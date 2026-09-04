@@ -1,3 +1,4 @@
+import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 import { runCensus } from "@/lib/run";
 
@@ -9,7 +10,25 @@ export const maxDuration = 300;
 export const dynamic = "force-dynamic";
 
 const JOBS: Record<string, () => Promise<unknown>> = {
-  census: runCensus,
+  census: async () => {
+    const summary = await runCensus();
+    /* Push the new survey out immediately instead of waiting for each page's
+       hour to expire.
+       This was found in an audit: a corrected figure was deployed, the
+       deployment went READY, and the live page still showed the old number —
+       the CDN went on serving the previous prerender, and only a cache-busting
+       query proved the new build was fine. A survey that lands at 06:00 and
+       shows up at 07:00 is a site that looks broken to anybody who read it in
+       between. */
+    revalidatePath("/", "layout");
+    return summary;
+  },
+  /* The same push, without a survey. Used after a copy fix, and it is the
+     answer to "the deploy is live but the page is not". */
+  refresh: async () => {
+    revalidatePath("/", "layout");
+    return { revalidated: "every page" };
+  },
 };
 
 /**
