@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 import { survey } from "@/lib/census";
-import { longDate } from "@/lib/when";
+import { numericDate } from "@/lib/when";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -48,7 +48,7 @@ export default async function OG() {
       >
         <div style={{ display: "flex", justifyContent: "space-between", fontSize: 22, color: "#968878", borderBottom: "3px solid #ece4d5", paddingBottom: 14 }}>
           <span>STACK CENSUS</span>
-          <span>{run ? `Run ${String(run.seq).padStart(3, "0")} · ${longDate(run.finished_at)}` : "Run 001"}</span>
+          <span>{run ? `Run ${String(run.seq).padStart(3, "0")} · ${numericDate(run.finished_at)}` : "Survey 001"}</span>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>

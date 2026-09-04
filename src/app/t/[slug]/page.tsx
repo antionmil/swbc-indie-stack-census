@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { byDomain } from "@/data/sites";
 import { survey, techSlug } from "@/lib/census";
-import { longDate } from "@/lib/when";
+import { numericDate } from "@/lib/when";
 import { Sheet } from "@/components/Sheet";
 
 export const revalidate = 3600;
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!found) return { title: "Not in this census" };
   const { run, row } = found;
   const title = `${row.tech}: ${row.n} of ${run.n_fetched} — Stack census`;
-  const description = `${row.n} of ${run.n_fetched} software products were running ${row.tech} on ${longDate(run.finished_at)}, with the line of the response that says so.`;
+  const description = `${row.n} of ${run.n_fetched} software products were running ${row.tech} on ${numericDate(run.finished_at)}, with the line of the response that says so.`;
   return { title, description, openGraph: { title, description } };
 }
 
@@ -48,7 +48,7 @@ export default async function TechPage({ params }: { params: Promise<{ slug: str
   const names = row.cats.map((c) => cats.get(c)).filter(Boolean) as string[];
 
   return (
-    <Sheet run={run.seq} date={longDate(run.finished_at)}>
+    <Sheet run={run.seq} date={numericDate(run.finished_at)}>
       <p className="mt-9 font-mono text-[11px] tracking-[0.16em] text-faint uppercase">
         {names.join(" · ") || "uncategorised"}
       </p>

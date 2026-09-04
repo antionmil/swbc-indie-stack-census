@@ -1,16 +1,8 @@
-/** Dates, written the way a person writes them. */
-export const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-export function longDate(d: Date | string): string {
-  const x = typeof d === "string" ? new Date(d) : d;
-  return `${x.getUTCDate()} ${MONTHS[x.getUTCMonth()]} ${x.getUTCFullYear()}`;
-}
-
-export function dayAndDate(d: Date | string): string {
-  const x = typeof d === "string" ? new Date(d) : d;
-  return `${DAYS[x.getUTCDay()]} ${x.getUTCDate()} ${MONTHS[x.getUTCMonth()]}`;
-}
+/* Every date on this site is `05.09.2026`. One format, everywhere: a page that
+   writes "Saturday 5 September" in one place and 05.09.2026 in another makes a
+   reader check whether they are the same date. The long forms were deleted
+   rather than left for later, because an unused date formatter is exactly the
+   thing that gets picked up again by accident. */
 
 /**
  * The cron runs at 06:00 UTC every day (vercel.json). This says which morning

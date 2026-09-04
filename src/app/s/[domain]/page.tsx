@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { SITES, byDomain } from "@/data/sites";
 import { survey, techSlug } from "@/lib/census";
 import { REST, SECTIONS, sectionFor } from "@/lib/sections";
-import { longDate } from "@/lib/when";
+import { numericDate } from "@/lib/when";
 import { Sheet } from "@/components/Sheet";
 
 export const revalidate = 3600;
@@ -42,7 +42,7 @@ export default async function SitePage({ params }: { params: Promise<{ domain: s
   const order = [...SECTIONS, REST];
 
   return (
-    <Sheet run={run.seq} date={longDate(run.finished_at)}>
+    <Sheet run={run.seq} date={numericDate(run.finished_at)}>
       <p className="mt-9 font-mono text-[11px] tracking-[0.16em] text-faint uppercase">
         {site.topic}{site.kind === "oss" ? ` · open source · ${site.src}` : " · indie"}
       </p>
@@ -74,7 +74,7 @@ export default async function SitePage({ params }: { params: Promise<{ domain: s
         <>
           <p className="font-body mt-4 max-w-[60ch] text-[15px] leading-relaxed text-muted">
             {rows.length} things were found in the response on{" "}
-            {longDate(run.finished_at)}. This is the front door only: whatever runs
+            {numericDate(run.finished_at)}. This is the front door only: whatever runs
             behind a login, and anything a browser would have to execute to reveal, is
             not here.
           </p>

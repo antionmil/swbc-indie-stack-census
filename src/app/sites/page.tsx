@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SITES } from "@/data/sites";
 import { INDIE } from "@/data/indie";
 import { latestRun } from "@/lib/census";
-import { longDate } from "@/lib/when";
+import { numericDate } from "@/lib/when";
 import { Sheet } from "@/components/Sheet";
 
 export const revalidate = 3600;
@@ -34,7 +34,7 @@ export default async function Sites() {
   };
 
   return (
-    <Sheet run={run?.seq} date={run ? longDate(run.finished_at) : null}>
+    <Sheet run={run?.seq} date={run ? numericDate(run.finished_at) : null}>
       <h1 className="font-display mt-9 max-w-[16ch] text-[34px] leading-[1.1] sm:text-[44px]">
         The {SITES.length.toLocaleString("en-GB")} products.
       </h1>

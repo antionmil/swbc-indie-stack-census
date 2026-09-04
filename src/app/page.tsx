@@ -2,7 +2,7 @@ import Link from "next/link";
 import { SITES } from "@/data/sites";
 import { survey, techSlug } from "@/lib/census";
 import { REST, SECTIONS, sectionFor } from "@/lib/sections";
-import { longDate, nextRun, numericDate } from "@/lib/when";
+import { nextRun, numericDate } from "@/lib/when";
 import { Row } from "@/components/Row";
 import { Jump, type JumpItem } from "@/components/Jump";
 import { Sheet } from "@/components/Sheet";
@@ -50,7 +50,7 @@ export default async function Home() {
   ];
 
   return (
-    <Sheet run={run.seq} date={longDate(run.finished_at)}>
+    <Sheet run={run.seq} date={numericDate(run.finished_at)}>
       <h1 className="font-display mt-9 max-w-[17ch] text-[34px] leading-[1.1] sm:text-[44px]">
         What {n.total.toLocaleString("en-GB")} real websites are built with.
       </h1>

@@ -5,7 +5,7 @@ import { INDIE } from "@/data/indie";
 import { EXTRA } from "@/lib/extra";
 import { canonical } from "@/lib/extra";
 import { survey } from "@/lib/census";
-import { longDate } from "@/lib/when";
+import { numericDate } from "@/lib/when";
 import { Sheet } from "@/components/Sheet";
 
 export const revalidate = 3600;
@@ -55,7 +55,7 @@ export default async function Method() {
         ". They are marked below.";
 
   return (
-    <Sheet run={run?.seq} date={run ? longDate(run.finished_at) : null}>
+    <Sheet run={run?.seq} date={run ? numericDate(run.finished_at) : null}>
       <h1 className="font-display mt-9 max-w-[18ch] text-[34px] leading-[1.1] sm:text-[44px]">
         How it is measured, and what it misses.
       </h1>
