@@ -6,10 +6,15 @@ import { Here } from "@/components/Here";
 export function Sheet({
   run,
   date,
+  home = false,
   children,
 }: {
   run?: number | null;
   date?: string | null;
+  /** The census itself. Every other page gets an arrow back to it in the
+   *  masthead — the name alone was already a link, and nobody reads a
+   *  wordmark as a way out. */
+  home?: boolean;
   children: React.ReactNode;
 }) {
   return (
@@ -17,9 +22,15 @@ export function Sheet({
       <div className="flex flex-wrap items-baseline justify-between gap-x-5 gap-y-1 border-b-2 border-ink pb-2.5">
         <Link
           href="/"
-          className="font-mono text-[11px] tracking-[0.16em] uppercase hover:text-accent"
+          className="group flex items-center gap-2 font-mono text-[11px] tracking-[0.16em] uppercase hover:text-accent"
         >
-          Stack census
+          {!home && (
+            <span aria-hidden className="text-faint group-hover:text-accent">
+              &larr;
+            </span>
+          )}
+          <span>Stack census</span>
+          {!home && <span className="sr-only">— back to the census</span>}
         </Link>
         <span className="tnum font-mono text-[11px] text-faint">
           {run ? `Survey ${String(run).padStart(3, "0")}` : "Survey 001"}

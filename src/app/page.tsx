@@ -50,7 +50,7 @@ export default async function Home() {
   ];
 
   return (
-    <Sheet run={run.seq} date={numericDate(run.finished_at)}>
+    <Sheet home run={run.seq} date={numericDate(run.finished_at)}>
       <h1 className="font-display mt-5 max-w-[17ch] text-[34px] leading-[1.1] sm:text-[44px]">
         What {n.total.toLocaleString("en-GB")} real websites are built with.
       </h1>
@@ -205,7 +205,7 @@ function Stat({ k, v, sub }: { k: string; v: string; sub?: string }) {
  */
 function Pending() {
   return (
-    <Sheet>
+    <Sheet home>
       <h1 className="font-display mt-9 max-w-[18ch] text-[34px] leading-[1.1] sm:text-[44px]">
         The first survey has not finished yet.
       </h1>
