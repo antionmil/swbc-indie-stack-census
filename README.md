@@ -14,7 +14,7 @@ and every survey is diffed against the one before it.
 Thursday 06:00 UTC
   /api/cron/census                     secret-gated, fra1, maxDuration 300
     fetchRuleset()      src/lib/ruleset.ts   GPL rules, fetched, never stored
-    fetchAll()          src/lib/fetchsite.ts 51 GETs + stylesheets + MX/TXT
+    fetchAll()          src/lib/fetchsite.ts 51 GETs + stylesheets + MX
     detect()            src/lib/wappalyzer.ts the matcher
     -> runs / fetches / findings / changes   Neon, Frankfurt
 Pages
@@ -33,6 +33,8 @@ means something if the same code drew both sides of it.
 | The ruleset | `src/lib/ruleset.ts` | Fetched at run time and **never committed**. The rules are GPL-3.0 and this repo is public; storing them here would drag a copyleft file into a repo that does not carry that licence. |
 | The supplement | `src/lib/extra.ts` | The public ruleset detects the modern front end through `js`/`dom` rules that need a browser. On those alone Next.js showed on 11 of 51 sites while `/_next/static/` sat in the HTML of twice as many. These 51 rules match strings that are actually in the response, and every one is printed on `/method`. |
 | The list | `src/data/sites.ts` | Fixed for the run. A census that gains and loses members between surveys cannot tell a migration from a change of population. |
+| MX, not TXT | `src/lib/fetchsite.ts` | The first production run found 689 things where the laptop found 443. 244 of the 246 extra were domain-verification TXT records, which prove an account existed, not that the page runs anything — and which resolve differently depending on who asks. |
+| Seeded from production | — | Survey 001 was drawn by the deployed cron, not from a laptop, so that survey 002 is diffed against something drawn in the same place by the same code. |
 | The diff | `src/lib/run.ts` | Both directions are guarded on the site having been fetched **successfully in both runs**. Without that guard one 403 reads as a company throwing away its whole stack in a week. |
 | The palette | `src/app/globals.css` | One file, every colour a token, both schemes, and every contrast ratio measured against the colour the text actually sits on — `pnpm qa` fails under 4.5:1. |
 

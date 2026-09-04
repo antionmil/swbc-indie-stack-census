@@ -18,18 +18,28 @@ export type Fetched =
   | { ok: true; page: PageInput; ms: number }
   | { ok: false; domain: string; error: string; ms: number };
 
-/** MX and TXT only: the two that carry a fingerprint (mail host, domain
- *  verification records). A lookup that fails is not an error — plenty of
- *  domains have no MX at all. */
+/**
+ * MX ONLY. TXT is deliberately not read, and that was a correction.
+ *
+ * The first production run found 689 things where the same code on a laptop
+ * had found 443, and 244 of the 246 extra were TXT records: every
+ * `openai-domain-verification`, `slack-domain-verification`,
+ * `atlassian-domain-verification` line a company has ever been asked to add.
+ * Two problems with counting those. They are not what this census claims to
+ * measure — a verification record proves somebody once proved they owned the
+ * domain, not that the page runs anything — and one of them mapped an
+ * `apple-domain-verification` record to "Apple iCloud Mail", which is simply
+ * wrong. They also resolve differently depending on which resolver asks,
+ * which would have filled the weekly feed with hundreds of changes that never
+ * happened.
+ *
+ * MX is a different thing: it is where the company's mail actually goes, it is
+ * short enough that every resolver returns all of it, and it is the one part
+ * of a stack a CDN cannot hide.
+ */
 async function dnsRecords(host: string): Promise<Record<string, string[]>> {
-  const out: Record<string, string[]> = {};
-  const [mx, txt] = await Promise.all([
-    dns.resolveMx(host).catch(() => []),
-    dns.resolveTxt(host).catch(() => []),
-  ]);
-  if (mx.length) out.MX = mx.map((r) => `${r.priority} ${r.exchange}`);
-  if (txt.length) out.TXT = txt.map((r) => r.join(""));
-  return out;
+  const mx = await dns.resolveMx(host).catch(() => []);
+  return mx.length ? { MX: mx.map((r) => `${r.priority} ${r.exchange}`) } : {};
 }
 
 /** The stylesheets a page links to, absolute, in document order. */

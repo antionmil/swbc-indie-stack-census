@@ -59,8 +59,8 @@ export default async function Method() {
           GET of its home page, with a normal browser user-agent and redirects followed.
           From the response we keep the headers, the cookies, the HTML, the script tags,
           the meta tags and up to three of the stylesheets it links to. We also ask DNS
-          for the domain&rsquo;s MX and TXT records. That is the whole input: no login,
-          no crawl, no second page.
+          for the domain&rsquo;s MX records. That is the whole input: no login, no crawl,
+          no second page.
         </p>
         <p>
           Those inputs are matched against the fingerprint rules from{" "}
@@ -112,6 +112,20 @@ export default async function Method() {
           so React is counted wherever Next.js was found. Those lines say{" "}
           <span className="font-mono text-[13px]">implied</span> in their evidence, and
           the census prefers a directly observed example when it has one.
+        </p>
+        <p>
+          <strong className="font-semibold">TXT records are not read</strong>, though the
+          rules would happily match them. The first production run found 689 things where
+          the same code on a laptop had found 443, and 244 of the 246 extra were domain
+          verification records — every <span className="font-mono text-[13px]">
+          openai-domain-verification</span> and{" "}
+          <span className="font-mono text-[13px]">slack-domain-verification</span> line a
+          company has ever been asked to add. A verification record proves somebody once
+          proved they owned the domain. It is not the page running anything, one of them
+          resolved to &ldquo;Apple iCloud Mail&rdquo; on nineteen sites that do not use it,
+          and different resolvers return different amounts of it — which would have filled
+          the weekly feed with hundreds of changes that never happened. MX is read, because
+          it is where the mail actually goes.
         </p>
         <p>
           The ruleset ships a few products under two spellings — Sanity and Sanity.io are
