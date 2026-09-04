@@ -173,6 +173,17 @@ async function prune(): Promise<number> {
  * 403 reads as a company throwing away its entire stack in a week, and the
  * feed — the only reason anybody comes back — fills up with fiction.
  */
+/**
+ * Two signals that flap without anything changing.
+ *
+ * `alt-svc` advertises HTTP/3 inconsistently — Typeform dropped and regained it
+ * between two surveys twenty minutes apart — and HSTS comes and goes with which
+ * edge answers. Both stay in the tally, where they are true. Neither belongs in
+ * a feed that a reader is meant to trust, and a daily survey would print them
+ * every morning.
+ */
+const NOISY = ["HTTP/3", "HSTS"];
+
 export async function writeChanges(runId: number, prevId: number) {
   const db = sql();
   const added = (await db`
@@ -180,6 +191,7 @@ export async function writeChanges(runId: number, prevId: number) {
     select ${runId}, ${prevId}, f.domain, f.tech, 'added', f.evidence->0->>'detail'
     from findings f
     where f.run_id = ${runId}
+      and f.tech <> all(${NOISY}::text[])
       and exists (select 1 from fetches x where x.run_id = ${prevId} and x.domain = f.domain and x.ok = 1)
       and exists (select 1 from fetches y where y.run_id = ${runId} and y.domain = f.domain and y.ok = 1)
       and not exists (select 1 from findings g where g.run_id = ${prevId} and g.domain = f.domain and g.tech = f.tech)
@@ -189,6 +201,7 @@ export async function writeChanges(runId: number, prevId: number) {
     select ${runId}, ${prevId}, f.domain, f.tech, 'removed', f.evidence->0->>'detail'
     from findings f
     where f.run_id = ${prevId}
+      and f.tech <> all(${NOISY}::text[])
       and exists (select 1 from fetches x where x.run_id = ${runId} and x.domain = f.domain and x.ok = 1)
       and exists (select 1 from fetches y where y.run_id = ${prevId} and y.domain = f.domain and y.ok = 1)
       and not exists (select 1 from findings g where g.run_id = ${runId} and g.domain = f.domain and g.tech = f.tech)

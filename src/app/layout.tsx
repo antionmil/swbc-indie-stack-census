@@ -7,14 +7,14 @@ const URL_BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://stackcensus.oneday
 export const metadata: Metadata = {
   metadataBase: new URL(URL_BASE),
   title: {
-    default: "Indie stack census — what a thousand software products actually run on",
+    default: "Stack census — what 1,200 real websites are built with",
     template: "%s",
   },
   description:
-    "Over a thousand software products, fetched the same way on the same morning, and a tally of what came back: framework, host, email, analytics — with the line of the response that proves each one. 51 commercial indie products, counted beside 1,173 open-source tools.",
+    "Every morning we fetch the home page of 1,200 software products and read what they run: framework, CSS, host, analytics, email. Then we count it, and show the line of the response that proves each figure.",
   openGraph: {
     type: "website",
-    siteName: "Indie stack census",
+    siteName: "Stack census",
     url: URL_BASE,
   },
   twitter: { card: "summary_large_image", creator: "@antionmil" },

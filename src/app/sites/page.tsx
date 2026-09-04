@@ -9,17 +9,18 @@ import { Sheet } from "@/components/Sheet";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "The population — Indie stack census",
+  title: "The products — Stack census",
   description:
-    "Every product in the census, and the public list it came from. 51 commercial indie products and 1,173 open-source tools.",
+    "Every product in the census, and where its name came from: 51 picked by hand, the rest from two public lists.",
 };
 
 /**
- * The whole population, named.
+ * Every product in the census, named.
  *
  * A census that will not show you its own membership is asking to be trusted.
- * This page is long on purpose: 1,224 links, grouped by where they came from,
- * so that anybody can check that the list is what the site says it is.
+ * The page is long on purpose. It is grouped by SOURCE rather than by type,
+ * because the source is the part a reader can check: each name traces back to a
+ * line in a public list, or to the fifty-one I chose myself.
  */
 export default async function Sites() {
   const run = await latestRun();
@@ -35,18 +36,19 @@ export default async function Sites() {
   return (
     <Sheet run={run?.seq} date={run ? longDate(run.finished_at) : null}>
       <h1 className="font-display mt-9 max-w-[16ch] text-[34px] leading-[1.1] sm:text-[44px]">
-        The population.
+        The {SITES.length.toLocaleString("en-GB")} products.
       </h1>
       <p className="font-body mt-4 max-w-[62ch] text-[16px] leading-relaxed text-muted">
-        {SITES.length.toLocaleString("en-GB")} products, in two groups. The list is
-        fixed between surveys. Entries that pointed at GitHub, GitLab, an app store or
-        Read the Docs were removed: fingerprinting a code host tells you what the code
-        host runs, and nothing about the product.
+        One census, counted together. They are grouped below by where the name came
+        from, because that is the part you can check. The list is fixed between
+        surveys. Entries pointing at GitHub, GitLab, an app store or Read the Docs were
+        removed: fingerprinting a code host tells you what the code host runs, and
+        nothing about the product.
       </p>
 
       <section className="mt-9">
         <h2 className="font-mono text-[11px] tracking-[0.16em] text-faint uppercase">
-          Indie · {INDIE.length} commercial products · picked by hand
+          {INDIE.length} picked by hand · commercial products
         </h2>
         <p className="mt-2 flex flex-wrap gap-x-3 gap-y-1.5 border-t border-rule pt-3 font-mono text-[12px] leading-relaxed">
           {INDIE.map((s) => (
@@ -60,7 +62,7 @@ export default async function Sites() {
       {[...bySrc.entries()].map(([src, list]) => (
         <section key={src} className="mt-9">
           <h2 className="font-mono text-[11px] tracking-[0.16em] text-faint uppercase">
-            Open source · {list.length.toLocaleString("en-GB")} tools ·{" "}
+            {list.length.toLocaleString("en-GB")} from{" "}
             {SOURCE_LINK[src] ? (
               <a className="underline underline-offset-2 hover:text-accent" href={SOURCE_LINK[src]}>
                 {src}

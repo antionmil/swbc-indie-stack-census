@@ -11,7 +11,7 @@ import { Sheet } from "@/components/Sheet";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Method and limits — Indie stack census",
+  title: "Method and limits — Stack census",
   description:
     "How fifty-one sites are fingerprinted, which rules are used, and the four things this census cannot see.",
 };
@@ -111,7 +111,7 @@ export default async function Method() {
 
       <Block title="What actually happens">
         <p>
-          Every Thursday at 06:00 UTC, each of the {SITES.length.toLocaleString("en-GB")}{" "}
+          Every morning at 06:00 UTC, each of the {SITES.length.toLocaleString("en-GB")}{" "}
           domains gets one HTTPS GET of its home page, with a normal browser user-agent
           and redirects followed.
           From the response we keep the headers, the cookies, the HTML, the script tags,
@@ -183,6 +183,13 @@ export default async function Method() {
           and different resolvers return different amounts of it — which would have filled
           the weekly feed with hundreds of changes that never happened. MX is read, because
           it is where the mail actually goes.
+        </p>
+        <p>
+          <strong className="font-semibold">Two signals are kept out of the change
+          feed.</strong> HTTP/3 and HSTS flap on their own: a server advertises{" "}
+          <span className="font-mono text-[13px]">alt-svc</span> inconsistently, and which
+          edge answers decides whether HSTS appears. Both stay in the tally, where they
+          are true. Neither belongs in a feed that is read as news.
         </p>
         <p>
           The ruleset ships a few products under two spellings — Sanity and Sanity.io are

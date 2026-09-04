@@ -13,15 +13,17 @@ export function dayAndDate(d: Date | string): string {
 }
 
 /**
- * The cron runs at 06:00 UTC every Thursday (vercel.json). This says which
- * Thursday comes next after a given moment, so the page can promise a date
- * rather than "weekly" — a vague promise is the same as no return mechanic.
+ * The cron runs at 06:00 UTC every day (vercel.json). This says which morning
+ * comes next after a given moment, so the page can promise a date rather than
+ * "daily" — a vague promise is the same as no return mechanic.
+ *
+ * It was weekly for the first day of this site's life. Daily is the point of a
+ * page somebody checks: a feed that fills once a week is a page you bookmark
+ * and forget.
  */
 export function nextRun(after: Date | string): Date {
   const x = new Date(typeof after === "string" ? after : after.getTime());
   const d = new Date(Date.UTC(x.getUTCFullYear(), x.getUTCMonth(), x.getUTCDate(), 6, 0, 0));
-  do {
-    d.setUTCDate(d.getUTCDate() + 1);
-  } while (d.getUTCDay() !== 4);
+  if (d.getTime() <= x.getTime()) d.setUTCDate(d.getUTCDate() + 1);
   return d;
 }

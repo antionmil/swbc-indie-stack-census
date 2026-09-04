@@ -1,11 +1,11 @@
 /**
  * The contrast figures written into globals.css. Run it after touching a token
  * and paste the output back into the comments — a documented ratio that was
- * never measured is worse than none, because it stops anyone re-checking.
+ * never measured is worse than none, because it stops anybody re-checking.
  *
- * Every pair is measured against the colour the text ACTUALLY SITS ON, which
- * is the thing day 2 got wrong: three tokens were measured against the page
- * and used on a card.
+ * Every pair is measured against the colour the text ACTUALLY SITS ON, which is
+ * the thing day 2 got wrong: three tokens were measured against the page and
+ * used on a card.
  */
 const lin = (c: number) => (c / 255 <= 0.04045 ? c / 255 / 12.92 : ((c / 255 + 0.055) / 1.055) ** 2.4);
 const lum = (hex: string) => {
@@ -18,8 +18,9 @@ const ratio = (a: string, b: string) => {
   return (x + 0.05) / (y + 0.05);
 };
 
+/* One scheme. The site committed to the dark ledger, so there is one palette to
+   measure and no second set of figures to fall out of date. */
 const THEMES = {
-  light: { ground: "#f6f2e9", surface: "#fffdf8", ink: "#221e17", muted: "#5c5344", faint: "#6b6152", accent: "#8a3a1c", added: "#2c5f3f" },
   dark: { ground: "#14120f", surface: "#1c1915", ink: "#ece4d5", muted: "#a8998a", faint: "#968878", accent: "#e08a5c", added: "#7fc39a" },
 };
 

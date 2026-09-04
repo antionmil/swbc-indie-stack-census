@@ -8,7 +8,7 @@ import { Sheet } from "@/components/Sheet";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "What changed — Indie stack census",
+  title: "What changed — Stack census",
   description:
     "Every technology that appeared on, or disappeared from, one of the fifty-one sites between two surveys.",
 };
@@ -25,11 +25,13 @@ export default async function Changes() {
         What changed.
       </h1>
       <p className="font-body mt-4 max-w-[62ch] text-[16px] leading-relaxed text-muted">
-        Every survey is compared with the one before it. A line appears here when a
-        technology showed up on a site that did not have it, or stopped appearing on one
-        that did — and only when that site answered properly in both surveys. A site
-        that returned an error is skipped entirely, because a failed fetch is not a
-        company throwing its stack away.
+        The census runs every morning, and each survey is compared with yesterday&rsquo;s.
+        A line appears here when a technology showed up on a product that did not have
+        it, or stopped appearing on one that did — and only when that product answered
+        properly in both surveys. A product that returned an error is skipped entirely,
+        because a failed fetch is not a company throwing its stack away. Two signals are
+        left out on purpose: HTTP/3 and HSTS flap on their own, without anything
+        changing.
       </p>
 
       {/* The first run has nothing to compare against, and this page will look
@@ -40,7 +42,7 @@ export default async function Changes() {
           <p className="font-display text-[20px] leading-snug">
             {runs <= 1
               ? "Nothing yet — this is the first survey."
-              : "Nothing moved between the last two surveys."}
+              : "Nothing moved overnight."}
           </p>
           <p className="font-body mt-3 max-w-[58ch] text-[15px] leading-relaxed text-muted">
             {runs <= 1
@@ -48,7 +50,7 @@ export default async function Changes() {
               : "Fifty-one sites, and not one detectable difference. It happens: these are marketing pages, and they change slowly. "}
             {run && (
               <>
-                The next survey runs on {dayAndDate(nextRun(run.finished_at))} at 06:00 UTC.
+                The next survey runs on {dayAndDate(nextRun(run.finished_at))} at 06:00 UTC — every morning.
               </>
             )}
           </p>

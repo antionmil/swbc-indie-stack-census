@@ -1,10 +1,9 @@
 import Link from "next/link";
 import { SITES } from "@/data/sites";
-import { INDIE } from "@/data/indie";
 import { survey, techSlug } from "@/lib/census";
 import { REST, SECTIONS, sectionFor } from "@/lib/sections";
 import { dayAndDate, longDate, nextRun } from "@/lib/when";
-import { Heads, Row } from "@/components/Row";
+import { Row } from "@/components/Row";
 import { Jump, type JumpItem } from "@/components/Jump";
 import { Sheet } from "@/components/Sheet";
 
@@ -52,15 +51,23 @@ export default async function Home() {
 
   return (
     <Sheet run={run.seq} date={longDate(run.finished_at)}>
-      <h1 className="font-display mt-9 max-w-[15ch] text-[34px] leading-[1.1] sm:text-[44px]">
-        {n.total.toLocaleString("en-GB")} products, counted.
+      <h1 className="font-display mt-9 max-w-[17ch] text-[34px] leading-[1.1] sm:text-[44px]">
+        What {n.total.toLocaleString("en-GB")} real websites are built with.
       </h1>
-      <p className="font-body mt-4 max-w-[62ch] text-[16px] leading-relaxed text-muted">
-        Every line below is something that was in the response — a header, a script
-        tag, a stylesheet, an MX record — and the figures are how many products had
-        it. Two populations, counted separately, because they disagree: {n.indie}{" "}
-        commercial indie products, and {n.oss.toLocaleString("en-GB")} open-source
-        tools. No opinions, no ranking, and nothing about revenue. This is a tally.
+      <p className="font-body mt-4 max-w-[62ch] text-[17px] leading-relaxed text-muted">
+        Every morning this site fetches the home page of{" "}
+        {n.total.toLocaleString("en-GB")} software products — Linear, Cal.com, Nextcloud,
+        Home Assistant, Ghost and a thousand more — and reads what came back. The
+        framework. The CSS. The host. The analytics. Where their email goes.
+      </p>
+      <p className="font-body mt-3 max-w-[62ch] text-[17px] leading-relaxed text-muted">
+        Then it counts. Every figure below is a link to the exact line of the response
+        that proves it, so you can check any of them yourself. Anything that changes
+        overnight appears on{" "}
+        <Link href="/changes" className="text-accent underline underline-offset-2">
+          what changed
+        </Link>
+        .
       </p>
 
       <Jump
@@ -69,31 +76,11 @@ export default async function Home() {
       />
 
       <dl className="mt-7 grid grid-cols-2 gap-x-6 gap-y-3 border-y border-rule py-3.5 sm:grid-cols-4">
-        <Stat k="asked" v={run.n_sites.toLocaleString("en-GB")} />
+        <Stat k="products asked" v={run.n_sites.toLocaleString("en-GB")} />
         <Stat k="answered" v={n.total.toLocaleString("en-GB")} />
         <Stat k="things found" v={rows.length.toLocaleString("en-GB")} />
         <Stat k="next survey" v={dayAndDate(next)} />
       </dl>
-
-      <p className="font-body mt-4 max-w-[62ch] text-[14px] leading-relaxed text-muted">
-        The <span className="text-ink">indie</span> column is {n.indie} commercial
-        products, picked by hand: Plausible, Linear, Cal.com, Resend and the rest of
-        the tools an indie founder already reads about. The{" "}
-        <span className="text-ink">open source</span> column is{" "}
-        {n.oss.toLocaleString("en-GB")} tools from two public lists,{" "}
-        <a className="underline underline-offset-2 hover:text-accent" href="https://github.com/awesome-selfhosted/awesome-selfhosted">
-          awesome-selfhosted
-        </a>{" "}
-        and{" "}
-        <a className="underline underline-offset-2 hover:text-accent" href="https://github.com/awesome-foss/awesome-sysadmin">
-          awesome-sysadmin
-        </a>
-        , so that any row can be traced back to somebody else&rsquo;s list.{" "}
-        <Link href="/sites" className="text-accent underline underline-offset-2">
-          The whole population is listed here
-        </Link>
-        .
-      </p>
 
       {SECTIONS.map((s) => {
         const list = grouped.get(s.slug) ?? [];
@@ -107,8 +94,7 @@ export default async function Home() {
             <p className="font-body mt-1.5 max-w-[58ch] text-[14px] leading-relaxed text-muted">
               {s.blurb}
             </p>
-            <div className="mt-3">
-              <Heads a="indie" b="open source" />
+            <div className="mt-3 border-t border-rule">
               {shown.map((r) => (
                 <Row
                   key={r.tech}
@@ -116,10 +102,8 @@ export default async function Home() {
                   name={r.tech}
                   note={r.cats.map((c) => cats.get(c)).find(Boolean)?.toLowerCase() ?? null}
                   evidence={r.sample ? `${r.sample_domain} — ${r.sample.detail}` : null}
-                  a={r.n_indie}
-                  aOf={n.indie}
-                  b={r.n_oss}
-                  bOf={n.oss}
+                  count={r.n}
+                  of={n.total}
                 />
               ))}
             </div>
@@ -159,30 +143,36 @@ export default async function Home() {
 
       <section className="mt-12">
         <h2 className="font-mono text-[11px] tracking-[0.16em] text-faint uppercase">
-          The indie {INDIE.length}
+          Where the {SITES.length.toLocaleString("en-GB")} products come from
         </h2>
-        <p className="font-body mt-1.5 max-w-[58ch] text-[14px] leading-relaxed text-muted">
-          The smaller column, in full. These are commercial products with a price
-          list, which is what makes them worth comparing against a thousand
-          open-source tools.
-        </p>
-        <p className="mt-3 flex flex-wrap gap-x-3 gap-y-1.5 border-t border-rule pt-3 font-mono text-[12px] leading-relaxed">
-          {INDIE.map((s) => (
-            <Link key={s.domain} href={`/s/${s.domain}`} className="hover:text-accent">
-              {s.name}
-            </Link>
-          ))}
+        <p className="font-body mt-1.5 max-w-[60ch] text-[15px] leading-relaxed text-muted">
+          51 commercial products picked by hand — the tools an indie founder already
+          reads about — and {(SITES.length - 51).toLocaleString("en-GB")} more taken from
+          two public lists,{" "}
+          <a className="underline underline-offset-2 hover:text-accent" href="https://github.com/awesome-selfhosted/awesome-selfhosted">
+            awesome-selfhosted
+          </a>{" "}
+          and{" "}
+          <a className="underline underline-offset-2 hover:text-accent" href="https://github.com/awesome-foss/awesome-sysadmin">
+            awesome-sysadmin
+          </a>
+          , so that every row traces back to somebody else&rsquo;s list rather than to a
+          list I typed myself.{" "}
+          <Link href="/sites" className="text-accent underline underline-offset-2">
+            All {SITES.length.toLocaleString("en-GB")} are named here
+          </Link>
+          .
         </p>
       </section>
 
       <p className="font-body mt-8 max-w-[62ch] text-[14px] leading-relaxed text-muted">
-        The population is fixed between surveys: a census that gains and loses members
-        cannot tell a migration from a change of population.{" "}
+        The list is fixed between surveys: a census that gains and loses members cannot
+        tell a real change from a change of population.{" "}
         {silent.length === 0
           ? `All ${run.n_sites.toLocaleString("en-GB")} answered this time. `
           : `${run.n_sites - n.total} did not answer this time and are left out of every figure above. `}
         The next survey runs on {dayAndDate(next)} at 06:00 UTC, and anything that moves
-        between now and then lands on{" "}
+        overnight lands on{" "}
         <Link href="/changes" className="text-accent underline underline-offset-2">
           what changed
         </Link>

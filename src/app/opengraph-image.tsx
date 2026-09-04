@@ -4,7 +4,7 @@ import { longDate } from "@/lib/when";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "Indie stack census — what a thousand software products actually run on";
+export const alt = "Stack census — what 1,200 real websites are built with";
 
 /**
  * THE FONT TRAP, already paid for once in the scaffold: ImageResponse cannot
@@ -40,33 +40,33 @@ export default async function OG() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#f6f2e9",
-          color: "#221e17",
+          background: "#14120f",
+          color: "#ece4d5",
           padding: 68,
           fontFamily: font ? "Serif" : "serif",
         }}
       >
-        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 22, color: "#6b6152", borderBottom: "3px solid #221e17", paddingBottom: 14 }}>
-          <span>INDIE STACK CENSUS</span>
+        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 22, color: "#968878", borderBottom: "3px solid #ece4d5", paddingBottom: 14 }}>
+          <span>STACK CENSUS</span>
           <span>{run ? `Run ${String(run.seq).padStart(3, "0")} · ${longDate(run.finished_at)}` : "Run 001"}</span>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
           {rows.map((r) => (
-            <div key={r.tech} style={{ display: "flex", justifyContent: "space-between", fontSize: 40, borderBottom: "1px solid #d8cfbc", paddingBottom: 8 }}>
+            <div key={r.tech} style={{ display: "flex", justifyContent: "space-between", fontSize: 40, borderBottom: "1px solid #332c24", paddingBottom: 8 }}>
               <span>{r.tech}</span>
-              <span style={{ color: "#8a3a1c" }}>
+              <span style={{ color: "#e08a5c" }}>
                 {r.n}
-                <span style={{ color: "#6b6152" }}>/{run?.n_fetched ?? 1224}</span>
+                <span style={{ color: "#968878" }}>/{run?.n_fetched ?? 1224}</span>
               </span>
             </div>
           ))}
         </div>
 
-        <div style={{ display: "flex", fontSize: 30, color: "#5c5344" }}>
+        <div style={{ display: "flex", fontSize: 30, color: "#a8998a" }}>
           {run
-            ? `${run.n_fetched.toLocaleString("en-GB")} software products, fetched the same morning.`
-            : "A thousand software products, counted."}
+            ? `${run.n_fetched.toLocaleString("en-GB")} products, fetched this morning and counted.`
+            : "A thousand products, fetched every morning and counted."}
         </div>
       </div>
     ),

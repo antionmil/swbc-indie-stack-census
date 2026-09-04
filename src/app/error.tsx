@@ -6,7 +6,7 @@ export default function Error({ reset }: { error: Error; reset: () => void }) {
   return (
     <main className="mx-auto w-full max-w-3xl px-5 py-14 sm:px-8">
       <div className="border-b-2 border-ink pb-2.5 font-mono text-[11px] tracking-[0.16em] uppercase">
-        Indie stack census
+        Stack census
       </div>
       <h1 className="font-display mt-9 max-w-[18ch] text-[34px] leading-[1.1]">
         This page did not render.

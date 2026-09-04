@@ -18,7 +18,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ domain: string }> }): Promise<Metadata> {
   const site = byDomain.get((await params).domain);
   if (!site) return { title: "Not in this census" };
-  const title = `What ${site.name} runs — Indie stack census`;
+  const title = `What ${site.name} runs — Stack census`;
   const description = `Everything found in ${site.domain}'s response: framework, host, email, analytics — with the line that gave each one away.`;
   return { title, description, openGraph: { title, description } };
 }

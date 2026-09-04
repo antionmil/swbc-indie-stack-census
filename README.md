@@ -1,21 +1,21 @@
-# Indie stack census
+# Stack census
 
 **[stackcensus.onedaybuilt.com](https://stackcensus.onedaybuilt.com)** — day 4 of
 [26](https://onedaybuilt.com).
 
-**1,224 software products** are fetched every Thursday morning, read, and
-tallied: what the page is built with, where it is served, where the email goes.
-Two populations, counted separately — 51 commercial indie products picked by
-hand, and 1,173 open-source tools from two public lists — because they answer
-differently and one average over both would report neither.
+**1,224 software products** are fetched every morning, read, and tallied: what
+the page is built with, where it is served, where the email goes. One census,
+one column. 51 of the products were picked by hand and 1,173 come from two
+public lists, which is a fact about where the names came from and is on
+`/sites` — it is not two populations to be reported separately.
 
 Every figure on the site links to the string in the response that produced it,
-and every survey is diffed against the one before it.
+and every survey is diffed against the one before.
 
 ## How it works
 
 ```
-Thursday 06:00 UTC
+Every morning, 06:00 UTC
   /api/cron/census                     secret-gated, fra1, maxDuration 300
     fetchRuleset()      src/lib/ruleset.ts   GPL rules, fetched, never stored
     fetchEach()         src/lib/fetchsite.ts 1,224 GETs, streamed, 40 wide
@@ -39,7 +39,9 @@ means something if the same code drew both sides of it.
 | The supplement | `src/lib/extra.ts` | The public ruleset detects the modern front end through `js`/`dom` rules that need a browser. On those alone Next.js showed on 11 of 51 sites while `/_next/static/` sat in the HTML of twice as many. These 51 rules match strings that are actually in the response, and every one is printed on `/method`. |
 | The list | `src/data/sites.ts` | **Generated** by `pnpm list:build` from two public lists plus `src/data/indie.ts`. A thousand entries I typed myself would be unauditable; these can each be traced to a line in somebody else's repository. Fixed between surveys. |
 | Streaming | `src/lib/fetchsite.ts` | `fetchEach` hands each response to a callback and forgets it. The 51-site version returned an array; at 1,224 sites that array is gigabytes of HTML in a function that does not have it. |
-| Two columns | `src/components/Row.tsx` | Every row shows the indie count and the open-source count. One combined figure would hide the only interesting thing, which is that the two groups disagree. |
+| The change feed ignores two signals | `src/lib/run.ts` | HTTP/3 and HSTS flap on their own — `alt-svc` is advertised inconsistently and HSTS depends on which edge answers. They stay in the tally, where they are true. A daily feed would otherwise print them every morning. |
+| Who is here | `src/app/api/here/` | A salted one-way hash of the IP address, deleted after five minutes. No cookie, nothing written to the visitor's browser, and no way back to the address. Keyed on the address rather than on a number the browser invents, because that number can be invented a thousand times and this figure is shown to everybody. |
+| One scheme | `src/app/globals.css` | The site is dark, not scheme-following. One palette to measure, and no second set of contrast figures to fall out of date. |
 | MX, not TXT | `src/lib/fetchsite.ts` | The first production run found 689 things where the laptop found 443. 244 of the 246 extra were domain-verification TXT records, which prove an account existed, not that the page runs anything — and which resolve differently depending on who asks. |
 | Seeded from production | — | Survey 001 was drawn by the deployed cron, not from a laptop, so that survey 002 is diffed against something drawn in the same place by the same code. |
 | The diff | `src/lib/run.ts` | Both directions are guarded on the site having been fetched **successfully in both runs**. Without that guard one 403 reads as a company throwing away its whole stack in a week. |
