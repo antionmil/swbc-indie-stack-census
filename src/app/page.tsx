@@ -54,20 +54,9 @@ export default async function Home() {
       <h1 className="font-display mt-9 max-w-[17ch] text-[34px] leading-[1.1] sm:text-[44px]">
         What {n.total.toLocaleString("en-GB")} real websites are built with.
       </h1>
-      <p className="font-body mt-4 max-w-[62ch] text-[17px] leading-relaxed text-muted">
-        Every morning this site fetches the home page of{" "}
-        {n.total.toLocaleString("en-GB")} software products — Linear, Cal.com, Nextcloud,
-        Home Assistant, Ghost and a thousand more — and reads what came back. The
-        framework. The CSS. The host. The analytics. Where their email goes.
-      </p>
-      <p className="font-body mt-3 max-w-[62ch] text-[17px] leading-relaxed text-muted">
-        Then it counts. Every figure below is a link to the exact line of the response
-        that proves it, so you can check any of them yourself. Anything that changes
-        overnight appears on{" "}
-        <Link href="/changes" className="text-accent underline underline-offset-2">
-          what changed
-        </Link>
-        .
+      <p className="font-body mt-4 max-w-[60ch] text-[17px] leading-relaxed text-muted">
+        Fetched every morning, read, and counted. Every figure links to the line of the
+        response that proves it.
       </p>
 
       <Jump
@@ -79,7 +68,11 @@ export default async function Home() {
         <Stat k="products asked" v={run.n_sites.toLocaleString("en-GB")} />
         <Stat k="answered" v={n.total.toLocaleString("en-GB")} />
         <Stat k="things found" v={rows.length.toLocaleString("en-GB")} />
-        <Stat k="next survey" v={numericDate(next)} sub="06:00 UTC" />
+        {/* The format is spelled out because 05.09.2026 is the fifth of
+            September to half the world and the ninth of May to the other half,
+            and a census that publishes a date it has to be asked about has
+            wasted the date. */}
+        <Stat k="next survey" v={numericDate(next)} sub="dd.mm.yyyy · 06:00 UTC" />
       </dl>
 
       {SECTIONS.map((s) => {

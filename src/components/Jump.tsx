@@ -80,7 +80,7 @@ export function Jump({ items, hint }: { items: JumpItem[]; hint: string }) {
 
   return (
     <div className="mt-7" onKeyDown={onKeyDown}>
-      <label htmlFor="jump" className="font-mono text-[10px] tracking-[0.14em] text-faint uppercase">
+      <label htmlFor="jump" className="font-mono text-[10px] tracking-[0.14em] text-muted uppercase">
         find a product or a technology
       </label>
       <input
@@ -97,7 +97,11 @@ export function Jump({ items, hint }: { items: JumpItem[]; hint: string }) {
         spellCheck={false}
         placeholder="linear, tailwind, cloudflare…"
         aria-describedby="jump-note"
-        className="mt-1.5 w-full border-b border-ink bg-transparent pb-1.5 font-mono text-[15px] text-ink placeholder:text-faint focus:border-accent focus:outline-none"
+        /* It used to be a transparent box with one hairline under it, and it
+           disappeared into the page — the one control on the site, and nobody
+           could see it. It is now a field: its own surface, a border all the way
+           round, and room to breathe. */
+        className="mt-1.5 w-full rounded-sm border border-rule bg-surface px-3.5 py-3 font-mono text-[15px] text-ink placeholder:text-faint hover:border-muted focus:border-accent focus:outline-none"
       />
       <p id="jump-note" className="mt-1.5 font-mono text-[11px] text-faint">
         {showing
