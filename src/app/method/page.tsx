@@ -56,7 +56,7 @@ export default async function Method() {
 
   return (
     <Sheet run={run?.seq} date={run ? numericDate(run.finished_at) : null}>
-      <h1 className="font-display mt-9 max-w-[18ch] text-[34px] leading-[1.1] sm:text-[44px]">
+      <h1 className="font-display mt-5 max-w-[18ch] text-[34px] leading-[1.1] sm:text-[44px]">
         How it is measured, and what it misses.
       </h1>
       <p className="font-body mt-4 max-w-[62ch] text-[16px] leading-relaxed text-muted">

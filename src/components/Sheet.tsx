@@ -21,11 +21,13 @@ export function Sheet({
         >
           Stack census
         </Link>
-        <Here />
         <span className="tnum font-mono text-[11px] text-faint">
           {run ? `Survey ${String(run).padStart(3, "0")}` : "Survey 001"}
           {date ? ` · ${date}` : ""}
         </span>
+      </div>
+      <div className="mt-4">
+        <Here />
       </div>
       {children}
       <footer className="mt-14 border-t-2 border-ink pt-3 font-mono text-[11px] leading-relaxed text-faint">

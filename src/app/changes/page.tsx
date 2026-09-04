@@ -21,7 +21,7 @@ export default async function Changes() {
 
   return (
     <Sheet run={run?.seq} date={run ? numericDate(run.finished_at) : null}>
-      <h1 className="font-display mt-9 max-w-[16ch] text-[34px] leading-[1.1] sm:text-[44px]">
+      <h1 className="font-display mt-5 max-w-[16ch] text-[34px] leading-[1.1] sm:text-[44px]">
         What changed.
       </h1>
       <p className="font-body mt-4 max-w-[62ch] text-[16px] leading-relaxed text-muted">

@@ -4,7 +4,7 @@ import { Sheet } from "@/components/Sheet";
 export default function NotFound() {
   return (
     <Sheet>
-      <h1 className="font-display mt-9 max-w-[18ch] text-[34px] leading-[1.1] sm:text-[42px]">
+      <h1 className="font-display mt-5 max-w-[18ch] text-[34px] leading-[1.1] sm:text-[42px]">
         Not in this census.
       </h1>
       <p className="font-body mt-4 max-w-[58ch] text-[16px] leading-relaxed text-muted">

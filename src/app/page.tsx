@@ -51,7 +51,7 @@ export default async function Home() {
 
   return (
     <Sheet run={run.seq} date={numericDate(run.finished_at)}>
-      <h1 className="font-display mt-9 max-w-[17ch] text-[34px] leading-[1.1] sm:text-[44px]">
+      <h1 className="font-display mt-5 max-w-[17ch] text-[34px] leading-[1.1] sm:text-[44px]">
         What {n.total.toLocaleString("en-GB")} real websites are built with.
       </h1>
       <p className="font-body mt-4 max-w-[60ch] text-[17px] leading-relaxed text-muted">

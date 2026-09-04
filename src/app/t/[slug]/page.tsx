@@ -49,7 +49,7 @@ export default async function TechPage({ params }: { params: Promise<{ slug: str
 
   return (
     <Sheet run={run.seq} date={numericDate(run.finished_at)}>
-      <p className="mt-9 font-mono text-[11px] tracking-[0.16em] text-faint uppercase">
+      <p className="mt-5 font-mono text-[11px] tracking-[0.16em] text-faint uppercase">
         {names.join(" · ") || "uncategorised"}
       </p>
       <h1 className="font-display mt-2 text-[34px] leading-[1.1] sm:text-[42px]">{row.tech}</h1>

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 type Counts = { here: number; week: number; ever: number };
@@ -17,7 +18,7 @@ const WEEK_FLOOR = 25;
 const EVER_FLOOR = 50;
 
 /**
- * The room, in the masthead.
+ * The room, under the masthead.
  *
  * Nothing is claimed until the first heartbeat returns: a bar that renders a
  * number on the server and then corrects itself is the stale flash this project
@@ -45,27 +46,39 @@ export function Here() {
     };
   }, []);
 
-  if (!c) return null;
+  /* The wrapper keeps its height whether or not the numbers have arrived, so
+     the headline underneath never jumps when the first heartbeat lands. The
+     numbers themselves are never rendered before they are known: a bar that
+     prints a figure and then corrects itself is the stale flash this project
+     bans, and the honest form of "not known yet" is empty space. */
+  if (!c)
+    return <div className="h-[38px]" aria-hidden />;
 
-  const stats: string[] = [];
-  if (c.week >= WEEK_FLOOR) stats.push(`${short(c.week)} this week`);
-  if (c.ever >= EVER_FLOOR) stats.push(`${short(c.ever)} all-time`);
+  const stats: { n: string; label: string }[] = [];
+  if (c.week >= WEEK_FLOOR) stats.push({ n: short(c.week), label: "visitors this week" });
+  if (c.ever >= EVER_FLOOR) stats.push({ n: short(c.ever), label: "visitors all-time" });
 
   return (
-    <span className="flex items-center gap-2 font-mono text-[11px] text-faint">
-      <span className="relative flex h-1.5 w-1.5 shrink-0" aria-hidden>
-        <span className="pulse absolute inline-flex h-full w-full rounded-full bg-accent opacity-70" />
-        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
-      </span>
-      <span className="text-ink">{c.here}</span>
-      <span>reading now</span>
-      {stats.length > 0 && <span aria-hidden>·</span>}
-      {stats.map((s, i) => (
-        <span key={s}>
-          {s}
-          {i < stats.length - 1 && <span aria-hidden> ·</span>}
+    <div className="flex h-[38px] items-center">
+      <div className="inline-flex flex-wrap items-center gap-x-5 gap-y-1 rounded-full border border-rule bg-surface px-4 py-1.5 text-[13px]">
+        <span className="flex items-center gap-2">
+          <span className="relative flex h-1.5 w-1.5 shrink-0" aria-hidden>
+            <span className="pulse absolute inline-flex h-full w-full rounded-full bg-added opacity-70" />
+            <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-added" />
+          </span>
+          <span className="tnum font-mono font-semibold text-ink">{c.here}</span>
+          <span className="text-muted">{c.here === 1 ? "reading now" : "online now"}</span>
         </span>
-      ))}
-    </span>
+        {stats.map((s) => (
+          <span key={s.label} className="flex items-center gap-1.5">
+            <span className="tnum font-mono font-semibold text-ink">{s.n}</span>
+            <span className="text-muted">{s.label}</span>
+          </span>
+        ))}
+        <Link href="/changes" className="text-accent hover:underline">
+          what changed &rarr;
+        </Link>
+      </div>
+    </div>
   );
 }
