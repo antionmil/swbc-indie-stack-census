@@ -35,7 +35,7 @@ export type Fetched =
  * domain, not that the page runs anything — and one of them mapped an
  * `apple-domain-verification` record to "Apple iCloud Mail", which is simply
  * wrong. They also resolve differently depending on which resolver asks,
- * which would have filled the weekly feed with hundreds of changes that never
+ * which would have filled the change feed with hundreds of changes that never
  * happened.
  *
  * MX is a different thing: it is where the company's mail actually goes, it is

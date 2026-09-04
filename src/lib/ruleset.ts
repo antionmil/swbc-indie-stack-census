@@ -6,7 +6,7 @@ import { compile, type RawTech, type Tech } from "@/lib/wappalyzer";
  *
  * enthec/webappanalyzer carries on the rules Wappalyzer closed in August 2023.
  * They are GPL-3.0. This repository is public and is not GPL, so the rules stay
- * out of it: the weekly cron pulls them, matches with them in memory, and
+ * out of it: the daily cron pulls them, matches with them in memory, and
  * stores only the RESULT — which is a fact about a website, not a derivative of
  * the ruleset. Keeping the fetch in the loop also means the census re-runs
  * against current rules rather than a copy that ages in a data folder.

@@ -13,7 +13,7 @@ import { Sheet } from "@/components/Sheet";
  * Read at build time or during a revalidation, never while somebody waits:
  * Neon's free plan parks the compute after five minutes idle, so the first
  * visitor after a quiet hour would pay for a cold Postgres. An hour is well
- * under the weekly cadence of the data.
+ * under the daily cadence of the data.
  */
 export const revalidate = 3600;
 

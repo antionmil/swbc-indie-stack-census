@@ -13,7 +13,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Method and limits — Stack census",
   description:
-    "How fifty-one sites are fingerprinted, which rules are used, and the four things this census cannot see.",
+    "How a thousand websites are fingerprinted every morning, which rules are used, and the four things this census cannot see.",
 };
 
 /** The supplementary rules, printed. A rule nobody can read is a rule nobody
@@ -183,7 +183,7 @@ export default async function Method() {
           proved they owned the domain. It is not the page running anything, one of them
           resolved to &ldquo;Apple iCloud Mail&rdquo; on nineteen sites that do not use it,
           and different resolvers return different amounts of it — which would have filled
-          the weekly feed with hundreds of changes that never happened. MX is read, because
+          the change feed with hundreds of changes that never happened. MX is read, because
           it is where the mail actually goes.
         </p>
         <p>

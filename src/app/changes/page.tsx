@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { byDomain } from "@/data/sites";
-import { latestRun, recentChanges, runCount, runSeq, techSlug } from "@/lib/census";
+import { SITES, byDomain } from "@/data/sites";
+import { latestRun, recentChanges, runCount, runSeq, survey, techSlug } from "@/lib/census";
 import { nextRun, numericDate } from "@/lib/when";
 import { Sheet } from "@/components/Sheet";
 
@@ -10,11 +10,23 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "What changed — Stack census",
   description:
-    "Every technology that appeared on, or disappeared from, one of the fifty-one sites between two surveys.",
+    "Every technology that appeared on, or disappeared from, one of the products in the census since yesterday morning.",
 };
 
 export default async function Changes() {
-  const [run, rows, runs, seqs] = await Promise.all([latestRun(), recentChanges(), runCount(), runSeq()]);
+  const [run, rows, runs, seqs, s] = await Promise.all([
+    latestRun(),
+    recentChanges(),
+    runCount(),
+    runSeq(),
+    survey(),
+  ]);
+  /* A technology that was REMOVED everywhere has no page any more, and the feed
+     is the one place that still names it. Linking it produced the only broken
+     link on the site: /t/trac, 404, from our own page. So a name is a link only
+     while there is something at the other end. */
+  const hasPage = new Set((s?.tally ?? []).map((t) => t.tech));
+  const inCensus = new Set(SITES.map((x) => x.domain));
 
   const byRun = new Map<number, typeof rows>();
   for (const r of rows) byRun.set(r.run_id, [...(byRun.get(r.run_id) ?? []), r]);
@@ -42,7 +54,7 @@ export default async function Changes() {
           <p className="font-display text-[20px] leading-snug">
             {runs <= 1
               ? "Nothing yet — this is the first survey."
-              : "Nothing moved overnight."}
+              : "Nothing moved since the last survey."}
           </p>
           <p className="font-body mt-3 max-w-[58ch] text-[15px] leading-relaxed text-muted">
             {runs <= 1
@@ -80,15 +92,23 @@ export default async function Changes() {
                       >
                         {c.kind === "added" ? "+" : "−"}
                       </span>
-                      <Link href={`/s/${c.domain}`} className="font-display text-[17px] hover:text-accent">
-                        {byDomain.get(c.domain)?.name ?? c.domain}
-                      </Link>
+                      {inCensus.has(c.domain) ? (
+                        <Link href={`/s/${c.domain}`} className="font-display text-[17px] hover:text-accent">
+                          {byDomain.get(c.domain)?.name ?? c.domain}
+                        </Link>
+                      ) : (
+                        <span className="font-display text-[17px]">{c.domain}</span>
+                      )}
                       <span className="font-body text-[15px] text-muted">
                         {c.kind === "added" ? "started using" : "stopped showing"}
                       </span>
-                      <Link href={`/t/${techSlug(c.tech)}`} className="font-display text-[17px] hover:text-accent">
-                        {c.tech}
-                      </Link>
+                      {hasPage.has(c.tech) ? (
+                        <Link href={`/t/${techSlug(c.tech)}`} className="font-display text-[17px] hover:text-accent">
+                          {c.tech}
+                        </Link>
+                      ) : (
+                        <span className="font-display text-[17px]">{c.tech}</span>
+                      )}
                     </div>
                     {c.evidence && (
                       <p className="mt-1 font-mono text-[11px] leading-relaxed break-all text-faint">

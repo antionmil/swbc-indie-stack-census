@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { runCensus } from "@/lib/run";
 
 export const runtime = "nodejs";
-/** Fifty-one sites plus their stylesheets took 38 seconds on a laptop. 300 is
+/** 1,224 products plus their stylesheets took 103 seconds in production. 300 is
  *  the Pro ceiling and leaves room for a slow site to hit its own timeout
  *  without taking the run down. */
 export const maxDuration = 300;

@@ -27,7 +27,7 @@ Pages
 ```
 
 There is **one** implementation of a census run (`src/lib/run.ts`). `pnpm census`
-and the Thursday cron both call it, because a diff between two surveys only
+and the daily cron both call it, because a diff between two surveys only
 means something if the same code drew both sides of it.
 
 ## The parts worth knowing

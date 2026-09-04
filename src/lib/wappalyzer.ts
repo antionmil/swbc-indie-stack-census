@@ -4,7 +4,7 @@
  * Wappalyzer's own engine went closed-source in August 2023. The rules did
  * not: they carry on under GPL-3.0 in enthec/webappanalyzer. This file is the
  * matcher, written here so that ONE implementation produces both the seeded
- * census and every weekly re-run — a diff between two snapshots is only
+ * census and every later run — a diff between two snapshots is only
  * meaningful if the same code drew both of them.
  *
  * The ruleset itself is NEVER committed to this repository. It is GPL-3.0 and
@@ -14,7 +14,7 @@
  *
  * What is deliberately NOT implemented: `js` and `dom` patterns. Both need a
  * real browser to evaluate, a headless Chrome does not fit in a Vercel
- * function, and a signal the weekly cron cannot reproduce would poison the
+ * function, and a signal the daily cron cannot reproduce would poison the
  * diff feed. The site says so on its method page rather than quietly
  * under-reporting.
  */

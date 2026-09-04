@@ -4,7 +4,7 @@ import { numericDate } from "@/lib/when";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "Stack census — what 1,200 real websites are built with";
+export const alt = "Stack census — what a thousand real websites are built with";
 
 /**
  * THE FONT TRAP, already paid for once in the scaffold: ImageResponse cannot
