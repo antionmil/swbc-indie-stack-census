@@ -3,6 +3,7 @@ import { SITES } from "@/data/sites";
 import { categoryNames, fetchRows, latestRun, tally, techSlug } from "@/lib/census";
 import { REST, SECTIONS, sectionFor } from "@/lib/sections";
 import { dayAndDate, longDate, nextRun } from "@/lib/when";
+import { Jump, type JumpItem } from "@/components/Jump";
 import { Row } from "@/components/Row";
 import { Sheet } from "@/components/Sheet";
 
@@ -39,6 +40,23 @@ export default async function Home() {
     grouped.set(s.slug, [...(grouped.get(s.slug) ?? []), r]);
   }
 
+  /* Everything the filter box can jump to, built here so the box ships with
+     the page and needs no request of its own. */
+  const jump: JumpItem[] = [
+    ...SITES.map((s) => ({
+      href: `/s/${s.domain}`,
+      label: s.name,
+      sub: s.domain,
+      kind: "product" as const,
+    })),
+    ...rows.map((r) => ({
+      href: `/t/${techSlug(r.tech)}`,
+      label: r.tech,
+      sub: `${r.n} of ${n}`,
+      kind: "technology" as const,
+    })),
+  ];
+
   return (
     <Sheet run={run.seq} date={longDate(run.finished_at)}>
       <h1 className="font-display mt-9 max-w-[16ch] text-[34px] leading-[1.1] sm:text-[44px]">
@@ -51,12 +69,35 @@ export default async function Home() {
         on. No opinions, no ranking, and nothing about revenue: this is a tally.
       </p>
 
+      <Jump items={jump} />
+
       <dl className="mt-7 grid grid-cols-2 gap-x-6 gap-y-3 border-y border-rule py-3.5 sm:grid-cols-4">
         <Stat k="asked" v={String(run.n_sites)} />
         <Stat k="answered" v={String(run.n_fetched)} />
         <Stat k="things found" v={String(rows.length)} />
         <Stat k="next survey" v={dayAndDate(next)} />
       </dl>
+
+      {/* The roll of products, one click from the top of the page. It used to
+          sit below every section, which put the thing most visitors came for
+          nine screens down. Dense on purpose: a two-column table of 51 rows
+          would push the tally itself off the first two screens. */}
+      <section className="mt-6">
+        <h2 className="font-mono text-[11px] tracking-[0.16em] text-faint uppercase">
+          The fifty-one
+        </h2>
+        <p className="mt-2 flex flex-wrap gap-x-3 gap-y-1.5 font-mono text-[12px] leading-relaxed">
+          {SITES.map((s) => {
+            const f = fetched.find((x) => x.domain === s.domain);
+            return (
+              <Link key={s.domain} href={`/s/${s.domain}`} className="hover:text-accent">
+                {s.name}
+                {f && !f.ok && <span className="text-faint"> (no answer)</span>}
+              </Link>
+            );
+          })}
+        </p>
+      </section>
 
       {SECTIONS.map((s) => {
         const list = grouped.get(s.slug) ?? [];
@@ -111,35 +152,9 @@ export default async function Home() {
         </section>
       )}
 
-      <section className="mt-12">
-        <h2 className="font-mono text-[11px] tracking-[0.16em] text-faint uppercase">
-          The fifty-one
-        </h2>
-        <p className="font-body mt-1.5 max-w-[58ch] text-[14px] leading-relaxed text-muted">
-          The list is fixed for the run. A census that gains and loses members between
-          surveys cannot tell a migration from a change of population.
-        </p>
-        <div className="mt-3 grid grid-cols-1 gap-x-6 border-t border-rule sm:grid-cols-2">
-          {SITES.map((s) => {
-            const f = fetched.find((x) => x.domain === s.domain);
-            return (
-              <Link
-                key={s.domain}
-                href={`/s/${s.domain}`}
-                className="flex items-baseline gap-3 border-b border-rule-soft py-2 hover:bg-surface"
-              >
-                <span className="font-display text-[15px]">{s.name}</span>
-                <span aria-hidden className="leader" />
-                <span className="font-mono text-[11px] text-faint">
-                  {f && !f.ok ? "no answer" : s.group.toLowerCase()}
-                </span>
-              </Link>
-            );
-          })}
-        </div>
-      </section>
-
       <p className="font-body mt-8 max-w-[62ch] text-[14px] leading-relaxed text-muted">
+        The list of fifty-one is fixed for the run: a census that gains and loses
+        members between surveys cannot tell a migration from a change of population.{" "}
         {silent.length === 0
           ? `All ${run.n_sites} answered this time. `
           : `${silent.length} did not answer this time (${silent.map((s) => s.domain).join(", ")}) and are left out of every figure above. `}
