@@ -67,23 +67,25 @@ export default async function Method() {
 
       <Block title="Who is counted">
         <p>
-          Two populations, counted separately, because they answer differently and an
-          average over both would report neither.
+          One census of {SITES.length.toLocaleString("en-GB")} products, counted together.
+          The names came from two places, and that is worth knowing because it is the part
+          you can check — but it is where a name came from, not two things reported
+          separately.
         </p>
         <p>
-          <strong className="font-semibold">The indie group is {INDIE.length} commercial
-          products</strong>, picked by hand: Plausible, Linear, Cal.com, Resend and the
-          rest of the tools an indie founder already reads about. It is a small group and
-          it is not a sample of anything. It is a named list, and it is on{" "}
+          <strong className="font-semibold">{INDIE.length} were picked by hand</strong>:
+          Plausible, Linear, Cal.com, Resend and the rest of the commercial tools an indie
+          founder already reads about. That is a choice I made, and it is not a sample of
+          anything. It is a named list, and it is on{" "}
           <Link href="/sites" className="text-accent underline underline-offset-2">
             the population page
           </Link>{" "}
           in full.
         </p>
         <p>
-          <strong className="font-semibold">The open-source group is{" "}
-          {(SITES.length - INDIE.length).toLocaleString("en-GB")} tools</strong> taken from
-          two public lists,{" "}
+          <strong className="font-semibold">The other{" "}
+          {(SITES.length - INDIE.length).toLocaleString("en-GB")} are open-source
+          tools</strong> taken from two public lists,{" "}
           <a className="text-accent underline underline-offset-2" href="https://github.com/awesome-selfhosted/awesome-selfhosted">
             awesome-selfhosted
           </a>{" "}
