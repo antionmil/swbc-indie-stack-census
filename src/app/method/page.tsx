@@ -187,8 +187,15 @@ export default async function Method() {
           it is where the mail actually goes.
         </p>
         <p>
+          <strong className="font-semibold">The green and red figures</strong> are how far
+          a count moved since the previous survey. They are worked out only on the
+          products that answered in BOTH surveys. Without that restriction a morning where
+          forty sites time out would read as forty products dropping their framework
+          overnight, and the arrows would be reporting the weather rather than the web.
+        </p>
+        <p>
           <strong className="font-semibold">Two signals are kept out of the change
-          feed.</strong> HTTP/3 and HSTS flap on their own: a server advertises{" "}
+          feed</strong>, and carry no movement figure either. HTTP/3 and HSTS flap on their own: a server advertises{" "}
           <span className="font-mono text-[13px]">alt-svc</span> inconsistently, and which
           edge answers decides whether HSTS appears. Both stay in the tally, where they
           are true. Neither belongs in a feed that is read as news.

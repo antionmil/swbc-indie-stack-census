@@ -53,9 +53,21 @@ export default async function TechPage({ params }: { params: Promise<{ slug: str
         {names.join(" · ") || "uncategorised"}
       </p>
       <h1 className="font-display mt-2 text-[34px] leading-[1.1] sm:text-[42px]">{row.tech}</h1>
-      <p className="font-display mt-3 text-[26px]">
-        <span className="tnum">{row.n.toLocaleString("en-GB")}</span>{" "}
-        <span className="text-muted text-[19px]">of {n.total.toLocaleString("en-GB")}</span>
+      <p className="font-display mt-3 flex flex-wrap items-baseline gap-x-3 text-[26px]">
+        <span>
+          <span className="tnum">{row.n.toLocaleString("en-GB")}</span>{" "}
+          <span className="text-[19px] text-muted">of {n.total.toLocaleString("en-GB")}</span>
+        </span>
+        {row.delta !== undefined && row.delta !== 0 && (
+          <span
+            className={`tnum font-mono text-[15px] font-semibold ${
+              row.delta > 0 ? "text-added" : "text-removed"
+            }`}
+          >
+            {row.delta > 0 ? "+" : "−"}
+            {Math.abs(row.delta)} since the last survey
+          </span>
+        )}
       </p>
       <p className="font-body mt-3 max-w-[60ch] text-[15px] leading-relaxed text-muted">
         Found in survey {String(run.seq).padStart(3, "0")}. Each line gives the string in

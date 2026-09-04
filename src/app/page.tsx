@@ -25,7 +25,7 @@ const REST_MAX = 90;
 export default async function Home() {
   const s = await survey();
   if (!s) return <Pending />;
-  const { run, tally: rows, cats, n, silent } = s;
+  const { run, tally: rows, cats, n, silent, prevRun } = s;
   const next = nextRun(run.finished_at);
 
   const grouped = new Map<string, typeof rows>();
@@ -75,16 +75,23 @@ export default async function Home() {
         <Stat k="next survey" v={numericDate(next)} sub="dd.mm.yyyy · 06:00 UTC" />
       </dl>
 
+      {prevRun !== null && (
+        <p className="mt-3 font-mono text-[11px] leading-relaxed text-faint">
+          The green and red figures are the movement since the last survey, counted only
+          on the products that answered in both.
+        </p>
+      )}
+
       {SECTIONS.map((s) => {
         const list = grouped.get(s.slug) ?? [];
         if (!list.length) return null;
         const shown = list.slice(0, TOP);
         return (
           <section key={s.slug} id={s.slug} className="mt-10">
-            <h2 className="font-mono text-[11px] tracking-[0.16em] text-faint uppercase">
+            <h2 className="font-display text-[24px] leading-tight sm:text-[27px]">
               {s.title}
             </h2>
-            <p className="font-body mt-1.5 max-w-[58ch] text-[14px] leading-relaxed text-muted">
+            <p className="font-body mt-1.5 max-w-[58ch] text-[15px] leading-relaxed text-muted">
               {s.blurb}
             </p>
             <div className="mt-3 border-t border-rule">
@@ -97,6 +104,7 @@ export default async function Home() {
                   evidence={r.sample ? `${r.sample_domain} — ${r.sample.detail}` : null}
                   count={r.n}
                   of={n.total}
+                  delta={r.delta}
                 />
               ))}
             </div>
@@ -111,7 +119,7 @@ export default async function Home() {
 
       {(grouped.get(REST.slug) ?? []).length > 0 && (
         <section id={REST.slug} className="mt-10">
-          <h2 className="font-mono text-[11px] tracking-[0.16em] text-faint uppercase">
+          <h2 className="font-display text-[24px] leading-tight sm:text-[27px]">
             {REST.title}
           </h2>
           <p className="font-body mt-1.5 max-w-[58ch] text-[14px] leading-relaxed text-muted">
@@ -135,7 +143,7 @@ export default async function Home() {
       )}
 
       <section className="mt-12">
-        <h2 className="font-mono text-[11px] tracking-[0.16em] text-faint uppercase">
+        <h2 className="font-display text-[24px] leading-tight sm:text-[27px]">
           Where the {SITES.length.toLocaleString("en-GB")} products come from
         </h2>
         <p className="font-body mt-1.5 max-w-[60ch] text-[15px] leading-relaxed text-muted">

@@ -31,6 +31,10 @@ export type Evidence = { kind: string; detail: string };
 
 export type TallyRow = {
   tech: string;
+  /** Movement since the previous survey, counted only on the products that
+   *  answered in BOTH — see `deltas()`. Absent on the first survey, and on the
+   *  two signals that flap. */
+  delta?: number;
   /** Both groups, and the total. The comparison IS the census: what 51
    *  commercial products chose, beside what 1,173 open-source ones chose. */
   n: number;
@@ -185,6 +189,8 @@ export type Survey = {
   fetches: Map<string, FetchRow>;
   cats: Map<number, string>;
   silent: FetchRow[];
+  /** The survey this one is compared against. Null on the first. */
+  prevRun: number | null;
 };
 
 /**
@@ -217,10 +223,46 @@ export function survey(): Promise<Survey | null> {
   return value;
 }
 
+/**
+ * Two signals that flap without anything changing, so they get no movement
+ * figure. Kept in step with NOISY in run.ts, which keeps them out of the
+ * change feed for the same reason.
+ */
+const NO_DELTA = new Set(["HTTP/3", "HSTS"]);
+
+/**
+ * How far each figure moved since the previous survey.
+ *
+ * Counted ONLY on the products that answered in both surveys. Without that
+ * restriction a morning where forty sites time out reads as forty products
+ * dropping their framework overnight, and the arrows would be reporting the
+ * weather rather than the web.
+ */
+async function deltas(runId: number, prevId: number): Promise<Map<string, number>> {
+  const rows = (await sql()`
+    select f.tech,
+           count(*) filter (where f.run_id = ${runId})::int as now,
+           count(*) filter (where f.run_id = ${prevId})::int as before
+    from findings f
+    join fetches a on a.run_id = ${runId} and a.domain = f.domain and a.ok = 1
+    join fetches b on b.run_id = ${prevId} and b.domain = f.domain and b.ok = 1
+    where f.run_id in (${runId}, ${prevId})
+    group by f.tech`) as unknown as { tech: string; now: number; before: number }[];
+  const out = new Map<string, number>();
+  for (const r of rows) if (r.now !== r.before) out.set(r.tech, r.now - r.before);
+  return out;
+}
+
 async function load(): Promise<Survey | null> {
   const run = await latestRun();
   if (!run) return null;
   const db = sql();
+
+  const prev = (await db`
+    select id from runs where finished_at is not null and id < ${run.id}
+    order by id desc limit 1`) as unknown as { id: number }[];
+  const prevRun = prev[0]?.id ?? null;
+  const moved = prevRun ? await deltas(run.id, prevRun) : new Map<string, number>();
 
   const [rowsRaw, fetchRaw, catRaw] = await Promise.all([
     db`
@@ -289,11 +331,12 @@ async function load(): Promise<Survey | null> {
     .map(([tech, c]) => ({
       tech, n: c.n, n_indie: c.indie, n_oss: c.oss, cats: c.cats,
       sample: c.sample, sample_domain: c.sampleDomain,
+      delta: NO_DELTA.has(tech) ? undefined : moved.get(tech),
     }))
     .sort((a, b) => b.n - a.n || a.tech.localeCompare(b.tech));
 
   return {
-    run, n, tally, byTech, bySite, fetches,
+    run, n, tally, byTech, bySite, fetches, prevRun,
     cats: new Map(catRows.map((c) => [c.id, c.name])),
     silent: silent.sort((a, b) => a.domain.localeCompare(b.domain)),
   };

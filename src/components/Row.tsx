@@ -14,6 +14,7 @@ export function Row({
   evidence,
   count,
   of,
+  delta,
 }: {
   href: string;
   name: string;
@@ -21,6 +22,10 @@ export function Row({
   evidence?: string | null;
   count: number;
   of: number;
+  /** Movement since the previous survey. Zero is never passed: a column of
+   *  "+0" is noise, and a row that did not move should look like a row that
+   *  did not move. */
+  delta?: number;
 }) {
   return (
     <Link
@@ -34,6 +39,18 @@ export function Row({
           {count}
           <span className="font-normal text-faint">/{of.toLocaleString("en-GB")}</span>
         </span>
+        {delta !== undefined && delta !== 0 && (
+          <span
+            className={`tnum w-[34px] shrink-0 text-right font-mono text-[12px] font-semibold ${
+              delta > 0 ? "text-added" : "text-removed"
+            }`}
+            title={`${delta > 0 ? "+" : "−"}${Math.abs(delta)} since the previous survey`}
+          >
+            {delta > 0 ? "+" : "−"}
+            {Math.abs(delta)}
+          </span>
+        )}
+        {(delta === undefined || delta === 0) && <span aria-hidden className="w-[34px] shrink-0" />}
       </span>
       {(note || evidence) && (
         <span className="mt-0.5 flex flex-wrap items-baseline gap-x-2 font-mono text-[11px] leading-relaxed text-faint">

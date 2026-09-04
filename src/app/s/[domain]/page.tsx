@@ -84,7 +84,7 @@ export default async function SitePage({ params }: { params: Promise<{ domain: s
             if (!list.length) return null;
             return (
               <section key={s.slug} className="mt-8">
-                <h2 className="font-mono text-[11px] tracking-[0.16em] text-faint uppercase">
+                <h2 className="font-display text-[21px] leading-tight sm:text-[23px]">
                   {s.title}
                 </h2>
                 <div className="mt-2 border-t border-rule">
