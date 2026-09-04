@@ -147,9 +147,11 @@ export default async function Method() {
 
       {silent.length > 0 && (
         <p className="font-body mt-3 max-w-[62ch] text-[15px] leading-relaxed text-muted">
-          {silent.length} of them matched nothing at all in this survey, which is itself
-          a result — nobody in the fifty-one loads{" "}
-          {silent.slice(0, 3).join(", ")} on their marketing page. They are marked below.
+          {silent.length} of them matched nothing at all in this survey, which is itself a
+          result: not one of the fifty-one home pages carried a trace of{" "}
+          {silent.slice(0, 3).join(", ")}
+          {silent.length > 3 ? `, or of ${silent.length - 3} other things looked for` : ""}.
+          They are marked below.
         </p>
       )}
 
