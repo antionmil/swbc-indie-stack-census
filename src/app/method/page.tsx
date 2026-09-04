@@ -41,6 +41,16 @@ export default async function Method() {
      nobody uses. Naming them puts both in front of the reader. */
   const seen = new Set(run ? (await tally(run.id)).map((r) => r.tech) : []);
   const silent = run ? entries.map(([n]) => n).filter((n) => !seen.has(canonical(n))) : [];
+  /* One string, built here rather than assembled out of JSX expressions: a
+     `{list}`, `{maybe}`, `.` sequence puts a space in front of the comma and
+     the full stop, and the page then reads "Umami , or of 22 other things ." */
+  const silentLine =
+    silent.length === 0
+      ? ""
+      : `${silent.length} of them matched nothing at all in this survey, which is itself a ` +
+        `result: not one of the fifty-one home pages carried a trace of ${silent.slice(0, 3).join(", ")}` +
+        (silent.length > 3 ? `, or of ${silent.length - 3} other things looked for` : "") +
+        ". They are marked below.";
 
   return (
     <Sheet run={run?.seq} date={run ? longDate(run.finished_at) : null}>
@@ -147,11 +157,7 @@ export default async function Method() {
 
       {silent.length > 0 && (
         <p className="font-body mt-3 max-w-[62ch] text-[15px] leading-relaxed text-muted">
-          {silent.length} of them matched nothing at all in this survey, which is itself a
-          result: not one of the fifty-one home pages carried a trace of{" "}
-          {silent.slice(0, 3).join(", ")}
-          {silent.length > 3 ? `, or of ${silent.length - 3} other things looked for` : ""}.
-          They are marked below.
+          {silentLine}
         </p>
       )}
 
