@@ -32,9 +32,12 @@ export function Sheet({
           <span>Stack census</span>
           {!home && <span className="sr-only">— back to the census</span>}
         </Link>
+        {/* No run, no claim. This used to fall back to "Survey 001", which
+            printed a survey number that was two behind on the not-found page —
+            a made-up figure in the one place a reader is already unsure what
+            they are looking at. */}
         <span className="tnum font-mono text-[11px] text-faint">
-          {run ? `Survey ${String(run).padStart(3, "0")}` : "Survey 001"}
-          {date ? ` · ${date}` : ""}
+          {run ? `Survey ${String(run).padStart(3, "0")}${date ? ` · ${date}` : ""}` : ""}
         </span>
       </div>
       <div className="mt-4">
