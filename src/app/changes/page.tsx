@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { byDomain } from "@/data/sites";
 import { latestRun, recentChanges, runCount, runSeq, techSlug } from "@/lib/census";
-import { dayAndDate, longDate, nextRun } from "@/lib/when";
+import { longDate, nextRun, numericDate } from "@/lib/when";
 import { Sheet } from "@/components/Sheet";
 
 export const revalidate = 3600;
@@ -50,7 +50,7 @@ export default async function Changes() {
               : "Fifty-one sites, and not one detectable difference. It happens: these are marketing pages, and they change slowly. "}
             {run && (
               <>
-                The next survey runs on {dayAndDate(nextRun(run.finished_at))} at 06:00 UTC — every morning.
+                The next survey runs on {numericDate(nextRun(run.finished_at))} at 06:00 UTC — every morning.
               </>
             )}
           </p>

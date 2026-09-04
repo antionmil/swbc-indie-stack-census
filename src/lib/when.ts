@@ -27,3 +27,10 @@ export function nextRun(after: Date | string): Date {
   if (d.getTime() <= x.getTime()) d.setUTCDate(d.getUTCDate() + 1);
   return d;
 }
+
+/** 05.09.2026. Zero-padded, so a column of these lines up. */
+export function numericDate(d: Date | string): string {
+  const x = typeof d === "string" ? new Date(d) : d;
+  const p = (n: number) => String(n).padStart(2, "0");
+  return `${p(x.getUTCDate())}.${p(x.getUTCMonth() + 1)}.${x.getUTCFullYear()}`;
+}

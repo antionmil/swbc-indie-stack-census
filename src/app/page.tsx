@@ -2,7 +2,7 @@ import Link from "next/link";
 import { SITES } from "@/data/sites";
 import { survey, techSlug } from "@/lib/census";
 import { REST, SECTIONS, sectionFor } from "@/lib/sections";
-import { dayAndDate, longDate, nextRun } from "@/lib/when";
+import { longDate, nextRun, numericDate } from "@/lib/when";
 import { Row } from "@/components/Row";
 import { Jump, type JumpItem } from "@/components/Jump";
 import { Sheet } from "@/components/Sheet";
@@ -79,7 +79,7 @@ export default async function Home() {
         <Stat k="products asked" v={run.n_sites.toLocaleString("en-GB")} />
         <Stat k="answered" v={n.total.toLocaleString("en-GB")} />
         <Stat k="things found" v={rows.length.toLocaleString("en-GB")} />
-        <Stat k="next survey" v={dayAndDate(next)} />
+        <Stat k="next survey" v={numericDate(next)} sub="06:00 UTC" />
       </dl>
 
       {SECTIONS.map((s) => {
@@ -171,7 +171,7 @@ export default async function Home() {
         {silent.length === 0
           ? `All ${run.n_sites.toLocaleString("en-GB")} answered this time. `
           : `${run.n_sites - n.total} did not answer this time and are left out of every figure above. `}
-        The next survey runs on {dayAndDate(next)} at 06:00 UTC, and anything that moves
+        The next survey runs on {numericDate(next)} at 06:00 UTC, and anything that moves
         overnight lands on{" "}
         <Link href="/changes" className="text-accent underline underline-offset-2">
           what changed
@@ -186,11 +186,21 @@ export default async function Home() {
   );
 }
 
-function Stat({ k, v }: { k: string; v: string }) {
+function Stat({ k, v, sub }: { k: string; v: string; sub?: string }) {
   return (
     <div>
       <dt className="font-mono text-[10px] tracking-[0.14em] text-faint uppercase">{k}</dt>
-      <dd className="tnum font-display mt-0.5 text-[19px]">{v}</dd>
+      {/* The figure, then anything qualifying it underneath. The next survey
+          used to print "Saturday 5 September", which wrapped onto two lines and
+          knocked the row of figures out of line with each other. */}
+      <dd className="tnum font-display mt-0.5 text-[19px] leading-tight">
+        {v}
+        {sub && (
+          <span className="mt-0.5 block font-mono text-[11px] font-normal text-faint">
+            {sub}
+          </span>
+        )}
+      </dd>
     </div>
   );
 }
