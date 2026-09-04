@@ -28,7 +28,12 @@ async function serif(): Promise<ArrayBuffer | null> {
 export default async function OG() {
   const s = await survey();
   const run = s?.run ?? null;
-  const rows = s ? s.tally.slice(0, 5) : [];
+  /* HSTS and HTTP/3 are true and they are transport, not a stack choice. They
+     also happen to be the two biggest numbers, so the share card led with them
+     and told a reader nothing about what anybody builds with. They stay in the
+     tally and stay off the card, for the same reason they are kept out of the
+     change feed. */
+  const rows = s ? s.tally.filter((r) => r.tech !== "HSTS" && r.tech !== "HTTP/3").slice(0, 5) : [];
   const font = await serif();
 
   return new ImageResponse(
@@ -57,7 +62,9 @@ export default async function OG() {
               <span>{r.tech}</span>
               <span style={{ color: "#e08a5c" }}>
                 {r.n}
-                <span style={{ color: "#968878" }}>/{run?.n_fetched ?? 1224}</span>
+                <span style={{ color: "#968878" }}>
+                  /{(run?.n_fetched ?? 1224).toLocaleString("en-GB")}
+                </span>
               </span>
             </div>
           ))}
