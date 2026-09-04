@@ -57,7 +57,7 @@ export const EXTRA: Record<string, RawTech> = {
   "Vercel Speed Insights": { scriptSrc: ["/_vercel/speed-insights/script\\.js"], cats: [10] },
   "Amplitude": { scriptSrc: ["cdn\\.amplitude\\.com", "amplitude-js"], scripts: ["cdn\\.amplitude\\.com"], cats: [10] },
   "Mixpanel": { scriptSrc: ["cdn\\.mxpnl\\.com"], scripts: ["cdn\\.mxpnl\\.com"], cats: [10] },
-  "Statsig": { scriptSrc: ["statsig[^\"']*\\.js", "cdn\\.statsig\\.com"], cats: [10] },
+  "Statsig": { scriptSrc: ["cdn\\.statsig\\.com"], scripts: ["cdn\\.statsig\\.com"], cats: [10] },
   "Koala": { scriptSrc: ["cdn\\.getkoala\\.com"], scripts: ["cdn\\.getkoala\\.com"], cats: [10] },
   "Common Room": { scriptSrc: ["cdn\\.cr-relay\\.com"], scripts: ["cdn\\.cr-relay\\.com"], cats: [10] },
 

@@ -2,6 +2,14 @@
  * A census run from the command line — the same function the Thursday cron
  * calls, so the seeded survey and every later one are drawn by one
  * implementation. Needs DATABASE_URL.
+ *
+ * `--conditions=react-server` is load-bearing (it is in the pnpm script). The
+ * database module imports `server-only`, whose default export exists to throw —
+ * that is the whole point of it, and it is what stops the connection string
+ * being pulled into a client bundle. Under that condition the package resolves
+ * to the empty module instead, which is exactly how Next resolves it on the
+ * server. Without the flag this script dies with "cannot be imported from a
+ * Client Component".
  */
 import { runCensus } from "../src/lib/run";
 

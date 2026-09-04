@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SITES } from "@/data/sites";
 import { EXTRA } from "@/lib/extra";
-import { latestRun } from "@/lib/census";
+import { canonical } from "@/lib/extra";
+import { latestRun, tally } from "@/lib/census";
 import { longDate } from "@/lib/when";
 import { Sheet } from "@/components/Sheet";
 
@@ -33,6 +34,13 @@ function rulesOf(raw: (typeof EXTRA)[string]): string[] {
 export default async function Method() {
   const run = await latestRun();
   const entries = Object.entries(EXTRA);
+
+  /* Which of our own rules found nothing this week. Worth printing: "looked
+     for and not found" is a result, and a rule that has quietly stopped
+     matching anything looks exactly the same from the outside as a technology
+     nobody uses. Naming them puts both in front of the reader. */
+  const seen = new Set(run ? (await tally(run.id)).map((r) => r.tech) : []);
+  const silent = run ? entries.map(([n]) => n).filter((n) => !seen.has(canonical(n))) : [];
 
   return (
     <Sheet run={run?.id} date={run ? longDate(run.finished_at) : null}>
@@ -123,10 +131,25 @@ export default async function Method() {
         </p>
       </Block>
 
+      {silent.length > 0 && (
+        <p className="font-body mt-3 max-w-[62ch] text-[15px] leading-relaxed text-muted">
+          {silent.length} of them matched nothing at all in this survey, which is itself
+          a result — nobody in the fifty-one loads{" "}
+          {silent.slice(0, 3).join(", ")} on their marketing page. They are marked below.
+        </p>
+      )}
+
       <div className="mt-4 border-t border-rule">
         {entries.map(([name, raw]) => (
           <div key={name} className="border-b border-rule-soft py-2.5">
-            <p className="font-display text-[16px]">{name}</p>
+            <p className="font-display text-[16px]">
+              {name}
+              {silent.includes(name) && (
+                <span className="ml-2 font-mono text-[10px] tracking-[0.12em] text-faint uppercase">
+                  found nothing
+                </span>
+              )}
+            </p>
             <ul className="mt-0.5 space-y-0.5">
               {rulesOf(raw).map((r, i) => (
                 <li key={i} className="font-mono text-[11px] leading-relaxed break-all text-faint">

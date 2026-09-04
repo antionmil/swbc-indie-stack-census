@@ -279,7 +279,12 @@ export function detect(page: PageInput, techs: Tech[], alias: (n: string) => str
     // the ruleset intends: they add, capped at 100.
     cur.confidence = Math.min(100, cur.confidence + confidence);
     cur.version ??= ver;
-    if (cur.evidence.length < 6 && !cur.evidence.some((e) => e.detail === detail))
+    /* Four lines, and at most two of a kind. Radix leaves a dozen `--radix-*`
+       custom properties in one stylesheet, and a row that repeats the same
+       kind of proof twelve times is less readable than one that shows it
+       twice — the reader has already believed it by the second line. */
+    const sameKind = cur.evidence.filter((e) => e.kind === kind).length;
+    if (cur.evidence.length < 4 && sameKind < 2 && !cur.evidence.some((e) => e.detail === detail))
       cur.evidence.push({ kind, detail });
   };
 

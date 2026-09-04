@@ -31,7 +31,7 @@ means something if the same code drew both sides of it.
 |---|---|---|
 | The matcher | `src/lib/wappalyzer.ts` | Wappalyzer closed its engine in 2023. The rules live on under GPL-3.0; this is a fresh matcher for them, HTTP-only. |
 | The ruleset | `src/lib/ruleset.ts` | Fetched at run time and **never committed**. The rules are GPL-3.0 and this repo is public; storing them here would drag a copyleft file into a repo that does not carry that licence. |
-| The supplement | `src/lib/extra.ts` | The public ruleset detects the modern front end through `js`/`dom` rules that need a browser. On those alone Next.js showed on 11 of 51 sites while `/_next/static/` sat in the HTML of twice as many. These 54 rules match strings that are actually in the response, and every one is printed on `/method`. |
+| The supplement | `src/lib/extra.ts` | The public ruleset detects the modern front end through `js`/`dom` rules that need a browser. On those alone Next.js showed on 11 of 51 sites while `/_next/static/` sat in the HTML of twice as many. These 51 rules match strings that are actually in the response, and every one is printed on `/method`. |
 | The list | `src/data/sites.ts` | Fixed for the run. A census that gains and loses members between surveys cannot tell a migration from a change of population. |
 | The diff | `src/lib/run.ts` | Both directions are guarded on the site having been fetched **successfully in both runs**. Without that guard one 403 reads as a company throwing away its whole stack in a week. |
 | The palette | `src/app/globals.css` | One file, every colour a token, both schemes, and every contrast ratio measured against the colour the text actually sits on — `pnpm qa` fails under 4.5:1. |
@@ -63,5 +63,7 @@ collide on one URL slug, or if any site detects nothing at all.
    `vercel.json`.
 3. `cp .env.example .env.local`, fill in `DATABASE_URL` and `CRON_SECRET`.
 4. `pnpm db:push`
-5. `pnpm census` — the first survey. Takes about a minute.
+5. `pnpm census` — the first survey. Takes about a minute. (It runs under
+   `--conditions=react-server` so that `server-only` resolves the way Next
+   resolves it on the server, instead of throwing.)
 6. `pnpm dev`

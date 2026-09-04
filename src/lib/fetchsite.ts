@@ -90,6 +90,10 @@ export async function fetchSite(domain: string, timeoutMs = 25_000): Promise<Fet
       cache: "no-store",
     });
     const html = (await res.text()).slice(0, MAX_HTML);
+    /* Stopped HERE, before the stylesheets and the DNS lookups. The site page
+       prints this figure as "answered in N ms", and a number that quietly
+       included three more requests would be a lie in small type. */
+    const ms = Date.now() - started;
 
     const headers: Record<string, string[]> = {};
     res.headers.forEach((v, k) => {
@@ -117,7 +121,7 @@ export async function fetchSite(domain: string, timeoutMs = 25_000): Promise<Fet
       dns: await dnsRecords(domain),
       css: await fetchStyles(styleSheetHrefs(html, res.url || `https://${domain}`)),
     };
-    return { ok: true, page, ms: Date.now() - started };
+    return { ok: true, page, ms };
   } catch (e) {
     return {
       ok: false,

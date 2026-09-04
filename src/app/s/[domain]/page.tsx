@@ -59,10 +59,13 @@ export default async function SitePage({ params }: { params: Promise<{ domain: s
         >
           {site.domain}
         </a>
-        {me?.final_url && me.final_url !== `https://${site.domain}` && (
+        {/* Compare HOSTS, not strings: fetch resolves `https://linear.app` to
+            `https://linear.app/`, and a naive string comparison then printed
+            "answered as linear.app" on every site that simply added a slash. */}
+        {me?.final_url && new URL(me.final_url).host !== site.domain && (
           <> · answered as {new URL(me.final_url).host}</>
         )}
-        {me && <> · HTTP {me.status} in {me.ms} ms</>}
+        {me?.ok === 1 && <> · HTTP {me.status} in {me.ms.toLocaleString("en-GB")} ms</>}
       </p>
 
       {me && !me.ok ? (
