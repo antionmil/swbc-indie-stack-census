@@ -47,6 +47,12 @@ const registrable = (h: string) => h.split(".").slice(-2).join(".");
 
 type Row = { domain: string; name: string; kind: "indie" | "oss"; src: string; topic: string };
 
+/** Counted while building, and written into the generated file. The method page
+ *  used to state this figure from memory: it said 306 dropped, which was true
+ *  of one list and wrong from the moment the second was added. A published
+ *  number has to be computed by the thing that produces it. */
+const stats = { entries: 0, dropped: 0 };
+
 async function fromList(src: (typeof SOURCES)[number]): Promise<Row[]> {
   const md = await (await fetch(src.url, { headers: { "user-agent": "stackcensus.onedaybuilt.com" } })).text();
   const rows: Row[] = [];
@@ -58,13 +64,18 @@ async function fromList(src: (typeof SOURCES)[number]): Promise<Row[]> {
     if (h) topic = h[1].replace(/\[|\]|\(.*\)/g, "").trim();
     const m = /^- \[([^\]]+)\]\((https?:\/\/[^)]+)\)/.exec(line);
     if (!m) continue;
+    stats.entries++;
     let h2: string;
     try {
       h2 = host(m[2]);
     } catch {
+      stats.dropped++;
       continue;
     }
-    if (CODE_HOSTS.has(h2) || CODE_HOSTS.has(registrable(h2))) continue;
+    if (CODE_HOSTS.has(h2) || CODE_HOSTS.has(registrable(h2))) {
+      stats.dropped++;
+      continue;
+    }
     rows.push({ domain: h2, name: m[1].trim(), kind: "oss", src: src.id, topic });
   }
   return rows;
@@ -102,8 +113,10 @@ import type { CensusSite } from "@/data/indie";
 export const SITES: CensusSite[] = ${JSON.stringify(all, null, 1)};
 
 export const byDomain = new Map(SITES.map((s) => [s.domain, s]));
-export const INDIE_DOMAINS = SITES.filter((s) => s.kind === "indie").map((s) => s.domain);
-export const OSS_DOMAINS = SITES.filter((s) => s.kind === "oss").map((s) => s.domain);
+
+/** What the two public lists contained, and what was thrown away. Printed on
+ *  /method, so it is computed here rather than remembered. */
+export const LIST_STATS = { entries: ${stats.entries}, droppedCodeHosts: ${stats.dropped} };
 `;
 
 await writeFile("src/data/sites.ts", body);

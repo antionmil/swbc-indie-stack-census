@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITES } from "@/data/sites";
+import { LIST_STATS, SITES } from "@/data/sites";
 import { INDIE } from "@/data/indie";
 import { EXTRA } from "@/lib/extra";
 import { canonical } from "@/lib/extra";
@@ -100,8 +100,9 @@ export default async function Method() {
         </p>
         <p>
           Entries pointing at GitHub, GitLab, an app store or Read the Docs are dropped
-          before the survey runs — 306 of them. Fingerprinting a code host tells you what
-          the code host runs, and nothing about the product.
+          before the survey runs — {LIST_STATS.droppedCodeHosts} of the{" "}
+          {LIST_STATS.entries.toLocaleString("en-GB")} the two lists hold. Fingerprinting
+          a code host tells you what the code host runs, and nothing about the product.
         </p>
         <p>
           The population is fixed between surveys. It changes only when the source lists

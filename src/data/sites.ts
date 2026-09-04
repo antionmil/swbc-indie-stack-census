@@ -8585,5 +8585,7 @@ export const SITES: CensusSite[] = [
 ];
 
 export const byDomain = new Map(SITES.map((s) => [s.domain, s]));
-export const INDIE_DOMAINS = SITES.filter((s) => s.kind === "indie").map((s) => s.domain);
-export const OSS_DOMAINS = SITES.filter((s) => s.kind === "oss").map((s) => s.domain);
+
+/** What the two public lists contained, and what was thrown away. Printed on
+ *  /method, so it is computed here rather than remembered. */
+export const LIST_STATS = { entries: 1565, droppedCodeHosts: 348 };
