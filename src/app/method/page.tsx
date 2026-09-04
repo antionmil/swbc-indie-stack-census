@@ -1,0 +1,171 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { SITES } from "@/data/sites";
+import { EXTRA } from "@/lib/extra";
+import { latestRun } from "@/lib/census";
+import { longDate } from "@/lib/when";
+import { Sheet } from "@/components/Sheet";
+
+export const revalidate = 3600;
+
+export const metadata: Metadata = {
+  title: "Method and limits — Indie stack census",
+  description:
+    "How fifty-one sites are fingerprinted, which rules are used, and the four things this census cannot see.",
+};
+
+/** The supplementary rules, printed. A rule nobody can read is a rule nobody
+ *  can argue with, and every figure on this site rests on these. */
+function rulesOf(raw: (typeof EXTRA)[string]): string[] {
+  const out: string[] = [];
+  const push = (label: string, v: unknown) => {
+    if (!v) return;
+    for (const s of Array.isArray(v) ? v : [v]) out.push(`${label} ${s}`);
+  };
+  push("script src", raw.scriptSrc);
+  push("in the html", raw.html);
+  push("in a stylesheet", raw.css);
+  for (const [k, v] of Object.entries(raw.meta ?? {})) push(`<meta ${k}>`, v);
+  for (const [k, v] of Object.entries(raw.headers ?? {})) push(`header ${k}:`, v);
+  return out;
+}
+
+export default async function Method() {
+  const run = await latestRun();
+  const entries = Object.entries(EXTRA);
+
+  return (
+    <Sheet run={run?.id} date={run ? longDate(run.finished_at) : null}>
+      <h1 className="font-display mt-9 max-w-[18ch] text-[34px] leading-[1.1] sm:text-[44px]">
+        How it is measured, and what it misses.
+      </h1>
+      <p className="font-body mt-4 max-w-[62ch] text-[16px] leading-relaxed text-muted">
+        A census is only worth the method. This one is small enough to describe in full,
+        so here it is — including the parts that would make a figure wrong if you read
+        it as more than it is.
+      </p>
+
+      <Block title="What actually happens">
+        <p>
+          Every Thursday at 06:00 UTC, each of the {SITES.length} domains gets one HTTPS
+          GET of its home page, with a normal browser user-agent and redirects followed.
+          From the response we keep the headers, the cookies, the HTML, the script tags,
+          the meta tags and up to three of the stylesheets it links to. We also ask DNS
+          for the domain&rsquo;s MX and TXT records. That is the whole input: no login,
+          no crawl, no second page.
+        </p>
+        <p>
+          Those inputs are matched against the fingerprint rules from{" "}
+          <a className="text-accent underline underline-offset-2" href="https://github.com/enthec/webappanalyzer">
+            enthec/webappanalyzer
+          </a>
+          , which carries on the ruleset Wappalyzer closed in August 2023. The rules are
+          GPL-3.0. They are fetched at the start of every run and never stored here, so
+          this repository redistributes none of them — and the census always matches
+          against current rules rather than a copy going stale in a data folder.
+        </p>
+      </Block>
+
+      <Block title="The four things it cannot see">
+        <p>
+          <strong className="font-semibold">Anything that needs a browser.</strong> Most
+          of the public ruleset&rsquo;s modern front-end detection is written as{" "}
+          <code className="font-mono text-[13px]">js</code> and{" "}
+          <code className="font-mono text-[13px]">dom</code> rules, which only exist
+          after a page has executed. A serverless function has no browser, so those rules
+          are skipped rather than half-run. That is why the supplement below exists.
+        </p>
+        <p>
+          <strong className="font-semibold">Anything behind a login.</strong> This is the
+          marketing page. The application a company actually ships may be built on
+          something else entirely, and often is.
+        </p>
+        <p>
+          <strong className="font-semibold">Anything the CDN hides.</strong> A site
+          fronted by Cloudflare tells you about Cloudflare. What answers behind it is
+          frequently invisible from the outside.
+        </p>
+        <p>
+          <strong className="font-semibold">Anything about the company.</strong> No
+          revenue, no headcount, no funding, no ranking. Fifty-one sites cannot support
+          those claims and this census does not make them.
+        </p>
+      </Block>
+
+      <Block title="Reading the figures">
+        <p>
+          A count is &ldquo;how many of the sites that answered had this in the
+          response&rdquo;. It is not market share, and it is not a recommendation. Two
+          detections are kept only when the rules put confidence at 50 or above, which is
+          the ruleset&rsquo;s own threshold for a weak signal.
+        </p>
+        <p>
+          Some rows are inferred rather than seen: the ruleset says Next.js implies React,
+          so React is counted wherever Next.js was found. Those lines say{" "}
+          <span className="font-mono text-[13px]">implied</span> in their evidence, and
+          the census prefers a directly observed example when it has one.
+        </p>
+        <p>
+          The ruleset ships a few products under two spellings — Sanity and Sanity.io are
+          the same thing, matching the same evidence. Those are merged before counting, or
+          the tally would show one product twice.
+        </p>
+      </Block>
+
+      <Block title={`The ${entries.length} rules this census adds`}>
+        <p>
+          On the public ruleset alone, Next.js was found on 11 of 51 sites while{" "}
+          <span className="font-mono text-[13px]">/_next/static/</span> sat in the HTML of
+          twice as many — the rest of its rules need a browser. So the census adds rules
+          of its own. Every one matches a string that is present in the response, and
+          every one is printed here, because a fingerprint you cannot read is one you
+          cannot argue with.
+        </p>
+      </Block>
+
+      <div className="mt-4 border-t border-rule">
+        {entries.map(([name, raw]) => (
+          <div key={name} className="border-b border-rule-soft py-2.5">
+            <p className="font-display text-[16px]">{name}</p>
+            <ul className="mt-0.5 space-y-0.5">
+              {rulesOf(raw).map((r, i) => (
+                <li key={i} className="font-mono text-[11px] leading-relaxed break-all text-faint">
+                  {r}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <Block title="Corrections">
+        <p>
+          If a line is wrong about your site, it is wrong in public and I would rather fix
+          it: the evidence string on each row says exactly what was matched, so a
+          correction takes one message.{" "}
+          <a className="text-accent underline underline-offset-2" href="https://x.com/antionmil">
+            @antionmil
+          </a>
+          .
+        </p>
+        <p>
+          <Link href="/" className="text-accent underline underline-offset-2">
+            Back to the census
+          </Link>
+          .
+        </p>
+      </Block>
+    </Sheet>
+  );
+}
+
+function Block({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <section className="mt-10">
+      <h2 className="font-mono text-[11px] tracking-[0.16em] text-faint uppercase">{title}</h2>
+      <div className="font-body mt-2 max-w-[62ch] space-y-3 border-t border-rule pt-3 text-[15px] leading-relaxed text-muted">
+        {children}
+      </div>
+    </section>
+  );
+}

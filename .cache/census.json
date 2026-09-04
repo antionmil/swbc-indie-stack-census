@@ -1,0 +1,8772 @@
+{
+ "at": "2026-09-04T07:23:34.961Z",
+ "cats": {
+  "1": {
+   "groups": [
+    3
+   ],
+   "name": "CMS",
+   "priority": 1
+  },
+  "2": {
+   "groups": [
+    3,
+    4,
+    18
+   ],
+   "name": "Message boards",
+   "priority": 1
+  },
+  "3": {
+   "groups": [
+    5
+   ],
+   "name": "Database managers",
+   "priority": 2
+  },
+  "4": {
+   "groups": [
+    3
+   ],
+   "name": "Documentation",
+   "priority": 2
+  },
+  "5": {
+   "groups": [
+    6
+   ],
+   "name": "Widgets",
+   "priority": 9
+  },
+  "6": {
+   "groups": [
+    1
+   ],
+   "name": "Ecommerce",
+   "priority": 1
+  },
+  "7": {
+   "groups": [
+    3,
+    10
+   ],
+   "name": "Photo galleries",
+   "priority": 1
+  },
+  "8": {
+   "groups": [
+    3
+   ],
+   "name": "Wikis",
+   "priority": 1
+  },
+  "9": {
+   "groups": [
+    5,
+    7
+   ],
+   "name": "Hosting panels",
+   "priority": 2
+  },
+  "10": {
+   "groups": [
+    8
+   ],
+   "name": "Analytics",
+   "priority": 9
+  },
+  "11": {
+   "groups": [
+    3
+   ],
+   "name": "Blogs",
+   "priority": 1
+  },
+  "12": {
+   "groups": [
+    9
+   ],
+   "name": "JavaScript frameworks",
+   "priority": 8
+  },
+  "13": {
+   "groups": [
+    3,
+    18
+   ],
+   "name": "Issue trackers",
+   "priority": 2
+  },
+  "14": {
+   "groups": [
+    10
+   ],
+   "name": "Video players",
+   "priority": 7
+  },
+  "15": {
+   "groups": [
+    3,
+    18
+   ],
+   "name": "Comment systems",
+   "priority": 9
+  },
+  "16": {
+   "groups": [
+    11
+   ],
+   "name": "Security",
+   "priority": 9
+  },
+  "17": {
+   "groups": [
+    9
+   ],
+   "name": "Font scripts",
+   "priority": 9
+  },
+  "18": {
+   "groups": [
+    9
+   ],
+   "name": "Web frameworks",
+   "priority": 7
+  },
+  "19": {
+   "groups": [
+    6
+   ],
+   "name": "Miscellaneous",
+   "priority": 10
+  },
+  "20": {
+   "groups": [
+    9
+   ],
+   "name": "Editors",
+   "priority": 4
+  },
+  "21": {
+   "groups": [
+    3
+   ],
+   "name": "LMS",
+   "priority": 1
+  },
+  "22": {
+   "groups": [
+    7
+   ],
+   "name": "Web servers",
+   "priority": 8
+  },
+  "23": {
+   "groups": [
+    7
+   ],
+   "name": "Caching",
+   "priority": 7
+  },
+  "24": {
+   "groups": [
+    3
+   ],
+   "name": "Rich text editors",
+   "priority": 5
+  },
+  "25": {
+   "groups": [
+    9
+   ],
+   "name": "JavaScript graphics",
+   "priority": 6
+  },
+  "26": {
+   "groups": [
+    9
+   ],
+   "name": "Mobile frameworks",
+   "priority": 8
+  },
+  "27": {
+   "groups": [
+    9
+   ],
+   "name": "Programming languages",
+   "priority": 5
+  },
+  "28": {
+   "groups": [
+    7
+   ],
+   "name": "Operating systems",
+   "priority": 6
+  },
+  "29": {
+   "groups": [
+    3
+   ],
+   "name": "Search engines",
+   "priority": 4
+  },
+  "30": {
+   "groups": [
+    4
+   ],
+   "name": "Webmail",
+   "priority": 2
+  },
+  "31": {
+   "groups": [
+    7
+   ],
+   "name": "CDN",
+   "priority": 9
+  },
+  "32": {
+   "groups": [
+    2
+   ],
+   "name": "Marketing automation",
+   "priority": 9
+  },
+  "33": {
+   "groups": [
+    7
+   ],
+   "name": "Web server extensions",
+   "priority": 7
+  },
+  "34": {
+   "groups": [
+    7
+   ],
+   "name": "Databases",
+   "priority": 5
+  },
+  "35": {
+   "groups": [
+    17
+   ],
+   "name": "Maps",
+   "priority": 6
+  },
+  "36": {
+   "groups": [
+    2
+   ],
+   "name": "Advertising",
+   "priority": 9
+  },
+  "37": {
+   "groups": [
+    7
+   ],
+   "name": "Network devices",
+   "priority": 2
+  },
+  "38": {
+   "groups": [
+    10,
+    7
+   ],
+   "name": "Media servers",
+   "priority": 1
+  },
+  "39": {
+   "groups": [
+    4
+   ],
+   "name": "Webcams",
+   "priority": 9
+  },
+  "41": {
+   "groups": [
+    1
+   ],
+   "name": "Payment processors",
+   "priority": 8
+  },
+  "42": {
+   "groups": [
+    8
+   ],
+   "name": "Tag managers",
+   "priority": 9
+  },
+  "44": {
+   "groups": [
+    9
+   ],
+   "name": "CI",
+   "priority": 3
+  },
+  "45": {
+   "groups": [
+    7
+   ],
+   "name": "Control systems",
+   "priority": 2
+  },
+  "46": {
+   "groups": [
+    4
+   ],
+   "name": "Remote access",
+   "priority": 1
+  },
+  "47": {
+   "groups": [
+    9
+   ],
+   "name": "Development",
+   "priority": 2
+  },
+  "48": {
+   "groups": [
+    10
+   ],
+   "name": "Network storage",
+   "priority": 2
+  },
+  "49": {
+   "groups": [
+    3
+   ],
+   "name": "Feed readers",
+   "priority": 1
+  },
+  "50": {
+   "groups": [
+    3
+   ],
+   "name": "DMS",
+   "priority": 1
+  },
+  "51": {
+   "groups": [
+    9
+   ],
+   "name": "Page builders",
+   "priority": 1
+  },
+  "52": {
+   "groups": [
+    4,
+    16
+   ],
+   "name": "Live chat",
+   "priority": 9
+  },
+  "53": {
+   "groups": [
+    2,
+    16
+   ],
+   "name": "CRM",
+   "priority": 5
+  },
+  "54": {
+   "groups": [
+    2
+   ],
+   "name": "SEO",
+   "priority": 8
+  },
+  "55": {
+   "groups": [
+    16
+   ],
+   "name": "Accounting",
+   "priority": 1
+  },
+  "56": {
+   "groups": [
+    5
+   ],
+   "name": "Cryptominers",
+   "priority": 5
+  },
+  "57": {
+   "groups": [
+    9
+   ],
+   "name": "Static site generator",
+   "priority": 1
+  },
+  "58": {
+   "groups": [
+    6
+   ],
+   "name": "User onboarding",
+   "priority": 8
+  },
+  "59": {
+   "groups": [
+    9
+   ],
+   "name": "JavaScript libraries",
+   "priority": 9
+  },
+  "60": {
+   "groups": [
+    7
+   ],
+   "name": "Containers",
+   "priority": 8
+  },
+  "62": {
+   "groups": [
+    7
+   ],
+   "name": "PaaS",
+   "priority": 8
+  },
+  "63": {
+   "groups": [
+    7
+   ],
+   "name": "IaaS",
+   "priority": 8
+  },
+  "64": {
+   "groups": [
+    7
+   ],
+   "name": "Reverse proxies",
+   "priority": 7
+  },
+  "65": {
+   "groups": [
+    7
+   ],
+   "name": "Load balancers",
+   "priority": 7
+  },
+  "66": {
+   "groups": [
+    9
+   ],
+   "name": "UI frameworks",
+   "priority": 7
+  },
+  "67": {
+   "groups": [
+    13
+   ],
+   "name": "Cookie compliance",
+   "priority": 9
+  },
+  "68": {
+   "groups": [
+    9
+   ],
+   "name": "Accessibility",
+   "priority": 9
+  },
+  "69": {
+   "groups": [
+    11
+   ],
+   "name": "Authentication",
+   "priority": 6
+  },
+  "70": {
+   "groups": [
+    11
+   ],
+   "name": "SSL/TLS certificate authorities",
+   "priority": 9
+  },
+  "71": {
+   "groups": [
+    2
+   ],
+   "name": "Affiliate programs",
+   "priority": 9
+  },
+  "72": {
+   "groups": [
+    14
+   ],
+   "name": "Appointment scheduling",
+   "priority": 9
+  },
+  "73": {
+   "groups": [
+    8
+   ],
+   "name": "Surveys",
+   "priority": 9
+  },
+  "74": {
+   "groups": [
+    8
+   ],
+   "name": "A/B Testing",
+   "priority": 9
+  },
+  "75": {
+   "groups": [
+    4,
+    2
+   ],
+   "name": "Email",
+   "priority": 9
+  },
+  "76": {
+   "groups": [
+    2
+   ],
+   "name": "Personalisation",
+   "priority": 9
+  },
+  "77": {
+   "groups": [
+    2
+   ],
+   "name": "Retargeting",
+   "priority": 9
+  },
+  "78": {
+   "groups": [
+    2
+   ],
+   "name": "RUM",
+   "priority": 9
+  },
+  "79": {
+   "groups": [
+    17
+   ],
+   "name": "Geolocation",
+   "priority": 9
+  },
+  "80": {
+   "groups": [
+    15
+   ],
+   "name": "WordPress themes",
+   "priority": 7
+  },
+  "81": {
+   "groups": [
+    15
+   ],
+   "name": "Shopify themes",
+   "priority": 7
+  },
+  "82": {
+   "groups": [
+    15
+   ],
+   "name": "Drupal themes",
+   "priority": 7
+  },
+  "83": {
+   "groups": [
+    8
+   ],
+   "name": "Browser fingerprinting",
+   "priority": 9
+  },
+  "84": {
+   "groups": [
+    1
+   ],
+   "name": "Loyalty & rewards",
+   "priority": 9
+  },
+  "85": {
+   "groups": [
+    9
+   ],
+   "name": "Feature management",
+   "priority": 9
+  },
+  "86": {
+   "groups": [
+    2
+   ],
+   "name": "Segmentation",
+   "priority": 9
+  },
+  "87": {
+   "groups": [
+    15
+   ],
+   "name": "WordPress plugins",
+   "priority": 8
+  },
+  "88": {
+   "groups": [
+    7
+   ],
+   "name": "Hosting",
+   "priority": 9
+  },
+  "89": {
+   "groups": [
+    3
+   ],
+   "name": "Translation",
+   "priority": 9
+  },
+  "90": {
+   "groups": [
+    2,
+    18
+   ],
+   "name": "Reviews",
+   "priority": 9
+  },
+  "91": {
+   "groups": [
+    1
+   ],
+   "name": "Buy now pay later",
+   "priority": 9
+  },
+  "92": {
+   "groups": [
+    7
+   ],
+   "name": "Performance",
+   "priority": 9
+  },
+  "93": {
+   "groups": [
+    14
+   ],
+   "name": "Reservations & delivery",
+   "priority": 9
+  },
+  "94": {
+   "groups": [
+    2,
+    1
+   ],
+   "name": "Referral marketing",
+   "priority": 9
+  },
+  "95": {
+   "groups": [
+    10
+   ],
+   "name": "Digital asset management",
+   "priority": 9
+  },
+  "96": {
+   "groups": [
+    2,
+    18
+   ],
+   "name": "Content curation",
+   "priority": 9
+  },
+  "97": {
+   "groups": [
+    2,
+    8
+   ],
+   "name": "Customer data platform",
+   "priority": 9
+  },
+  "98": {
+   "groups": [
+    1
+   ],
+   "name": "Cart abandonment",
+   "priority": 9
+  },
+  "99": {
+   "groups": [
+    1
+   ],
+   "name": "Shipping carriers",
+   "priority": 9
+  },
+  "100": {
+   "groups": [
+    15
+   ],
+   "name": "Shopify apps",
+   "priority": 8
+  },
+  "101": {
+   "groups": [
+    6,
+    16
+   ],
+   "name": "Recruitment & staffing",
+   "priority": 9
+  },
+  "102": {
+   "groups": [
+    1
+   ],
+   "name": "Returns",
+   "priority": 9
+  },
+  "103": {
+   "groups": [
+    1,
+    10
+   ],
+   "name": "Livestreaming",
+   "priority": 9
+  },
+  "104": {
+   "groups": [
+    14
+   ],
+   "name": "Ticket booking",
+   "priority": 9
+  },
+  "105": {
+   "groups": [
+    10
+   ],
+   "name": "Augmented reality",
+   "priority": 9
+  },
+  "106": {
+   "groups": [
+    1
+   ],
+   "name": "Cross border ecommerce",
+   "priority": 6
+  },
+  "107": {
+   "groups": [
+    1
+   ],
+   "name": "Fulfilment",
+   "priority": 6
+  },
+  "108": {
+   "groups": [
+    1
+   ],
+   "name": "Ecommerce frontends",
+   "priority": 6
+  },
+  "109": {
+   "groups": [
+    6
+   ],
+   "name": "Domain parking",
+   "priority": 9
+  },
+  "110": {
+   "groups": [
+    8
+   ],
+   "name": "Form builders",
+   "priority": 8
+  },
+  "111": {
+   "groups": [
+    6
+   ],
+   "name": "Fundraising & donations",
+   "priority": 9
+  },
+  "112": {
+   "groups": [
+    5,
+    9
+   ],
+   "name": "Artificial Intelligence",
+   "priority": 9
+  }
+ },
+ "rows": [
+  {
+   "domain": "plausible.io",
+   "url": "https://plausible.io/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Alpine.js",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "/assets/js/alpine.js?v=1788501702"
+      },
+      {
+       "kind": "html",
+       "detail": "<nav x-data=\"{mobileNav: false}\" class=\"relative py-8 z-10\"> "
+      }
+     ]
+    },
+    {
+     "name": "Bunny",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: BunnyCDN-CH1-889"
+      }
+     ]
+    },
+    {
+     "name": "Jekyll",
+     "confidence": 100,
+     "version": "3.9.2",
+     "cats": [
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "meta",
+       "detail": "<meta generator=\"Jekyll v3.9.2\">"
+      }
+     ]
+    },
+    {
+     "name": "Ruby",
+     "confidence": 100,
+     "cats": [
+      27
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Jekyll"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "umami.is",
+   "url": "https://umami.is/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-cache-status: DYNAMIC"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3efacf3e24bc-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare Browser Insights",
+     "confidence": 100,
+     "cats": [
+      10,
+      78
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788…"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare Web Analytics",
+     "confidence": 100,
+     "cats": [
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788…"
+      }
+     ]
+    },
+    {
+     "name": "Google Ads",
+     "confidence": 100,
+     "cats": [
+      36
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Google Ads Conversion Tracking"
+      }
+     ]
+    },
+    {
+     "name": "Google Ads Conversion Tracking",
+     "confidence": 100,
+     "cats": [
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "inline script matches gtag\\([^)]+'(AW-)"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=63072000"
+      }
+     ]
+    },
+    {
+     "name": "HubSpot",
+     "confidence": 100,
+     "cats": [
+      32
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT v=spf1 include:_spf.google.com include:sendgrid.net include…"
+      }
+     ]
+    },
+    {
+     "name": "Mailgun",
+     "confidence": 100,
+     "cats": [
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT v=spf1 include:_spf.google.com include:sendgrid.net include…"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/0ps0-m0d304a2.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/365zx74ldagwa.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/1-ztdypg7i5v3.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/turbopack-0stelh3g0hd32.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/1kvbjw-pjsp2e.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/1ghyh0wji5en8.js"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "Sendgrid",
+     "confidence": 100,
+     "cats": [
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT v=spf1 include:_spf.google.com include:sendgrid.net include…"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    },
+    {
+     "name": "Vercel",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-vercel-cache: HIT"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-id: fra1::2pt9r-1788506577100-3410e436377b"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "fathomanalytics.com",
+   "url": "https://usefathom.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Astro",
+     "confidence": 100,
+     "cats": [
+      57,
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "/_astro/_slug_.BEDAp4qS.css"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=63072000"
+      }
+     ]
+    },
+    {
+     "name": "Vercel",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: Vercel"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-cache: HIT"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-id: fra1::kc7hp-1788506577150-3f3b34d4dfb8"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "buttondown.com",
+   "url": "https://buttondown.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-cache-status: DYNAMIC"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3efafbe0e5d9-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=63072000"
+      }
+     ]
+    },
+    {
+     "name": "HTTP/3",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "alt-svc: h3=\":443\"; ma=86400"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-powered-by: Next.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/2nzfd4k38r76s.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/29xm_enopyaqt.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/2y9fh7ly5vv73.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/turbopack-1hb4t-htmg12f.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/2_yzgjw_rlwnl.js"
+      }
+     ]
+    },
+    {
+     "name": "Radix UI",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "data-radix-collection-item"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-navigation-menu-viewport-height"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    },
+    {
+     "name": "Vercel",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-vercel-cache: MISS"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-id: fra1::iad1::qhfsj-1788506577167-f083ea64d399"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "tally.so",
+   "url": "https://tally.so/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-cache-status: DYNAMIC"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3efcadb2df5e-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-powered-by: Next.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/polyfills-42372ed130431b0a.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/webpack-2102a4fa56165ca0.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/framework-ec8d903c9fd6b2fd.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/main-60e90ceb1a95da26.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/pages/_app-af5e7872eca7efd2.js"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "Stripe",
+     "confidence": 100,
+     "cats": [
+      41
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT stripe-verification=3d56318549d545fb1c774c30d6ebe68f3f74853…"
+      }
+     ]
+    },
+    {
+     "name": "Tally",
+     "confidence": 100,
+     "cats": [
+      73
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://tally.so/widgets/embed.js"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "convertkit.com",
+   "url": "https://kit.com/",
+   "status": 403,
+   "found": [
+    {
+     "name": "AngularJS",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "<div class=\"page\" ng-app="
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3efdf94031a4-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare Bot Management",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "cookie",
+       "detail": "cookie __cf_bm"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 aspmx2.googlemail.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 aspmx3.googlemail.com"
+      }
+     ]
+    },
+    {
+     "name": "HubSpot",
+     "confidence": 100,
+     "cats": [
+      32
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT v=spf1 include:_spf.google.com include:5217515.spf04.hubspo…"
+      }
+     ]
+    },
+    {
+     "name": "Yahoo",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT yahoo-verification-key=ZB70ocI/W39QlZP+yi5pf5W1K12WGHC0WMtD…"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "formspark.io",
+   "url": "https://formspark.io/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Amazon CloudFront",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "via: 1.1 eaac1a6042f8ad6061a1baa8224ea5d4.cloudfront.net (CloudFront)"
+      },
+      {
+       "kind": "header",
+       "detail": "x-amz-cf-id: WGAY3Cw7fbzEohYgfGn0Sei2Ltn804coP0-ukMyr3pCO1WBws3nMvA=="
+      }
+     ]
+    },
+    {
+     "name": "Amazon S3",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: AmazonS3"
+      },
+      {
+       "kind": "header",
+       "detail": "x-amz-server-side-encryption: AES256"
+      }
+     ]
+    },
+    {
+     "name": "Amazon SES",
+     "confidence": 100,
+     "cats": [
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT v=spf1 include:amazonses.com include:_spf.google.com -all"
+      }
+     ]
+    },
+    {
+     "name": "Amazon Web Services",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Amazon CloudFront"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/0wbtxe8hdf063.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/1y-93pyqhf2-y.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/2yya_5er712sz.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/08wkfhu5452oh.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/0sv8d-1tuc3gx.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/1boybbv1mekq9.js"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "fillout.com",
+   "url": "https://www.fillout.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=63072000"
+      }
+     ]
+    },
+    {
+     "name": "HubSpot",
+     "confidence": 100,
+     "cats": [
+      32
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT hubspot-developer-verification=ODA3YTAyOWQtNjhiYi00ZjIxLTg5…"
+      }
+     ]
+    },
+    {
+     "name": "Meta",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT facebook-domain-verification=bb7jco1elb46g9f0xz32l5yy94bss0"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/polyfills-42372ed130431b0a.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/webpack-afcbf99d812994a0.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/framework-9f7b1bf43cd5a01c.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/main-92a0bb0a3af982dc.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/pages/_app-f8d1011f4ddd5843.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/1252-4e9045a12f43dede.js"
+      }
+     ]
+    },
+    {
+     "name": "OpenAI",
+     "confidence": 100,
+     "cats": [
+      112
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT openai-domain-verification=dv-As4BDMDmXGwd7YfqhfWNDBj8"
+      }
+     ]
+    },
+    {
+     "name": "Radix UI",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "data-radix-collection-item"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-select-trigger-width"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-select-trigger-height"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-dropdown-menu-content-available-height"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-dropdown-menu-content-transform-origin"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-popover-trigger-width"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "shadcn/ui",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --destructive-foreground"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    },
+    {
+     "name": "Vercel",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: Vercel"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-cache: HIT"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-id: fra1::x9whj-1788506577714-5ff3dfbfcfb8"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "savvycal.com",
+   "url": "https://savvycal.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Fly.io",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "fly-request-id: 01M1NMS72WQ6K9WGSAR4D1H7VH-fra"
+      },
+      {
+       "kind": "header",
+       "detail": "server: Fly/ec1a4f957c (2026-08-31)"
+      },
+      {
+       "kind": "header",
+       "detail": "via: 1.1 fly.io, 1.1 fly.io"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=31536000"
+      }
+     ]
+    },
+    {
+     "name": "HubSpot",
+     "confidence": 100,
+     "cats": [
+      32
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT hubspot-developer-verification=MzhlMDA2NTktY2E3Yi00ZGE2LThh…"
+      }
+     ]
+    },
+    {
+     "name": "Inertia.js",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "vary: X-Inertia"
+      }
+     ]
+    },
+    {
+     "name": "Microsoft 365",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT MS=98BCD8B83715CC89747D71EACD4547498F00EB56"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    },
+    {
+     "name": "Tally",
+     "confidence": 100,
+     "cats": [
+      73
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://tally.so/widgets/embed.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "ghost.org",
+   "url": "https://ghost.org/",
+   "status": 200,
+   "found": [
+    {
+     "name": "FirstPromoter",
+     "confidence": 100,
+     "cats": [
+      71
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://cdn.firstpromoter.com/fpr.js"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 aspmx2.googlemail.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 aspmx3.googlemail.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=31536000"
+      }
+     ]
+    },
+    {
+     "name": "Hugo",
+     "confidence": 100,
+     "version": "0.119.0",
+     "cats": [
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "meta",
+       "detail": "<meta generator=\"Hugo 0.119.0\">"
+      }
+     ]
+    },
+    {
+     "name": "Netlify",
+     "confidence": 100,
+     "cats": [
+      62,
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: Netlify"
+      },
+      {
+       "kind": "header",
+       "detail": "x-nf-request-id: 01M1NMS6C9DJZRY3QGYN94T5TQ"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    },
+    {
+     "name": "Alpine.js",
+     "confidence": 75,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "<header class=\"relative bg-[var(--header-bg)]\" data-header-transparent=\"false\" x-data=\"{o…"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "simpleanalytics.com",
+   "url": "https://www.simpleanalytics.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=15552000; includeSubDomains"
+      }
+     ]
+    },
+    {
+     "name": "Nuxt.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "/_nuxt/DJvtGz4x.js"
+      },
+      {
+       "kind": "html",
+       "detail": "<div id=\"__nuxt\""
+      }
+     ]
+    },
+    {
+     "name": "Simple Analytics",
+     "confidence": 100,
+     "cats": [
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://scripts.simpleanalyticscdn.com/auto-events.js"
+      }
+     ]
+    },
+    {
+     "name": "Vue.js",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "<div data-v-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "substack.com",
+   "url": "https://substack.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Amazon Web Services",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "inline script matches \\.amazonaws\\.com"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-cache-status: DYNAMIC"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3efc0a4abe86-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare Bot Management",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "cookie",
+       "detail": "cookie __cf_bm"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare Browser Insights",
+     "confidence": 100,
+     "cats": [
+      10,
+      78
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://static.cloudflareinsights.com/beacon.min.js"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare Web Analytics",
+     "confidence": 100,
+     "cats": [
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://static.cloudflareinsights.com/beacon.min.js"
+      }
+     ]
+    },
+    {
+     "name": "Express",
+     "confidence": 100,
+     "cats": [
+      18,
+      22
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-powered-by: Express"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=31536000; includeSubDomains; preload"
+      }
+     ]
+    },
+    {
+     "name": "HTTP/3",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "alt-svc: h3=\":443\"; ma=86400"
+      }
+     ]
+    },
+    {
+     "name": "Node.js",
+     "confidence": 100,
+     "cats": [
+      27
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Express"
+      }
+     ]
+    },
+    {
+     "name": "Substack",
+     "confidence": 100,
+     "cats": [
+      11
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-cluster: substack"
+      },
+      {
+       "kind": "header",
+       "detail": "x-served-by: Substack"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "typeform.com",
+   "url": "https://www.typeform.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Amazon CloudFront",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "via: 1.1 2df3825a2dc874fe2f6a21536c6d8f72.cloudfront.net (CloudFront)"
+      },
+      {
+       "kind": "header",
+       "detail": "x-amz-cf-id: iKGaG6xHV6IGdzsNmEuQEWqTUnzQD6WXF6AhasDUgVE5HOLeIdxuNA=="
+      }
+     ]
+    },
+    {
+     "name": "Amazon Web Services",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Amazon CloudFront"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-cache-status: HIT"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3efebc490d25-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "Google Font API",
+     "confidence": 100,
+     "cats": [
+      17
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
+      }
+     ]
+    },
+    {
+     "name": "Google Hosted Libraries",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
+      }
+     ]
+    },
+    {
+     "name": "Google Tag Manager",
+     "confidence": 100,
+     "cats": [
+      42
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "googletagmanager.com/ns.html?id=GTM-WH2ZQ3X\" height=\"0\" width=\"0\" style=\"display:none;vis…"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 aspmx2.googlemail.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 aspmx3.googlemail.com"
+      }
+     ]
+    },
+    {
+     "name": "HTTP/3",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "alt-svc: h3=\":443\"; ma=86400"
+      }
+     ]
+    },
+    {
+     "name": "jQuery",
+     "confidence": 100,
+     "version": "3.5.1",
+     "cats": [
+      59
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66ffe2174aa8…"
+      }
+     ]
+    },
+    {
+     "name": "jsDelivr",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://cdn.jsdelivr.net/gh/makebuild-code/typeform@1.0.27/src/localization/redirect-untr…"
+      },
+      {
+       "kind": "script",
+       "detail": "https://cdn.jsdelivr.net/gh/makebuild-code/typeform@1.0.26/src/signup/google-one-tap.min.…"
+      },
+      {
+       "kind": "script",
+       "detail": "https://cdn.jsdelivr.net/gh/makebuild-code/typeform@1.0.28/src/signup/signup-helpers.min.…"
+      },
+      {
+       "kind": "script",
+       "detail": "https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"
+      },
+      {
+       "kind": "script",
+       "detail": "https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuidv4.min.js"
+      },
+      {
+       "kind": "script",
+       "detail": "https://cdn.jsdelivr.net/gh/makebuild-code/mods-by-makebuild@1.0.3/src/debug-logger/debug…"
+      }
+     ]
+    },
+    {
+     "name": "OneTrust",
+     "confidence": 100,
+     "cats": [
+      67
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
+      }
+     ]
+    },
+    {
+     "name": "Webflow",
+     "confidence": 100,
+     "cats": [
+      51
+     ],
+     "evidence": [
+      {
+       "kind": "meta",
+       "detail": "<meta generator=\"Webflow\">"
+      }
+     ]
+    },
+    {
+     "name": "Wistia",
+     "confidence": 100,
+     "cats": [
+      14
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://fast.wistia.com/assets/external/E-v1.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "calendly.com",
+   "url": "https://calendly.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Amazon CloudFront",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "via: 1.1 33bbce3c2eb1494fd9ca9c71d11cf154.cloudfront.net (CloudFront)"
+      },
+      {
+       "kind": "header",
+       "detail": "x-amz-cf-id: IbGpLm-ggZitUmwV5-cf7LgGV9mR6YiVkvb02MwscnM-8AxDup_29w=="
+      }
+     ]
+    },
+    {
+     "name": "Amazon S3",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-amz-server-side-encryption: AES256"
+      }
+     ]
+    },
+    {
+     "name": "Amazon Web Services",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-amz-version-id: Ta51.WBwJulxuxWhplaHTcqZEmAT5FVh"
+      }
+     ]
+    },
+    {
+     "name": "Astro",
+     "confidence": 100,
+     "cats": [
+      57,
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "<astro-island"
+      },
+      {
+       "kind": "html",
+       "detail": "/_astro/layouts.BKN24crw.css"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-cache-status: DYNAMIC"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3f039b44343e-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare Bot Management",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "cookie",
+       "detail": "cookie __cf_bm"
+      }
+     ]
+    },
+    {
+     "name": "Google Tag Manager",
+     "confidence": 100,
+     "cats": [
+      42
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "googletagmanager.com/ns.html?id=GTM-W3RGHP8\" height=\"0\" width=\"0\" style=\"display:none;vis…"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 10 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 20 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 20 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 30 aspmx2.googlemail.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 30 aspmx3.googlemail.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=31536000; includeSubDomains; preload"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "posthog.com",
+   "url": "https://posthog.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Cloudinary",
+     "confidence": 100,
+     "cats": [
+      31,
+      95
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "res.cloudinary.com"
+      }
+     ]
+    },
+    {
+     "name": "Gatsby",
+     "confidence": 100,
+     "version": "4.25.9",
+     "cats": [
+      57,
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "meta",
+       "detail": "<meta generator=\"Gatsby 4.25.9\">"
+      },
+      {
+       "kind": "html",
+       "detail": "id=\"___gatsby\""
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=63072000"
+      }
+     ]
+    },
+    {
+     "name": "Naver Analytics",
+     "confidence": 100,
+     "cats": [
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "meta",
+       "detail": "<meta naver-site-verification=\"a58db4b98c2bf9e4b52a4aa0c20fcf1fcdab2793\">"
+      }
+     ]
+    },
+    {
+     "name": "Radix UI",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "data-radix-toast-viewport"
+      },
+      {
+       "kind": "html",
+       "detail": "data-radix-scroll-area-viewport"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "<meta data-react"
+      }
+     ]
+    },
+    {
+     "name": "Strapi",
+     "confidence": 100,
+     "cats": [
+      1
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "inline script matches (?://|-)strapi-|strapi_jwt"
+      }
+     ]
+    },
+    {
+     "name": "Vercel",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: Vercel"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-cache: HIT"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-id: fra1::8rw2j-1788506577110-c316685d5ec4"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Gatsby"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "cal.com",
+   "url": "https://cal.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-cache-status: DYNAMIC"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3eff7a1c2325-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare Bot Management",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "cookie",
+       "detail": "cookie __cf_bm"
+      }
+     ]
+    },
+    {
+     "name": "Framer",
+     "confidence": 100,
+     "cats": [],
+     "evidence": [
+      {
+       "kind": "meta",
+       "detail": "<meta generator=\"Framer e7caa14\">"
+      },
+      {
+       "kind": "html",
+       "detail": "framerusercontent.com"
+      }
+     ]
+    },
+    {
+     "name": "Google Tag Manager",
+     "confidence": 100,
+     "cats": [
+      42
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "googletagmanager.com/ns.html?id=GTM-PV22BDLZ\" height=\"0\" width=\"0\" style=\"display:none;vi…"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=31536000"
+      }
+     ]
+    },
+    {
+     "name": "PostHog",
+     "confidence": 100,
+     "cats": [
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "posthog.init("
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "beehiiv.com",
+   "url": "https://www.beehiiv.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Amazon Web Services",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "inline script matches \\.amazonaws\\.com"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-cache-status: BYPASS"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3efb8d751e6d-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare Bot Management",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "cookie",
+       "detail": "cookie __cf_bm"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=63072000"
+      }
+     ]
+    },
+    {
+     "name": "HTTP/3",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "alt-svc: h3=\":443\"; ma=86400"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-powered-by: Next.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/0i-10v115.qmq.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/14bhk_4ubar1..js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/144~j65021tzh.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/0vgmd88n8.urc.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/turbopack-08qxdbkzgjuv5.js"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    },
+    {
+     "name": "Vercel",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-vercel-cache: MISS"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-id: arn1::iad1::djmpf-1788506577240-d45980dc8005"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "supabase.com",
+   "url": "https://supabase.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=31536000; includeSubDomains; preload"
+      }
+     ]
+    },
+    {
+     "name": "HubSpot",
+     "confidence": 100,
+     "cats": [
+      32
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT v=spf1 include:_spf.google.com include:19953346.spf06.hubsp…"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://frontend-assets.supabase.com/www/e25c0e83dff6/_next/static/chunks/84ae39ca-db4a5e…"
+      },
+      {
+       "kind": "script",
+       "detail": "https://frontend-assets.supabase.com/www/e25c0e83dff6/_next/static/chunks/2379-0eee45c1fa…"
+      },
+      {
+       "kind": "script",
+       "detail": "https://frontend-assets.supabase.com/www/e25c0e83dff6/_next/static/chunks/main-app-94029e…"
+      },
+      {
+       "kind": "script",
+       "detail": "https://frontend-assets.supabase.com/www/e25c0e83dff6/_next/static/chunks/9e43655a-1ca1fd…"
+      },
+      {
+       "kind": "script",
+       "detail": "https://frontend-assets.supabase.com/www/e25c0e83dff6/_next/static/chunks/d0d393d5-cd06a5…"
+      },
+      {
+       "kind": "script",
+       "detail": "https://frontend-assets.supabase.com/www/e25c0e83dff6/_next/static/chunks/9855-5991b53288…"
+      }
+     ]
+    },
+    {
+     "name": "Radix UI",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "data-radix-collection-item"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-accordion-content-height"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-navigation-menu-viewport-width"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-navigation-menu-viewport-height"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-select-trigger-width"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-select-trigger-height"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "shadcn/ui",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --destructive-foreground"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    },
+    {
+     "name": "Vercel",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: Vercel"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-cache: HIT"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-id: fra1::9v6s2-1788506590155-752f4093f3ed"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "Zoom",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT ZOOM_verify_LkQKLCEOSZMkt2ZfWZsQoF"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "shortcut.com",
+   "url": "https://www.shortcut.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Amazon CloudFront",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "via: 1.1 a8b33ff40e244f67d922fbfab23360e6.cloudfront.net (CloudFront)"
+      },
+      {
+       "kind": "header",
+       "detail": "x-amz-cf-id: MR6SnC9seKtq2z7OY1MZcRYkQpDj_kViPdL7o-yPqkGvK7tJyHrC3g=="
+      }
+     ]
+    },
+    {
+     "name": "Amazon S3",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: AmazonS3"
+      }
+     ]
+    },
+    {
+     "name": "Amazon Web Services",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Amazon CloudFront"
+      }
+     ]
+    },
+    {
+     "name": "Astro",
+     "confidence": 100,
+     "cats": [
+      57,
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "/_astro/BaseLayout.BloXGes-.css"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HTTP/3",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "alt-svc: h3=\":443\"; ma=86400"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "linear.app",
+   "url": "https://linear.app/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Algolia",
+     "confidence": 100,
+     "cats": [
+      29
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "content-security-policy: default-src 'self' https://static.linear.app https://static.linear.dev; connect-src 'self…"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-cache-status: DYNAMIC"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3f2fe81423f7-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "Google Cloud",
+     "confidence": 100,
+     "cats": [
+      63
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Google Cloud CDN"
+      }
+     ]
+    },
+    {
+     "name": "Google Cloud CDN",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "via: 1.1 google"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=63072000; includeSubDomains"
+      }
+     ]
+    },
+    {
+     "name": "HTTP/3",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "alt-svc: h3=\":443\"; ma=86400"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://static.linear.app/web/_next/static/chunks/rolldown-runtime-C5USp2td.js"
+      },
+      {
+       "kind": "script",
+       "detail": "https://static.linear.app/web/_next/static/chunks/vinext-DE41j8oV.js"
+      },
+      {
+       "kind": "script",
+       "detail": "https://static.linear.app/web/_next/static/chunks/framework-DvOl2wyO.js"
+      },
+      {
+       "kind": "script",
+       "detail": "https://static.linear.app/web/_next/static/chunks/index-CQUdA0ut.js"
+      }
+     ]
+    },
+    {
+     "name": "Radix UI",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "data-radix-collection-item"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "Sanity",
+     "confidence": 100,
+     "cats": [
+      1
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "content-security-policy: default-src 'self' https://static.linear.app https://static.linear.dev; connect-src 'self…"
+      }
+     ]
+    },
+    {
+     "name": "Sanity.io",
+     "confidence": 100,
+     "cats": [
+      1
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "content-security-policy: default-src 'self' https://static.linear.app https://static.linear.dev; connect-src 'self…"
+      }
+     ]
+    },
+    {
+     "name": "Sentry",
+     "confidence": 100,
+     "cats": [
+      13
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "sentry-trace"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "fly.io",
+   "url": "https://fly.io/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Fly.io",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "fly-request-id: 01M1NMSG05VK9EQJCNAGYZA79D-fra"
+      },
+      {
+       "kind": "header",
+       "detail": "server: Fly/ec1a4f957c (2026-08-31)"
+      },
+      {
+       "kind": "header",
+       "detail": "via: 1.1 fly.io, 1.1 fly.io"
+      },
+      {
+       "kind": "cookie",
+       "detail": "cookie _fly"
+      }
+     ]
+    },
+    {
+     "name": "Google Tag Manager",
+     "confidence": 100,
+     "cats": [
+      42
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "<!-- Google Tag Manager -->"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "railway.app",
+   "url": "https://railway.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Google Ads",
+     "confidence": 100,
+     "cats": [
+      36
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Google Ads Conversion Tracking"
+      }
+     ]
+    },
+    {
+     "name": "Google Ads Conversion Tracking",
+     "confidence": 100,
+     "cats": [
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "inline script matches gtag\\([^)]+'(AW-)"
+      }
+     ]
+    },
+    {
+     "name": "Google Analytics",
+     "confidence": 100,
+     "cats": [
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://www.googletagmanager.com/gtag/js?id=AW-17509959674"
+      }
+     ]
+    },
+    {
+     "name": "Google Tag Manager",
+     "confidence": 100,
+     "cats": [
+      42
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://www.googletagmanager.com/gtag/js?id=AW-17509959674"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "xata.io",
+   "url": "https://xata.io/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Amazon SES",
+     "confidence": 100,
+     "cats": [
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT v=spf1 include:_spf.google.com include:amazonses.com includ…"
+      }
+     ]
+    },
+    {
+     "name": "Amazon Web Services",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Amazon SES"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=63072000"
+      }
+     ]
+    },
+    {
+     "name": "MailChimp",
+     "confidence": 100,
+     "cats": [
+      32,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT v=spf1 include:_spf.google.com include:amazonses.com includ…"
+      }
+     ]
+    },
+    {
+     "name": "Microsoft 365",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT MS=ms97322926"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-powered-by: Next.js, Payload"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/1iodoy4qu7_ft.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/0uwci1vai5q9t.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/1l3hgiw0lfjg3.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/turbopack-2w9wavl3vp72b.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/3j-4poi4y5h98.js"
+      }
+     ]
+    },
+    {
+     "name": "Radix UI",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "data-radix-collection-item"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-accordion-content-height"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-navigation-menu-viewport-width"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-navigation-menu-viewport-height"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-select-trigger-width"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-select-trigger-height"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "shadcn/ui",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --destructive-foreground"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    },
+    {
+     "name": "Vercel",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: Vercel"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-cache: HIT"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-id: fra1::iad1::mcnl2-1788506595905-19e46b700735"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "Zendesk",
+     "confidence": 100,
+     "cats": [
+      4,
+      13,
+      52
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT v=spf1 include:_spf.google.com include:amazonses.com includ…"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "turso.tech",
+   "url": "https://turso.tech/",
+   "status": 200,
+   "found": [
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=63072000"
+      }
+     ]
+    },
+    {
+     "name": "Mailgun",
+     "confidence": 100,
+     "cats": [
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT v=spf1 include:_spf.google.com include:mailgun.org ~all"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-powered-by: Next.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/fd9d1056-6f62598f9f40c435.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/2117-61fa392c0c4cf6a1.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/main-app-be3d940aef6bd3eb.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/c16f53c3-3927419f224c36be.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/2972-f9ae2e0b5fa01a52.js"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    },
+    {
+     "name": "Vercel",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: Vercel"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-cache: HIT"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-id: fra1::iad1::cg5kj-1788506595899-ad29f5ea2b5e"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "clerk.com",
+   "url": "https://clerk.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=63072000"
+      }
+     ]
+    },
+    {
+     "name": "Meta",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT facebook-domain-verification=eryo8iycag42tq5bblk5eqbeyr05er"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/3tlm31krzn2lg.js?dpl=dpl_FcQ459xw64QtcDvPZcHamuhQ4GHt"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/03v_zqkdhy604.js?dpl=dpl_FcQ459xw64QtcDvPZcHamuhQ4GHt"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/35_xv_epyzyg4.js?dpl=dpl_FcQ459xw64QtcDvPZcHamuhQ4GHt"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/2dj2njb-evdtm.js?dpl=dpl_FcQ459xw64QtcDvPZcHamuhQ4GHt"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/009f1at34wk2o.js?dpl=dpl_FcQ459xw64QtcDvPZcHamuhQ4GHt"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/turbopack-0k1-y06n58n1u.js?dpl=dpl_FcQ459xw64QtcDvPZcHamuhQ4GHt"
+      }
+     ]
+    },
+    {
+     "name": "Radix UI",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "data-radix-collection-item"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "<button class=\"transition-[color,background-color,border-color,text-decoration-color,fill…"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    },
+    {
+     "name": "Vercel",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: Vercel"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-cache: HIT"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-id: fra1::d8sqp-1788506595968-f08033c3a3b4"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "vercel.com",
+   "url": "https://vercel.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Amazon S3",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "content-security-policy: default-src 'self' vercel.com *.vercel.com assets.vercel.com *.vercel.sh vercel.live wss:…"
+      }
+     ]
+    },
+    {
+     "name": "Amazon Web Services",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Amazon S3"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 aspmx3.googlemail.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 aspmx2.googlemail.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=31536000; includeSubDomains; preload"
+      }
+     ]
+    },
+    {
+     "name": "Linkedin Insight Tag",
+     "confidence": 100,
+     "cats": [
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "content-security-policy: default-src 'self' vercel.com *.vercel.com assets.vercel.com *.vercel.sh vercel.live wss:…"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-powered-by: Next.js, Payload"
+      },
+      {
+       "kind": "script",
+       "detail": "/vc-ap-vercel-marketing/_next/static/immutable/chunks/358p8jk_auk2p.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/vc-ap-vercel-marketing/_next/static/immutable/chunks/0mhtpj2oaj65k.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/vc-ap-vercel-marketing/_next/static/immutable/chunks/2w1449dcak-ka.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/vc-ap-vercel-marketing/_next/static/immutable/chunks/2df1323qom36w.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/vc-ap-vercel-marketing/_next/static/immutable/chunks/310nq7h7xlbhx.js"
+      }
+     ]
+    },
+    {
+     "name": "Radix UI",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-select-trigger-width"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-select-trigger-height"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-popover-trigger-width"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-select-content-available-height"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-select-content-transform-origin"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "<a role=\"link\" type=\"submit\" tabindex=\"0\" data-react"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    },
+    {
+     "name": "Vercel",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: Vercel"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-cache: HIT"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-id: fra1::iad1::nvfp5-1788506587291-52a9d3defbc3"
+      }
+     ]
+    },
+    {
+     "name": "Vercel Blob",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": ".public.blob.vercel-storage.com"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "loops.so",
+   "url": "https://loops.so/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-cache-status: DYNAMIC"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3f737b6ebab9-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "Framer",
+     "confidence": 100,
+     "cats": [],
+     "evidence": [
+      {
+       "kind": "meta",
+       "detail": "<meta generator=\"Framer 41620b1\">"
+      },
+      {
+       "kind": "html",
+       "detail": "framerusercontent.com"
+      }
+     ]
+    },
+    {
+     "name": "Framer Sites",
+     "confidence": 100,
+     "cats": [
+      51
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://framerusercontent.com/sites/6mKmSN0Irj9Tv9spjec3zG/script_main.nlnyGsrJ.mjs"
+      }
+     ]
+    },
+    {
+     "name": "Google Analytics",
+     "confidence": 100,
+     "version": "GA4",
+     "cats": [
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "inline script matches gtag\\([^)]+'(G-)"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 aspmx2.googlemail.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 aspmx3.googlemail.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=31536000"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Framer Sites"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "netlify.com",
+   "url": "https://www.netlify.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Astro",
+     "confidence": 100,
+     "version": "5.18.2",
+     "cats": [
+      57,
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "meta",
+       "detail": "<meta generator=\"Astro v5.18.2\">"
+      },
+      {
+       "kind": "html",
+       "detail": "<astro-island"
+      },
+      {
+       "kind": "html",
+       "detail": "/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CDGfc0hd.js"
+      }
+     ]
+    },
+    {
+     "name": "Google Tag Manager",
+     "confidence": 100,
+     "cats": [
+      42
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "googletagmanager.com/ns.html?id=GTM-T7WNFLD\" height=\"0\" width=\"0\" style=\"display:none;vis…"
+      },
+      {
+       "kind": "html",
+       "detail": "<!-- Google Tag Manager -->"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 aspmx2.googlemail.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 aspmx3.googlemail.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=31536000; includeSubDomains; preload"
+      }
+     ]
+    },
+    {
+     "name": "HubSpot",
+     "confidence": 100,
+     "cats": [
+      32
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "//js.hs-scripts.com/7477936.js"
+      }
+     ]
+    },
+    {
+     "name": "Netlify",
+     "confidence": 100,
+     "cats": [
+      62,
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: Netlify"
+      },
+      {
+       "kind": "header",
+       "detail": "x-nf-request-id: 01M1NMSG8V5VS0YH1NJXPJS5X9"
+      },
+      {
+       "kind": "url",
+       "detail": "https://www.netlify.com/"
+      }
+     ]
+    },
+    {
+     "name": "OneTrust",
+     "confidence": 100,
+     "cats": [
+      67
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://cdn.cookielaw.org/consent/5dec0507-5e89-4bb4-8f2d-0872be7dd9dd/OtAutoBlock.js"
+      },
+      {
+       "kind": "script",
+       "detail": "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "lemonsqueezy.com",
+   "url": "https://www.lemonsqueezy.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Amazon S3",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "content-security-policy: report-uri https://o4505075539902464.ingest.us.sentry.io/api/4505075559825408/security/?s…"
+      }
+     ]
+    },
+    {
+     "name": "Amazon SES",
+     "confidence": 100,
+     "cats": [
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT v=spf1 include:_spf.google.com include:helpscoutemail.com i…"
+      }
+     ]
+    },
+    {
+     "name": "Amazon Web Services",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Amazon S3"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-cache-status: DYNAMIC"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3f7578c7bb0f-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare Browser Insights",
+     "confidence": 100,
+     "cats": [
+      10,
+      78
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788…"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare Web Analytics",
+     "confidence": 100,
+     "cats": [
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788…"
+      }
+     ]
+    },
+    {
+     "name": "Fathom",
+     "confidence": 100,
+     "cats": [
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://cdn.usefathom.com/script.js"
+      }
+     ]
+    },
+    {
+     "name": "Fathom Analytics",
+     "confidence": 100,
+     "cats": [
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://cdn.usefathom.com/script.js"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=31536000; includeSubDomains"
+      }
+     ]
+    },
+    {
+     "name": "jQuery",
+     "confidence": 100,
+     "version": "3.6.0",
+     "cats": [
+      59
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://code.jquery.com/jquery-3.6.0.min.js"
+      },
+      {
+       "kind": "script",
+       "detail": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6347244ba8d6…"
+      }
+     ]
+    },
+    {
+     "name": "jQuery CDN",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://code.jquery.com/jquery-3.6.0.min.js"
+      }
+     ]
+    },
+    {
+     "name": "Lemon Squeezy",
+     "confidence": 100,
+     "cats": [
+      41
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://app.lemonsqueezy.com/js/checkout.js"
+      },
+      {
+       "kind": "script",
+       "detail": "https://assets.lemonsqueezy.com/finsweet.min.js"
+      }
+     ]
+    },
+    {
+     "name": "Unpkg",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://unpkg.com/@inkeep/widgets-embed@0.2.270/dist/embed.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "render.com",
+   "url": "https://render.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Algolia",
+     "confidence": 100,
+     "cats": [
+      29
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "content-security-policy: script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.osano.com https://*.posthog.com…"
+      }
+     ]
+    },
+    {
+     "name": "Amazon S3",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "content-security-policy: script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.osano.com https://*.posthog.com…"
+      }
+     ]
+    },
+    {
+     "name": "Amazon Web Services",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Amazon S3"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-cache-status: DYNAMIC"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3f396ba8a032-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=31536000; includeSubDomains; preload"
+      }
+     ]
+    },
+    {
+     "name": "HTTP/3",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "alt-svc: h3=\":443\"; ma=86400"
+      }
+     ]
+    },
+    {
+     "name": "Linkedin Insight Tag",
+     "confidence": 100,
+     "cats": [
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "content-security-policy: script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.osano.com https://*.posthog.com…"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/4bd1b696-0c7d12ffa81fd994.js?dpl=7bcd8c9dc4"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/1255-2fe7744386fefa9a.js?dpl=7bcd8c9dc4"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/main-app-14cd1d9cb01dd32b.js?dpl=7bcd8c9dc4"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/5697-e8f5743934ba732a.js?dpl=sl5l8"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/3716-4a8bdc459507d66c.js?dpl=sl5l8"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/9057-cedbe025efa9cd60.js?dpl=sl5l8"
+      }
+     ]
+    },
+    {
+     "name": "Radix UI",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-accordion-content-height"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-tooltip-content-transform-origin"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "Render",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-render-origin-server: Render"
+      }
+     ]
+    },
+    {
+     "name": "Sanity",
+     "confidence": 100,
+     "cats": [
+      1
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "content-security-policy: script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.osano.com https://*.posthog.com…"
+      },
+      {
+       "kind": "html",
+       "detail": "cdn.sanity.io"
+      }
+     ]
+    },
+    {
+     "name": "Sanity.io",
+     "confidence": 100,
+     "cats": [
+      1
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "content-security-policy: script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.osano.com https://*.posthog.com…"
+      }
+     ]
+    },
+    {
+     "name": "Sentry",
+     "confidence": 100,
+     "cats": [
+      13
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "sentry-trace"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "neon.tech",
+   "url": "https://neon.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=63072000"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/0vn_c-qtmgve7.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/3dkourx2fabwg.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/3-ez0nivz1n3i.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/turbopack-36o0_qyhzj0j9.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/0hdju8bmsonnv.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/1bno4bhxyey9s.js"
+      }
+     ]
+    },
+    {
+     "name": "Radix UI",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-toast-swipe-move-x"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    },
+    {
+     "name": "Vercel",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: Vercel"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-cache: HIT"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-id: fra1::8z4hf-1788506590579-35560aa51f7f"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "planetscale.com",
+   "url": "https://planetscale.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3f6fe8c0985f-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare Bot Management",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "cookie",
+       "detail": "cookie __cf_bm"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HTTP/3",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "alt-svc: h3=\":443\"; ma=86400"
+      }
+     ]
+    },
+    {
+     "name": "imgix",
+     "confidence": 100,
+     "cats": [],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": ".imgix.net"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "workos.com",
+   "url": "https://workos.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "cdnjs",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"
+      },
+      {
+       "kind": "script",
+       "detail": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/autoloader/prism-autoloader.m…"
+      },
+      {
+       "kind": "script",
+       "detail": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/line-numbers/prism-line-numbe…"
+      },
+      {
+       "kind": "script",
+       "detail": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/normalize-whitespace/prism-no…"
+      },
+      {
+       "kind": "script",
+       "detail": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/custom-class/prism-custom-cla…"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-cache-status: DYNAMIC"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3f721f447dd2-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "Google Tag Manager",
+     "confidence": 100,
+     "cats": [
+      42
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "googletagmanager.com/ns.html?id=GTM-NTN3Q3DV\" height=\"0\" width=\"0\" style=\"display: none; …"
+      },
+      {
+       "kind": "html",
+       "detail": "<!-- Google Tag Manager -->"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HubSpot",
+     "confidence": 100,
+     "cats": [
+      32
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "//js-na1.hs-scripts.com/20433186.js"
+      }
+     ]
+    },
+    {
+     "name": "jQuery",
+     "confidence": 100,
+     "version": "3.5.1",
+     "cats": [
+      59
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=621f54116cab…"
+      }
+     ]
+    },
+    {
+     "name": "jsDelivr",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.0/dist/umd/popper.min.js"
+      },
+      {
+       "kind": "script",
+       "detail": "https://cdn.jsdelivr.net/npm/tippy.js@6.0.0/dist/tippy.umd.min.js"
+      },
+      {
+       "kind": "script",
+       "detail": "https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"
+      },
+      {
+       "kind": "script",
+       "detail": "https://cdn.jsdelivr.net/npm/quicklink@3.0.1/dist/quicklink.umd.js"
+      },
+      {
+       "kind": "script",
+       "detail": "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"
+      }
+     ]
+    },
+    {
+     "name": "Popper",
+     "confidence": 100,
+     "version": "2.0.0",
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.0/dist/umd/popper.min.js"
+      }
+     ]
+    },
+    {
+     "name": "Prism",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"
+      }
+     ]
+    },
+    {
+     "name": "Quicklink",
+     "confidence": 100,
+     "version": "3.0.1",
+     "cats": [
+      59,
+      92
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://cdn.jsdelivr.net/npm/quicklink@3.0.1/dist/quicklink.umd.js"
+      }
+     ]
+    },
+    {
+     "name": "Tippy.js",
+     "confidence": 100,
+     "version": "6.0.0",
+     "cats": [
+      59
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://cdn.jsdelivr.net/npm/tippy.js@6.0.0/dist/tippy.umd.min.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "arc.net",
+   "url": "https://arc.net/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-cache-status: DYNAMIC"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3fa58aed2325-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare Bot Management",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "cookie",
+       "detail": "cookie __cf_bm"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=63072000; includeSubDomains; preload"
+      }
+     ]
+    },
+    {
+     "name": "Microsoft 365",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT MS=ms65191501"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/polyfills-42372ed130431b0a.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/webpack-c7e72f719ef4fcbc.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/framework-552547284f246270.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/main-0ed5ce4e590b0f33.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/pages/_app-549c2dcbaa19fc61.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/7112840a-127f2773c0a86c59.js"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "Vercel",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-vercel-cache: HIT"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-id: fra1::jq492-1788506604423-492b1214ff99"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "Zendesk",
+     "confidence": 100,
+     "cats": [
+      4,
+      13,
+      52
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT v=spf1 include:_spf.firebasemail.com include:mail.zendesk.c…"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "cron.com",
+   "url": "https://www.cron.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=63072000"
+      }
+     ]
+    },
+    {
+     "name": "Stripe",
+     "confidence": 100,
+     "cats": [
+      41
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT stripe-verification=fdf20e556d9b8a3cc265fe960ffdb8d6b9e758e…"
+      }
+     ]
+    },
+    {
+     "name": "Vercel",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: Vercel"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-cache: HIT"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-id: fra1::hg8wv-1788506604575-73b2b6547c2e"
+      }
+     ]
+    },
+    {
+     "name": "Zendesk",
+     "confidence": 100,
+     "cats": [
+      4,
+      13,
+      52
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT v=spf1 include:_spf.google.com include:mail.zendesk.com ~all"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "placid.app",
+   "url": "https://placid.app/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Ahrefs",
+     "confidence": 100,
+     "cats": [
+      54,
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "meta",
+       "detail": "<meta ahrefs-site-verification=\"49a4027c77b223ea878799216769901dd09ccff47a37862ff90a8311022…\">"
+      }
+     ]
+    },
+    {
+     "name": "Fathom",
+     "confidence": 100,
+     "cats": [
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://cdn.usefathom.com/script.js"
+      }
+     ]
+    },
+    {
+     "name": "Fathom Analytics",
+     "confidence": 100,
+     "cats": [
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://cdn.usefathom.com/script.js"
+      }
+     ]
+    },
+    {
+     "name": "Font Awesome",
+     "confidence": 100,
+     "cats": [
+      17
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://kit.fontawesome.com/981500d4d0.js"
+      }
+     ]
+    },
+    {
+     "name": "Nginx",
+     "confidence": 100,
+     "cats": [
+      22,
+      64
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: nginx"
+      }
+     ]
+    },
+    {
+     "name": "Proton Mail",
+     "confidence": 100,
+     "cats": [
+      30
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 10 mail.protonmail.ch"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 20 mailsec.protonmail.ch"
+      },
+      {
+       "kind": "dns",
+       "detail": "TXT protonmail-verification=ec82096821fc5c721048dae632f12e38bf2…"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "abyssale.com",
+   "url": "https://www.abyssale.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Calendly",
+     "confidence": 100,
+     "cats": [
+      72
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://assets.calendly.com/assets/external/widget.js"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-cache-status: HIT"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3fa9fa1bef5b-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "Google Font API",
+     "confidence": 100,
+     "cats": [
+      17
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
+      }
+     ]
+    },
+    {
+     "name": "Google Hosted Libraries",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
+      }
+     ]
+    },
+    {
+     "name": "Google Tag Manager",
+     "confidence": 100,
+     "cats": [
+      42
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "googletagmanager.com/ns.html?id=GTM-PPS29RL\" height=\"0\" width=\"0\" style=\"display:none;vis…"
+      },
+      {
+       "kind": "html",
+       "detail": "<!-- Google Tag Manager -->"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=31536000"
+      }
+     ]
+    },
+    {
+     "name": "HTTP/3",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "alt-svc: h3=\":443\"; ma=86400"
+      }
+     ]
+    },
+    {
+     "name": "jQuery",
+     "confidence": 100,
+     "version": "3.5.1",
+     "cats": [
+      59
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=672b6e17b837…"
+      }
+     ]
+    },
+    {
+     "name": "Meta",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT facebook-domain-verification=xmce1hh23qvi779ivqguq6mfmo58ia"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "resend.com",
+   "url": "https://resend.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Amazon S3",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "content-security-policy: default-src 'self';    connect-src 'self' data: https://api.liveblocks.io wss://api.liveb…"
+      }
+     ]
+    },
+    {
+     "name": "Amazon Web Services",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Amazon S3"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=63072000"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-powered-by: Next.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/26yaa-tw3zzt9.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/3tg634zzc9qnh.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/0vl_xvfuekiit.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/2bxsriqxdupvz.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/1gmx038_9cpra.js"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    },
+    {
+     "name": "Vercel",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: Vercel"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-cache: HIT"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-id: fra1::iad1::djb4q-1788506596242-62a069bc8539"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "bannerbear.com",
+   "url": "https://www.bannerbear.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-cache-status: DYNAMIC"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3fa748f8039d-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 aspmx2.googlemail.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 aspmx3.googlemail.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=31536000"
+      }
+     ]
+    },
+    {
+     "name": "Netlify",
+     "confidence": 100,
+     "cats": [
+      62,
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-nf-request-id: 01M1NMT18J5CV6HP81EZSR5CYG"
+      }
+     ]
+    },
+    {
+     "name": "Plausible Analytics",
+     "confidence": 100,
+     "cats": [
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://plausible.io/js/script.js"
+      }
+     ]
+    },
+    {
+     "name": "Rewardful",
+     "confidence": 100,
+     "cats": [
+      71
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://r.wdfl.co/rw.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "cleanshot.com",
+   "url": "https://cleanshot.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Amazon CloudFront",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "via: 1.1 33bbce3c2eb1494fd9ca9c71d11cf154.cloudfront.net (CloudFront)"
+      },
+      {
+       "kind": "header",
+       "detail": "x-amz-cf-id: 5OmBOzkjeB6B3snTYuqs8YrCidObuu1BvFR5q5UokXHEzlrNjKL70A=="
+      }
+     ]
+    },
+    {
+     "name": "Amazon S3",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: AmazonS3"
+      }
+     ]
+    },
+    {
+     "name": "Amazon Web Services",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-amz-version-id: 8oN0sb45cN6s2eElZ83Juha7QUqtq_E9"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=63072000; includeSubDomains"
+      }
+     ]
+    },
+    {
+     "name": "Nuxt.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "/_nuxt/DWBXI7-5.js"
+      },
+      {
+       "kind": "html",
+       "detail": "<div id=\"__nuxt\""
+      }
+     ]
+    },
+    {
+     "name": "Paddle",
+     "confidence": 100,
+     "cats": [
+      41
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://cdn.paddle.com/paddle/paddle.js"
+      }
+     ]
+    },
+    {
+     "name": "Vue.js",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "<div class=\"ambient-gradient\" style=\"--c51bcbf4:-300px;--be62f354:-650px;--v01be7994:0.5;…"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "paddle.com",
+   "url": "https://www.paddle.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Amazon S3",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "content-security-policy: base-uri 'self';    default-src 'self' blob: data: https: ;    worker-src 'self' blob:;  …"
+      }
+     ]
+    },
+    {
+     "name": "Amazon Web Services",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Amazon S3"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=31536000; includeSubDomains"
+      }
+     ]
+    },
+    {
+     "name": "Linkedin Insight Tag",
+     "confidence": 100,
+     "cats": [
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "content-security-policy: base-uri 'self';    default-src 'self' blob: data: https: ;    worker-src 'self' blob:;  …"
+      }
+     ]
+    },
+    {
+     "name": "Netlify",
+     "confidence": 100,
+     "cats": [
+      62,
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: Netlify"
+      },
+      {
+       "kind": "header",
+       "detail": "x-nf-request-id: 01M1NMSSNNGVKPN4SGHC421KRA"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-powered-by: Next.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/1otom-4_cl36u.js?dpl=bb1dce4be80c82a70ed8089aab41f63a6fdd838423cc2c9…"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/2kzzaqeg595nn.js?dpl=bb1dce4be80c82a70ed8089aab41f63a6fdd838423cc2c9…"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/1hr8pwhzpv1zm.js?dpl=bb1dce4be80c82a70ed8089aab41f63a6fdd838423cc2c9…"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/turbopack-3s7pbpqusffwr.js?dpl=bb1dce4be80c82a70ed8089aab41f63a6fdd8…"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/0nhrltulvnr0k.js?dpl=bb1dce4be80c82a70ed8089aab41f63a6fdd838423cc2c9…"
+      }
+     ]
+    },
+    {
+     "name": "PHP",
+     "confidence": 100,
+     "cats": [
+      27
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "inline script matches \\.php(?:\\?|$)"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "remoteok.com",
+   "url": "https://remoteok.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Chatbase",
+     "confidence": 100,
+     "cats": [
+      52
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "inline script matches www\\.chatbase\\.co"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-cache-status: DYNAMIC"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3fad79c6bab6-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "HTTP/3",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "alt-svc: h3=\":443\"; ma=86400"
+      }
+     ]
+    },
+    {
+     "name": "jQuery",
+     "confidence": 100,
+     "cats": [
+      59
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "/jquery.js?1755892213"
+      }
+     ]
+    },
+    {
+     "name": "Showdown",
+     "confidence": 100,
+     "cats": [
+      59
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "/showdown.js?1755892214"
+      }
+     ]
+    },
+    {
+     "name": "Stripe",
+     "confidence": 100,
+     "cats": [
+      41
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT stripe-verification=4c9bd72a75cf52a808501813a3747f7a5098cd9…"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "postmarkapp.com",
+   "url": "https://postmarkapp.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-cache-status: DYNAMIC"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3f74ba7b03b5-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "Google Tag Manager",
+     "confidence": 100,
+     "cats": [
+      42
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "googletagmanager.com/ns.html?id=GTM-PWV3TKM\" width=\"0\" height=\"0\" style=\"display:none; vi…"
+      },
+      {
+       "kind": "html",
+       "detail": "<!-- Google Tag Manager -->"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 20 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 20 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 30 aspmx2.googlemail.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 30 aspmx3.googlemail.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=2592000"
+      }
+     ]
+    },
+    {
+     "name": "HTTP/3",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "alt-svc: h3=\":443\"; ma=86400"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "screenstudio.com",
+   "url": "https://screen.studio/",
+   "status": 200,
+   "found": [
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=63072000"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-powered-by: Next.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/f3d9516e-185d039b81d9a854.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/c7879cf7-072ccaabcbc85022.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/2415-3f4f01e7d8704d88.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/main-app-e061427b52fdee6e.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/a76c14b3-b996b28efc9dfcb6.js"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "Sentry",
+     "confidence": 100,
+     "cats": [
+      13
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "sentry-trace"
+      }
+     ]
+    },
+    {
+     "name": "Vercel",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: Vercel"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-cache: MISS"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-id: fra1::iad1::7th8h-1788506605467-7d43a03a5b35"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "microacquire.com",
+   "url": "https://microacquire.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=63072000"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/03cxm7v28798s.js?dpl=dpl_5PXG8jQ5c8oQKFPqFsmEK6mGs9VT"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/0li_-2gu1ifmy.js?dpl=dpl_5PXG8jQ5c8oQKFPqFsmEK6mGs9VT"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/00aczryfco484.js?dpl=dpl_5PXG8jQ5c8oQKFPqFsmEK6mGs9VT"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/turbopack-0k.~z5jo9h6ya.js?dpl=dpl_5PXG8jQ5c8oQKFPqFsmEK6mGs9VT"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/15a~lu5qxe4z5.js?dpl=dpl_5PXG8jQ5c8oQKFPqFsmEK6mGs9VT"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/chunks/03ug_ih8u~oib.js?dpl=dpl_5PXG8jQ5c8oQKFPqFsmEK6mGs9VT"
+      }
+     ]
+    },
+    {
+     "name": "Radix UI",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-accordion-content-height"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-toast-swipe-end-x"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-toast-swipe-move-x"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-navigation-menu-viewport-width"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-navigation-menu-viewport-height"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-select-trigger-width"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "shadcn/ui",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --destructive-foreground"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    },
+    {
+     "name": "Vercel",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: Vercel"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-cache: HIT"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-id: fra1::kltt8-1788506606269-a4845c5bc41c"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "polar.sh",
+   "url": "https://polar.sh/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Amazon S3",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "content-security-policy: default-src 'self';    connect-src 'self' https://api.polar.sh https://polar-production-f…"
+      }
+     ]
+    },
+    {
+     "name": "Amazon Web Services",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Amazon S3"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=63072000"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/1oygd66hq12mf.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/2-5sfqd_bbi54.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/0bvmd3v_yr6jd.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/0_c_-74ej__s4.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/2-dwcbkg36eos.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/turbopack-02w-3448mrn4p.js"
+      }
+     ]
+    },
+    {
+     "name": "Radix UI",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-accordion-content-height"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-toast-swipe-end-x"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-toast-swipe-move-x"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-select-trigger-width"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-select-trigger-height"
+      },
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --radix-popover-trigger-width"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "shadcn/ui",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --destructive-foreground"
+      }
+     ]
+    },
+    {
+     "name": "Tailwind CSS",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "css",
+       "detail": "stylesheet matches --tw-(?:rotate|translate|space-x|text-opacity|border-opacit…"
+      }
+     ]
+    },
+    {
+     "name": "Vercel",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: Vercel"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-cache: HIT"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-id: fra1::lwll5-1788506597359-dff2ce5ad143"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "nomadlist.com",
+   "url": "https://nomads.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-cache-status: DYNAMIC"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3fb00fb1862a-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare Turnstile",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://challenges.cloudflare.com/turnstile/v0/api.js"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=31536000; includeSubDomains; preload"
+      }
+     ]
+    },
+    {
+     "name": "HTTP/3",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "alt-svc: h3=\":443\"; ma=86400"
+      }
+     ]
+    },
+    {
+     "name": "jQuery",
+     "confidence": 100,
+     "cats": [
+      59
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "/jquery.js?1608000005"
+      },
+      {
+       "kind": "script",
+       "detail": "/jQueryEmoji.js?1640552976"
+      }
+     ]
+    },
+    {
+     "name": "OpenAI",
+     "confidence": 100,
+     "cats": [
+      112
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT openai-domain-verification=dv-9uvJexKCsCJXHzuAPIDrnWIT"
+      }
+     ]
+    },
+    {
+     "name": "reCAPTCHA",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://www.google.com/recaptcha/api.js?render=6LdPk2YhAAAAACrNlG0e_3Si2kyt5qxk1IRWcDHa&o…"
+      }
+     ]
+    },
+    {
+     "name": "Sendgrid",
+     "confidence": 100,
+     "cats": [
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT v=spf1 include:sendgrid.net ~all"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "stytch.com",
+   "url": "https://stytch.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Amazon CloudFront",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "via: 1.1 2d22f2597665c5eef97a8ac324518692.cloudfront.net (CloudFront)"
+      },
+      {
+       "kind": "header",
+       "detail": "x-amz-cf-id: SD3V2ZLCyUoqRc-j6mNi6ZJxzXpv2Hn7iVKVHWlFeR724wO0CQDSKw=="
+      }
+     ]
+    },
+    {
+     "name": "Amazon S3",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "content-security-policy: default-src 'self'; script-src 'self' 'nonce-M2IzMmVlMTItM2E0OC00M2M5LTlkYzktYmUzNmQzZWNk…"
+      }
+     ]
+    },
+    {
+     "name": "Amazon Web Services",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Amazon CloudFront"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=63072000; includeSubdomains; preload"
+      }
+     ]
+    },
+    {
+     "name": "Linkedin Ads",
+     "confidence": 100,
+     "cats": [
+      36
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "content-security-policy: default-src 'self'; script-src 'self' 'nonce-M2IzMmVlMTItM2E0OC00M2M5LTlkYzktYmUzNmQzZWNk…"
+      }
+     ]
+    },
+    {
+     "name": "Linkedin Insight Tag",
+     "confidence": 100,
+     "cats": [
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "content-security-policy: default-src 'self'; script-src 'self' 'nonce-M2IzMmVlMTItM2E0OC00M2M5LTlkYzktYmUzNmQzZWNk…"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-powered-by: Next.js"
+      },
+      {
+       "kind": "script",
+       "detail": "https://static.stytch.com/web/_next/static/chunks/4bd1b696-182b6b13bdad92e3.js"
+      },
+      {
+       "kind": "script",
+       "detail": "https://static.stytch.com/web/_next/static/chunks/1255-82eaa139d3b9d040.js"
+      },
+      {
+       "kind": "script",
+       "detail": "https://static.stytch.com/web/_next/static/chunks/main-app-bb26f02d4137e3a2.js"
+      },
+      {
+       "kind": "script",
+       "detail": "https://static.stytch.com/web/_next/static/chunks/7484-209d0262447ec6c6.js"
+      },
+      {
+       "kind": "script",
+       "detail": "https://static.stytch.com/web/_next/static/chunks/5417-2e8dad5e65f6c643.js"
+      }
+     ]
+    },
+    {
+     "name": "Radix UI",
+     "confidence": 100,
+     "cats": [
+      66
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "data-radix-collection-item"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "Sanity",
+     "confidence": 100,
+     "cats": [
+      1
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "content-security-policy: default-src 'self'; script-src 'self' 'nonce-M2IzMmVlMTItM2E0OC00M2M5LTlkYzktYmUzNmQzZWNk…"
+      },
+      {
+       "kind": "html",
+       "detail": "cdn.sanity.io"
+      }
+     ]
+    },
+    {
+     "name": "Sanity.io",
+     "confidence": 100,
+     "cats": [
+      1
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "content-security-policy: default-src 'self'; script-src 'self' 'nonce-M2IzMmVlMTItM2E0OC00M2M5LTlkYzktYmUzNmQzZWNk…"
+      }
+     ]
+    },
+    {
+     "name": "Very Good Security",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "content-security-policy: default-src 'self'; script-src 'self' 'nonce-M2IzMmVlMTItM2E0OC00M2M5LTlkYzktYmUzNmQzZWNk…"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "indiehackers.com",
+   "url": "https://www.indiehackers.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Astro",
+     "confidence": 100,
+     "cats": [
+      57,
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "/_astro/PageLayout.DU-bD32e.css"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-cache-status: HIT"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3fb23ab9bc5a-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "Render",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-render-origin-server: Render"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "photoai.com",
+   "url": "https://photoai.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Cloudflare",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: cloudflare"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-cache-status: DYNAMIC"
+      },
+      {
+       "kind": "header",
+       "detail": "cf-ray: a35b3fb02bf7c8a4-ZRH"
+      }
+     ]
+    },
+    {
+     "name": "Cloudflare Turnstile",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://challenges.cloudflare.com/turnstile/v0/api.js"
+      }
+     ]
+    },
+    {
+     "name": "Google Ads",
+     "confidence": 100,
+     "cats": [
+      36
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Google Ads Conversion Tracking"
+      }
+     ]
+    },
+    {
+     "name": "Google Ads Conversion Tracking",
+     "confidence": 100,
+     "cats": [
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "inline script matches gtag\\([^)]+'(AW-)"
+      }
+     ]
+    },
+    {
+     "name": "Google Analytics",
+     "confidence": 100,
+     "cats": [
+      10
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://www.googletagmanager.com/gtag/js?id=AW-720413846"
+      }
+     ]
+    },
+    {
+     "name": "Google Hosted Libraries",
+     "confidence": 100,
+     "cats": [
+      31
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
+      }
+     ]
+    },
+    {
+     "name": "Google Sign-in",
+     "confidence": 100,
+     "cats": [
+      69
+     ],
+     "evidence": [
+      {
+       "kind": "meta",
+       "detail": "<meta google-signin-client_id=\"646707764147-la2f7j7ner1dko12nq7q1hl783m77hun.apps.googleus…\">"
+      },
+      {
+       "kind": "script",
+       "detail": "https://accounts.google.com/gsi/client"
+      }
+     ]
+    },
+    {
+     "name": "Google Tag Manager",
+     "confidence": 100,
+     "cats": [
+      42
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://www.googletagmanager.com/gtag/js?id=AW-720413846"
+      },
+      {
+       "kind": "html",
+       "detail": "googletagmanager.com/ns.html?id=GTM-N6CQ2F5W\" height=\"0\" width=\"0\" style=\"display:none;vi…"
+      },
+      {
+       "kind": "html",
+       "detail": "<!-- Google Tag Manager -->"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=31536000; includeSubDomains; preload"
+      }
+     ]
+    },
+    {
+     "name": "HTTP/3",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "alt-svc: h3=\":443\"; ma=86400"
+      }
+     ]
+    },
+    {
+     "name": "jQuery",
+     "confidence": 100,
+     "cats": [
+      59
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "/jquery.js?1729619885"
+      }
+     ]
+    },
+    {
+     "name": "OpenAI",
+     "confidence": 100,
+     "cats": [
+      112
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "TXT openai-domain-verification=dv-WZRpHLbWQP7c9YuNn9gC0eSY"
+      }
+     ]
+    },
+    {
+     "name": "PHP",
+     "confidence": 100,
+     "cats": [
+      27
+     ],
+     "evidence": [
+      {
+       "kind": "cookie",
+       "detail": "cookie phpsessid"
+      }
+     ]
+    },
+    {
+     "name": "Stripe",
+     "confidence": 100,
+     "cats": [
+      41
+     ],
+     "evidence": [
+      {
+       "kind": "script",
+       "detail": "https://js.stripe.com/v3/pricing-table.js"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "domain": "raycast.com",
+   "url": "https://www.raycast.com/",
+   "status": 200,
+   "found": [
+    {
+     "name": "Google Workspace",
+     "confidence": 100,
+     "cats": [
+      30,
+      75
+     ],
+     "evidence": [
+      {
+       "kind": "dns",
+       "detail": "MX 1 aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt3.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 10 alt4.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt1.aspmx.l.google.com"
+      },
+      {
+       "kind": "dns",
+       "detail": "MX 5 alt2.aspmx.l.google.com"
+      }
+     ]
+    },
+    {
+     "name": "HSTS",
+     "confidence": 100,
+     "cats": [
+      16
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "strict-transport-security: max-age=63072000; includeSubDomains; preload"
+      }
+     ]
+    },
+    {
+     "name": "Next.js",
+     "confidence": 100,
+     "cats": [
+      12,
+      18,
+      22,
+      57
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "x-powered-by: Next.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/25k2c-2fbfgnn.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/2042mtbzjf094.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/3lieau6_k6821.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/22eo8sryf_e77.js"
+      },
+      {
+       "kind": "script",
+       "detail": "/_next/static/immutable/chunks/2i18hncr-2qqb.js"
+      }
+     ]
+    },
+    {
+     "name": "React",
+     "confidence": 100,
+     "cats": [
+      12
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    },
+    {
+     "name": "Sentry",
+     "confidence": 100,
+     "cats": [
+      13
+     ],
+     "evidence": [
+      {
+       "kind": "html",
+       "detail": "sentry-trace"
+      }
+     ]
+    },
+    {
+     "name": "Vercel",
+     "confidence": 100,
+     "cats": [
+      62
+     ],
+     "evidence": [
+      {
+       "kind": "header",
+       "detail": "server: Vercel"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-cache: HIT"
+      },
+      {
+       "kind": "header",
+       "detail": "x-vercel-id: fra1::iad1::5jwvf-1788506601158-89b49fb0f5b8"
+      }
+     ]
+    },
+    {
+     "name": "Webpack",
+     "confidence": 100,
+     "cats": [
+      19
+     ],
+     "evidence": [
+      {
+       "kind": "implied",
+       "detail": "implied by Next.js"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

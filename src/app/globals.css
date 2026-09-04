@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/* ONE palette, one file. Every colour on this site is a token from here.
+   Day 1 of this run shipped a hub with eighteen hardcoded white text values
+   on a light background — invisible to every visitor, fine on the developer's
+   screen. Day 2 measured three tokens against the PAGE background and wrote
+   the figures in a comment, but the text sat on `surface`, a different colour,
+   and all three failed AA where they were actually used.
+
+   So every ratio below names the background it was measured against, and both
+   are given. Computed with scripts/contrast.mts, not estimated. AA body text
+   needs 4.5:1; nothing here is below 4.9:1. */
+@theme {
+  /* Light — a ledger printed on cream paper. */
+  --color-ground: #f6f2e9;
+  --color-surface: #fffdf8;
+  --color-ink: #221e17;        /* 14.85 on ground · 16.32 on surface */
+  --color-muted: #5c5344;      /*  6.77 on ground ·  7.44 on surface */
+  --color-faint: #6b6152;      /*  5.44 on ground ·  5.98 on surface */
+  --color-rule: #d8cfbc;       /* lines, never text */
+  --color-rule-soft: #e7e0d2;  /* lines, never text */
+  --color-accent: #8a3a1c;     /*  6.95 on ground ·  7.64 on surface */
+  --color-accent-soft: #f1e5d9;
+  --color-added: #2c5f3f;      /*  6.68 on ground ·  7.34 on surface */
+  --color-removed: #8a3a1c;    /*  6.95 on ground ·  7.64 on surface */
+
+  --font-display: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --font-body: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* Dark — the same ledger under a lamp. Tokens are redefined; no colour is
+   ever written outside this file. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-ground: #14120f;
+    --color-surface: #1c1915;
+    --color-ink: #ece4d5;      /* 14.80 on ground · 13.86 on surface */
+    --color-muted: #a8998a;    /*  6.76 on ground ·  6.33 on surface */
+    --color-faint: #968878;    /*  5.42 on ground ·  5.08 on surface */
+    --color-rule: #332c24;
+    --color-rule-soft: #282219;
+    --color-accent: #e08a5c;   /*  7.09 on ground ·  6.64 on surface */
+    --color-accent-soft: #2a1e16;
+    --color-added: #7fc39a;    /*  9.06 on ground ·  8.48 on surface */
+    --color-removed: #e08a5c;  /*  7.09 on ground ·  6.64 on surface */
+  }
+}
+:root[data-theme="dark"] {
+  --color-ground: #14120f;
+  --color-surface: #1c1915;
+  --color-ink: #ece4d5;
+  --color-muted: #a8998a;
+  --color-faint: #968878;
+  --color-rule: #332c24;
+  --color-rule-soft: #282219;
+  --color-accent: #e08a5c;
+  --color-accent-soft: #2a1e16;
+  --color-added: #7fc39a;
+  --color-removed: #e08a5c;
+}
+
+html, body { background: var(--color-ground); color: var(--color-ink); }
+body { font-family: var(--font-body); }
+
+/* Figures in a ledger line up. Every count, every ratio, every run number is
+   tabular — otherwise a column of numbers in a proportional face wobbles. */
+.tnum { font-variant-numeric: tabular-nums; }
+
+/* The dotted leader between a name and its count, as a printed table has it.
+   Pure decoration, so it is hidden from assistive technology by being a
+   background rather than a character. */
+.leader {
+  flex: 1;
+  min-width: 1.5rem;
+  height: 1px;
+  align-self: end;
+  margin-bottom: 0.42em;
+  background-image: radial-gradient(circle, var(--color-rule) 1px, transparent 1px);
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+}
+
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }

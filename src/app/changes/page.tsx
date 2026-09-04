@@ -1,0 +1,104 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { byDomain } from "@/data/sites";
+import { latestRun, recentChanges, runCount, techSlug } from "@/lib/census";
+import { dayAndDate, longDate, nextRun } from "@/lib/when";
+import { Sheet } from "@/components/Sheet";
+
+export const revalidate = 3600;
+
+export const metadata: Metadata = {
+  title: "What changed — Indie stack census",
+  description:
+    "Every technology that appeared on, or disappeared from, one of the fifty-one sites between two surveys.",
+};
+
+export default async function Changes() {
+  const [run, rows, runs] = await Promise.all([latestRun(), recentChanges(), runCount()]);
+
+  const byRun = new Map<number, typeof rows>();
+  for (const r of rows) byRun.set(r.run_id, [...(byRun.get(r.run_id) ?? []), r]);
+
+  return (
+    <Sheet run={run?.id} date={run ? longDate(run.finished_at) : null}>
+      <h1 className="font-display mt-9 max-w-[16ch] text-[34px] leading-[1.1] sm:text-[44px]">
+        What changed.
+      </h1>
+      <p className="font-body mt-4 max-w-[62ch] text-[16px] leading-relaxed text-muted">
+        Every survey is compared with the one before it. A line appears here when a
+        technology showed up on a site that did not have it, or stopped appearing on one
+        that did — and only when that site answered properly in both surveys. A site
+        that returned an error is skipped entirely, because a failed fetch is not a
+        company throwing its stack away.
+      </p>
+
+      {/* The first run has nothing to compare against, and this page will look
+          like this for a week. It says which week, so that it reads as a
+          schedule rather than as a page that is broken. */}
+      {rows.length === 0 ? (
+        <div className="mt-8 border-y border-rule py-8">
+          <p className="font-display text-[20px] leading-snug">
+            {runs <= 1
+              ? "Nothing yet — this is the first survey."
+              : "Nothing moved between the last two surveys."}
+          </p>
+          <p className="font-body mt-3 max-w-[58ch] text-[15px] leading-relaxed text-muted">
+            {runs <= 1
+              ? "There is no earlier census to compare against. "
+              : "Fifty-one sites, and not one detectable difference. It happens: these are marketing pages, and they change slowly. "}
+            {run && (
+              <>
+                The next survey runs on {dayAndDate(nextRun(run.finished_at))} at 06:00 UTC.
+              </>
+            )}
+          </p>
+          <p className="font-body mt-3 text-[15px] leading-relaxed text-muted">
+            In the meantime, the{" "}
+            <Link href="/" className="text-accent underline underline-offset-2">
+              census itself
+            </Link>{" "}
+            is the thing to read.
+          </p>
+        </div>
+      ) : (
+        [...byRun.entries()]
+          .sort((a, b) => b[0] - a[0])
+          .map(([runId, list]) => (
+            <section key={runId} className="mt-8">
+              <h2 className="font-mono text-[11px] tracking-[0.16em] text-faint uppercase">
+                Survey {String(runId).padStart(3, "0")} · {longDate(list[0].at)}
+              </h2>
+              <div className="mt-2 border-t border-rule">
+                {list.map((c, i) => (
+                  <div key={`${c.domain}-${c.tech}-${i}`} className="border-b border-rule-soft py-2.5">
+                    <div className="flex flex-wrap items-baseline gap-x-2.5">
+                      <span
+                        aria-hidden
+                        className={`font-mono text-[13px] ${c.kind === "added" ? "text-added" : "text-removed"}`}
+                      >
+                        {c.kind === "added" ? "+" : "−"}
+                      </span>
+                      <Link href={`/s/${c.domain}`} className="font-display text-[17px] hover:text-accent">
+                        {byDomain.get(c.domain)?.name ?? c.domain}
+                      </Link>
+                      <span className="font-body text-[15px] text-muted">
+                        {c.kind === "added" ? "started using" : "stopped showing"}
+                      </span>
+                      <Link href={`/t/${techSlug(c.tech)}`} className="font-display text-[17px] hover:text-accent">
+                        {c.tech}
+                      </Link>
+                    </div>
+                    {c.evidence && (
+                      <p className="mt-1 font-mono text-[11px] leading-relaxed break-all text-faint">
+                        {c.kind === "added" ? "now" : "was"} — {c.evidence}
+                      </p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+          ))
+      )}
+    </Sheet>
+  );
+}
