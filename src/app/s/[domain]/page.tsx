@@ -46,7 +46,7 @@ export default async function SitePage({ params }: { params: Promise<{ domain: s
   const order = [...SECTIONS, REST];
 
   return (
-    <Sheet run={run.id} date={longDate(run.finished_at)}>
+    <Sheet run={run.seq} date={longDate(run.finished_at)}>
       <p className="mt-9 font-mono text-[11px] tracking-[0.16em] text-faint uppercase">
         {site.group}
       </p>
@@ -70,7 +70,7 @@ export default async function SitePage({ params }: { params: Promise<{ domain: s
 
       {me && !me.ok ? (
         <p className="font-body mt-6 max-w-[60ch] text-[15px] leading-relaxed text-muted">
-          This site did not answer in survey {String(run.id).padStart(3, "0")}
+          This site did not answer in survey {String(run.seq).padStart(3, "0")}
           {me.error ? ` (${me.error})` : ""}. It is counted in neither the totals nor the
           changes — a fetch that failed is not evidence that anything was dropped.
         </p>

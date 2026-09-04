@@ -47,7 +47,7 @@ export default async function OG() {
       >
         <div style={{ display: "flex", justifyContent: "space-between", fontSize: 22, color: "#6b6152", borderBottom: "3px solid #221e17", paddingBottom: 14 }}>
           <span>INDIE STACK CENSUS</span>
-          <span>{run ? `Run ${String(run.id).padStart(3, "0")} · ${longDate(run.finished_at)}` : "Run 001"}</span>
+          <span>{run ? `Run ${String(run.seq).padStart(3, "0")} · ${longDate(run.finished_at)}` : "Run 001"}</span>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>

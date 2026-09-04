@@ -45,7 +45,7 @@ export default async function TechPage({ params }: { params: Promise<{ slug: str
   const names = row.cats.map((c) => cats.get(c)).filter(Boolean) as string[];
 
   return (
-    <Sheet run={run.id} date={longDate(run.finished_at)}>
+    <Sheet run={run.seq} date={longDate(run.finished_at)}>
       <p className="mt-9 font-mono text-[11px] tracking-[0.16em] text-faint uppercase">
         {names.join(" · ") || "uncategorised"}
       </p>
@@ -56,7 +56,7 @@ export default async function TechPage({ params }: { params: Promise<{ slug: str
       </p>
       <p className="font-body mt-3 max-w-[60ch] text-[15px] leading-relaxed text-muted">
         Found on {row.n === 1 ? "one site" : `${row.n} sites`} in survey{" "}
-        {String(run.id).padStart(3, "0")}. Each line gives the string in that site&rsquo;s
+        {String(run.seq).padStart(3, "0")}. Each line gives the string in that site&rsquo;s
         response that put it here — go and look, the response is public.
       </p>
 

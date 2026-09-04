@@ -40,7 +40,7 @@ export default async function Home() {
   }
 
   return (
-    <Sheet run={run.id} date={longDate(run.finished_at)}>
+    <Sheet run={run.seq} date={longDate(run.finished_at)}>
       <h1 className="font-display mt-9 max-w-[16ch] text-[34px] leading-[1.1] sm:text-[44px]">
         Fifty-one products, counted.
       </h1>

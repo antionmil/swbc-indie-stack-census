@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { byDomain } from "@/data/sites";
-import { latestRun, recentChanges, runCount, techSlug } from "@/lib/census";
+import { latestRun, recentChanges, runCount, runSeq, techSlug } from "@/lib/census";
 import { dayAndDate, longDate, nextRun } from "@/lib/when";
 import { Sheet } from "@/components/Sheet";
 
@@ -14,13 +14,13 @@ export const metadata: Metadata = {
 };
 
 export default async function Changes() {
-  const [run, rows, runs] = await Promise.all([latestRun(), recentChanges(), runCount()]);
+  const [run, rows, runs, seqs] = await Promise.all([latestRun(), recentChanges(), runCount(), runSeq()]);
 
   const byRun = new Map<number, typeof rows>();
   for (const r of rows) byRun.set(r.run_id, [...(byRun.get(r.run_id) ?? []), r]);
 
   return (
-    <Sheet run={run?.id} date={run ? longDate(run.finished_at) : null}>
+    <Sheet run={run?.seq} date={run ? longDate(run.finished_at) : null}>
       <h1 className="font-display mt-9 max-w-[16ch] text-[34px] leading-[1.1] sm:text-[44px]">
         What changed.
       </h1>
@@ -66,7 +66,7 @@ export default async function Changes() {
           .map(([runId, list]) => (
             <section key={runId} className="mt-8">
               <h2 className="font-mono text-[11px] tracking-[0.16em] text-faint uppercase">
-                Survey {String(runId).padStart(3, "0")} · {longDate(list[0].at)}
+                Survey {String(seqs.get(runId) ?? runId).padStart(3, "0")} · {longDate(list[0].at)}
               </h2>
               <div className="mt-2 border-t border-rule">
                 {list.map((c, i) => (

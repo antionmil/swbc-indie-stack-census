@@ -15,6 +15,11 @@ export { techSlug } from "@/lib/slug";
 
 export type Run = {
   id: number;
+  /** What the site calls it: "survey 003". NOT the row id — the diff gate
+   *  creates and deletes synthetic runs, and a serial column keeps the numbers
+   *  it hands out even when the rows are gone. Left as the id, a site that had
+   *  run two surveys would announce "Run 001" and then "Run 004". */
+  seq: number;
   started_at: string;
   finished_at: string;
   n_sites: number;
@@ -37,7 +42,8 @@ export type TallyRow = {
 export async function latestRun(): Promise<Run | null> {
   if (!hasDb()) return null;
   const r = (await sql()`
-    select id, started_at, finished_at, n_sites, n_fetched, ruleset_size
+    select id, started_at, finished_at, n_sites, n_fetched, ruleset_size,
+           (select count(*) from runs p where p.finished_at is not null and p.id <= runs.id)::int as seq
     from runs where finished_at is not null order by id desc limit 1`) as Run[];
   return r[0] ?? null;
 }
@@ -102,6 +108,15 @@ export async function recentChanges(limit = 200): Promise<Change[]> {
   return (await sql()`
     select domain, tech, kind, evidence, run_id, at from changes
     order by run_id desc, domain, tech limit ${limit}`) as Change[];
+}
+
+/** run id -> the survey number the site prints. */
+export async function runSeq(): Promise<Map<number, number>> {
+  if (!hasDb()) return new Map();
+  const rows = (await sql()`
+    select id, (row_number() over (order by id))::int as seq
+    from runs where finished_at is not null`) as { id: number; seq: number }[];
+  return new Map(rows.map((r) => [r.id, r.seq]));
 }
 
 export async function categoryNames(): Promise<Map<number, string>> {

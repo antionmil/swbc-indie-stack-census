@@ -43,7 +43,7 @@ export default async function Method() {
   const silent = run ? entries.map(([n]) => n).filter((n) => !seen.has(canonical(n))) : [];
 
   return (
-    <Sheet run={run?.id} date={run ? longDate(run.finished_at) : null}>
+    <Sheet run={run?.seq} date={run ? longDate(run.finished_at) : null}>
       <h1 className="font-display mt-9 max-w-[18ch] text-[34px] leading-[1.1] sm:text-[44px]">
         How it is measured, and what it misses.
       </h1>
