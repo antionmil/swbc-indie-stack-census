@@ -29,6 +29,10 @@ export const runs = pgTable("runs", {
 export const fetches = pgTable("fetches", {
   run_id: integer("run_id").notNull(),
   domain: text("domain").notNull(),
+  /** "indie" or "oss". Written per run rather than looked up at read time, so
+   *  a survey stays readable exactly as it was taken even after the population
+   *  list changes underneath it. */
+  kind: text("kind").notNull().default("oss"),
   ok: integer("ok").notNull(),               // 1 or 0, so it sums
   status: integer("status"),
   final_url: text("final_url"),

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { byDomain } from "@/data/sites";
-import { categoryNames, findingsForTech, latestRun, tally, techSlug } from "@/lib/census";
+import { survey, techSlug } from "@/lib/census";
 import { longDate } from "@/lib/when";
 import { Sheet } from "@/components/Sheet";
 
@@ -15,17 +15,19 @@ export const revalidate = 3600;
  * `revalidate` alone is not enough for a dynamic segment.
  */
 export async function generateStaticParams() {
-  const run = await latestRun();
-  if (!run) return [];
-  return (await tally(run.id)).map((r) => ({ slug: techSlug(r.tech) }));
+  const s = await survey();
+  return s ? s.tally.map((r) => ({ slug: techSlug(r.tech) })) : [];
 }
 
+/** The technology page cap. A row can now be on a thousand products, and a
+ *  page of a thousand evidence blocks is not a page. */
+const LIST_MAX = 160;
+
 async function resolve(slug: string) {
-  const run = await latestRun();
-  if (!run) return null;
-  const rows = await tally(run.id);
-  const row = rows.find((r) => techSlug(r.tech) === slug);
-  return row ? { run, row } : null;
+  const s = await survey();
+  if (!s) return null;
+  const row = s.tally.find((r) => techSlug(r.tech) === slug);
+  return row ? { survey: s, run: s.run, row } : null;
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -33,7 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!found) return { title: "Not in this census" };
   const { run, row } = found;
   const title = `${row.tech}: ${row.n} of ${run.n_fetched} — Indie stack census`;
-  const description = `${row.n} of ${run.n_fetched} indie products were running ${row.tech} on ${longDate(run.finished_at)}, with the line of the response that says so.`;
+  const description = `${row.n} of ${run.n_fetched} software products were running ${row.tech} on ${longDate(run.finished_at)}, with the line of the response that says so.`;
   return { title, description, openGraph: { title, description } };
 }
 
@@ -41,7 +43,8 @@ export default async function TechPage({ params }: { params: Promise<{ slug: str
   const found = await resolve((await params).slug);
   if (!found) notFound();
   const { run, row } = found;
-  const [rows, cats] = await Promise.all([findingsForTech(run.id, row.tech), categoryNames()]);
+  const { cats, n } = found.survey;
+  const rows = (found.survey.byTech.get(row.tech) ?? []).slice(0, LIST_MAX);
   const names = row.cats.map((c) => cats.get(c)).filter(Boolean) as string[];
 
   return (
@@ -50,14 +53,30 @@ export default async function TechPage({ params }: { params: Promise<{ slug: str
         {names.join(" · ") || "uncategorised"}
       </p>
       <h1 className="font-display mt-2 text-[34px] leading-[1.1] sm:text-[42px]">{row.tech}</h1>
-      <p className="font-display mt-3 text-[22px]">
-        <span className="tnum">{row.n}</span> of{" "}
-        <span className="tnum">{run.n_fetched}</span>
-      </p>
+      <dl className="mt-4 flex flex-wrap gap-x-10 gap-y-3 border-y border-rule py-3.5">
+        <div>
+          <dt className="font-mono text-[10px] tracking-[0.14em] text-faint uppercase">indie</dt>
+          <dd className="tnum font-display mt-0.5 text-[21px]">
+            {row.n_indie} <span className="text-faint text-[15px]">of {n.indie}</span>
+          </dd>
+        </div>
+        <div>
+          <dt className="font-mono text-[10px] tracking-[0.14em] text-faint uppercase">open source</dt>
+          <dd className="tnum font-display mt-0.5 text-[21px]">
+            {row.n_oss} <span className="text-faint text-[15px]">of {n.oss.toLocaleString("en-GB")}</span>
+          </dd>
+        </div>
+        <div>
+          <dt className="font-mono text-[10px] tracking-[0.14em] text-faint uppercase">together</dt>
+          <dd className="tnum font-display mt-0.5 text-[21px]">
+            {row.n} <span className="text-faint text-[15px]">of {n.total.toLocaleString("en-GB")}</span>
+          </dd>
+        </div>
+      </dl>
       <p className="font-body mt-3 max-w-[60ch] text-[15px] leading-relaxed text-muted">
-        Found on {row.n === 1 ? "one site" : `${row.n} sites`} in survey{" "}
-        {String(run.seq).padStart(3, "0")}. Each line gives the string in that site&rsquo;s
-        response that put it here — go and look, the response is public.
+        Found in survey {String(run.seq).padStart(3, "0")}. Each line gives the string in
+        that product&rsquo;s response that put it here — go and look, the response is
+        public. The commercial products are listed first.
       </p>
 
       <div className="mt-8 border-t border-rule">
@@ -91,6 +110,14 @@ export default async function TechPage({ params }: { params: Promise<{ slug: str
           );
         })}
       </div>
+
+      {row.n > rows.length && (
+        <p className="mt-3 font-mono text-[11px] text-faint">
+          {(row.n - rows.length).toLocaleString("en-GB")} more products carried it. This
+          page lists the first {rows.length}: a page of a thousand evidence lines is not
+          a page, and the tally above is the whole count.
+        </p>
+      )}
 
       <p className="font-body mt-8 text-[14px] leading-relaxed text-muted">
         <Link href="/" className="text-accent underline underline-offset-2">

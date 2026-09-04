@@ -1,37 +1,32 @@
 import Link from "next/link";
 import { SITES } from "@/data/sites";
-import { categoryNames, fetchRows, latestRun, tally, techSlug } from "@/lib/census";
+import { INDIE } from "@/data/indie";
+import { survey, techSlug } from "@/lib/census";
 import { REST, SECTIONS, sectionFor } from "@/lib/sections";
 import { dayAndDate, longDate, nextRun } from "@/lib/when";
+import { Heads, Row } from "@/components/Row";
 import { Jump, type JumpItem } from "@/components/Jump";
-import { Row } from "@/components/Row";
 import { Sheet } from "@/components/Sheet";
 
 /**
  * The census.
  *
- * Everything on this page is read at build time or during a revalidation, and
- * never while somebody waits: Neon's free plan parks the compute after five
- * minutes idle, so the first visitor after a quiet hour would pay for a cold
- * Postgres. An hour is well under the weekly cadence of the data.
+ * Read at build time or during a revalidation, never while somebody waits:
+ * Neon's free plan parks the compute after five minutes idle, so the first
+ * visitor after a quiet hour would pay for a cold Postgres. An hour is well
+ * under the weekly cadence of the data.
  */
 export const revalidate = 3600;
 
-/** Per section, before "and n more". Enough to show the shape of the answer,
- *  short enough that the page is still a page. */
-const TOP = 8;
+/** Per section, before "and n more". */
+const TOP = 10;
+/** The unfiled list at the bottom. It is a few hundred rows long now. */
+const REST_MAX = 90;
 
 export default async function Home() {
-  const run = await latestRun();
-  if (!run) return <Pending />;
-
-  const [rows, cats, fetched] = await Promise.all([
-    tally(run.id),
-    categoryNames(),
-    fetchRows(run.id),
-  ]);
-  const n = run.n_fetched;
-  const silent = fetched.filter((f) => !f.ok);
+  const s = await survey();
+  if (!s) return <Pending />;
+  const { run, tally: rows, cats, n, silent } = s;
   const next = nextRun(run.finished_at);
 
   const grouped = new Map<string, typeof rows>();
@@ -40,8 +35,6 @@ export default async function Home() {
     grouped.set(s.slug, [...(grouped.get(s.slug) ?? []), r]);
   }
 
-  /* Everything the filter box can jump to, built here so the box ships with
-     the page and needs no request of its own. */
   const jump: JumpItem[] = [
     ...SITES.map((s) => ({
       href: `/s/${s.domain}`,
@@ -52,52 +45,55 @@ export default async function Home() {
     ...rows.map((r) => ({
       href: `/t/${techSlug(r.tech)}`,
       label: r.tech,
-      sub: `${r.n} of ${n}`,
+      sub: `${r.n} of ${n.total}`,
       kind: "technology" as const,
     })),
   ];
 
   return (
     <Sheet run={run.seq} date={longDate(run.finished_at)}>
-      <h1 className="font-display mt-9 max-w-[16ch] text-[34px] leading-[1.1] sm:text-[44px]">
-        Fifty-one products, counted.
+      <h1 className="font-display mt-9 max-w-[15ch] text-[34px] leading-[1.1] sm:text-[44px]">
+        {n.total.toLocaleString("en-GB")} products, counted.
       </h1>
       <p className="font-body mt-4 max-w-[62ch] text-[16px] leading-relaxed text-muted">
-        Fifty-one indie products, fetched the same way on the same morning. Every line
-        below is something that was in the response — a header, a script tag, a
-        stylesheet, an MX record — and the figure is how many of the {n} it was found
-        on. No opinions, no ranking, and nothing about revenue: this is a tally.
+        Every line below is something that was in the response — a header, a script
+        tag, a stylesheet, an MX record — and the figures are how many products had
+        it. Two populations, counted separately, because they disagree: {n.indie}{" "}
+        commercial indie products, and {n.oss.toLocaleString("en-GB")} open-source
+        tools. No opinions, no ranking, and nothing about revenue. This is a tally.
       </p>
 
-      <Jump items={jump} />
+      <Jump
+        items={jump}
+        hint={`Any of the ${SITES.length.toLocaleString("en-GB")} products, or any of the ${rows.length} things found on them.`}
+      />
 
       <dl className="mt-7 grid grid-cols-2 gap-x-6 gap-y-3 border-y border-rule py-3.5 sm:grid-cols-4">
-        <Stat k="asked" v={String(run.n_sites)} />
-        <Stat k="answered" v={String(run.n_fetched)} />
-        <Stat k="things found" v={String(rows.length)} />
+        <Stat k="asked" v={run.n_sites.toLocaleString("en-GB")} />
+        <Stat k="answered" v={n.total.toLocaleString("en-GB")} />
+        <Stat k="things found" v={rows.length.toLocaleString("en-GB")} />
         <Stat k="next survey" v={dayAndDate(next)} />
       </dl>
 
-      {/* The roll of products, one click from the top of the page. It used to
-          sit below every section, which put the thing most visitors came for
-          nine screens down. Dense on purpose: a two-column table of 51 rows
-          would push the tally itself off the first two screens. */}
-      <section className="mt-6">
-        <h2 className="font-mono text-[11px] tracking-[0.16em] text-faint uppercase">
-          The fifty-one
-        </h2>
-        <p className="mt-2 flex flex-wrap gap-x-3 gap-y-1.5 font-mono text-[12px] leading-relaxed">
-          {SITES.map((s) => {
-            const f = fetched.find((x) => x.domain === s.domain);
-            return (
-              <Link key={s.domain} href={`/s/${s.domain}`} className="hover:text-accent">
-                {s.name}
-                {f && !f.ok && <span className="text-faint"> (no answer)</span>}
-              </Link>
-            );
-          })}
-        </p>
-      </section>
+      <p className="font-body mt-4 max-w-[62ch] text-[14px] leading-relaxed text-muted">
+        The <span className="text-ink">indie</span> column is {n.indie} commercial
+        products, picked by hand: Plausible, Linear, Cal.com, Resend and the rest of
+        the tools an indie founder already reads about. The{" "}
+        <span className="text-ink">open source</span> column is{" "}
+        {n.oss.toLocaleString("en-GB")} tools from two public lists,{" "}
+        <a className="underline underline-offset-2 hover:text-accent" href="https://github.com/awesome-selfhosted/awesome-selfhosted">
+          awesome-selfhosted
+        </a>{" "}
+        and{" "}
+        <a className="underline underline-offset-2 hover:text-accent" href="https://github.com/awesome-foss/awesome-sysadmin">
+          awesome-sysadmin
+        </a>
+        , so that any row can be traced back to somebody else&rsquo;s list.{" "}
+        <Link href="/sites" className="text-accent underline underline-offset-2">
+          The whole population is listed here
+        </Link>
+        .
+      </p>
 
       {SECTIONS.map((s) => {
         const list = grouped.get(s.slug) ?? [];
@@ -111,7 +107,8 @@ export default async function Home() {
             <p className="font-body mt-1.5 max-w-[58ch] text-[14px] leading-relaxed text-muted">
               {s.blurb}
             </p>
-            <div className="mt-3 border-t border-rule">
+            <div className="mt-3">
+              <Heads a="indie" b="open source" />
               {shown.map((r) => (
                 <Row
                   key={r.tech}
@@ -119,14 +116,16 @@ export default async function Home() {
                   name={r.tech}
                   note={r.cats.map((c) => cats.get(c)).find(Boolean)?.toLowerCase() ?? null}
                   evidence={r.sample ? `${r.sample_domain} — ${r.sample.detail}` : null}
-                  count={r.n}
-                  of={n}
+                  a={r.n_indie}
+                  aOf={n.indie}
+                  b={r.n_oss}
+                  bOf={n.oss}
                 />
               ))}
             </div>
             {list.length > shown.length && (
               <p className="mt-2 font-mono text-[11px] text-faint">
-                and {list.length - shown.length} more found on fewer sites.
+                and {list.length - shown.length} more found on fewer products.
               </p>
             )}
           </section>
@@ -143,21 +142,45 @@ export default async function Home() {
             for being awkward to file.
           </p>
           <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1.5 border-t border-rule pt-3 font-mono text-[12px]">
-            {(grouped.get(REST.slug) ?? []).map((r) => (
+            {(grouped.get(REST.slug) ?? []).slice(0, REST_MAX).map((r) => (
               <Link key={r.tech} href={`/t/${techSlug(r.tech)}`} className="hover:text-accent">
                 {r.tech} <span className="tnum text-faint">{r.n}</span>
               </Link>
             ))}
           </div>
+          {(grouped.get(REST.slug) ?? []).length > REST_MAX && (
+            <p className="mt-2 font-mono text-[11px] text-faint">
+              and {(grouped.get(REST.slug) ?? []).length - REST_MAX} more. The filter at
+              the top reaches all of them.
+            </p>
+          )}
         </section>
       )}
 
+      <section className="mt-12">
+        <h2 className="font-mono text-[11px] tracking-[0.16em] text-faint uppercase">
+          The indie {INDIE.length}
+        </h2>
+        <p className="font-body mt-1.5 max-w-[58ch] text-[14px] leading-relaxed text-muted">
+          The smaller column, in full. These are commercial products with a price
+          list, which is what makes them worth comparing against a thousand
+          open-source tools.
+        </p>
+        <p className="mt-3 flex flex-wrap gap-x-3 gap-y-1.5 border-t border-rule pt-3 font-mono text-[12px] leading-relaxed">
+          {INDIE.map((s) => (
+            <Link key={s.domain} href={`/s/${s.domain}`} className="hover:text-accent">
+              {s.name}
+            </Link>
+          ))}
+        </p>
+      </section>
+
       <p className="font-body mt-8 max-w-[62ch] text-[14px] leading-relaxed text-muted">
-        The list of fifty-one is fixed for the run: a census that gains and loses
-        members between surveys cannot tell a migration from a change of population.{" "}
+        The population is fixed between surveys: a census that gains and loses members
+        cannot tell a migration from a change of population.{" "}
         {silent.length === 0
-          ? `All ${run.n_sites} answered this time. `
-          : `${silent.length} did not answer this time (${silent.map((s) => s.domain).join(", ")}) and are left out of every figure above. `}
+          ? `All ${run.n_sites.toLocaleString("en-GB")} answered this time. `
+          : `${run.n_sites - n.total} did not answer this time and are left out of every figure above. `}
         The next survey runs on {dayAndDate(next)} at 06:00 UTC, and anything that moves
         between now and then lands on{" "}
         <Link href="/changes" className="text-accent underline underline-offset-2">
@@ -183,9 +206,9 @@ function Stat({ k, v }: { k: string; v: string }) {
 }
 
 /**
- * Before the first run finishes there is no census, and the page says so.
- * The alternative — rendering zeroes and empty sections — reads as a broken
- * site rather than a young one.
+ * Before the first run finishes there is no census, and the page says so. The
+ * alternative — zeroes and empty sections — reads as a broken site rather than
+ * a young one.
  */
 function Pending() {
   return (
@@ -194,10 +217,10 @@ function Pending() {
         The first survey has not finished yet.
       </h1>
       <p className="font-body mt-4 max-w-[60ch] text-[16px] leading-relaxed text-muted">
-        Fifty-one indie products get fetched, read, and tallied — what they are built
-        with, where they are served, where their email goes. Nothing is published until
-        a full run completes, because a half-finished census would read as fifty-one
-        companies dropping their stack at once.
+        Over a thousand software products get fetched, read and tallied — what they are
+        built with, where they are served, where their email goes. Nothing is published
+        until a full run completes, because a half-finished census would read as a
+        thousand companies dropping their stack at once.
       </p>
       <p className="font-body mt-4 max-w-[60ch] text-[16px] leading-relaxed text-muted">
         Come back shortly, or read{" "}

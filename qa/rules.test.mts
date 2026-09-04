@@ -11,6 +11,7 @@
  * every rule lands somewhere between those two failures.
  */
 import { SITES } from "../src/data/sites";
+import { INDIE } from "../src/data/indie";
 import { EXTRA, canonical } from "../src/lib/extra";
 import { fetchAll } from "../src/lib/fetchsite";
 import { fetchRuleset } from "../src/lib/ruleset";
@@ -23,13 +24,23 @@ const fail = (m: string) => {
   console.log(`  FAIL  ${m}`);
 };
 
-const { techs } = await fetchRuleset();
-const pages = await fetchAll(SITES.map((s) => s.domain));
-const ok = pages.filter((p) => p.ok);
-console.log(`fetched ${ok.length}/${pages.length} sites, ruleset ${techs.length} technologies\n`);
+/* A SAMPLE, not the census. The population is 1,224 products and fetching all
+   of them is the Thursday cron's job, not a gate's: it would take minutes and
+   the gate would stop being run. The sample is the 51 commercial products plus
+   a fixed, evenly spaced slice of the open-source group — fixed so that two
+   runs of the gate are comparable, and spread so that it is not just the
+   domains beginning with "a". */
+const oss = SITES.filter((s) => s.kind === "oss");
+const step = Math.ceil(oss.length / 70);
+const SAMPLE = [...INDIE.map((s) => s.domain), ...oss.filter((_, i) => i % step === 0).map((s) => s.domain)];
 
-if (ok.length < SITES.length * 0.9)
-  fail(`only ${ok.length}/${SITES.length} sites answered — too few to judge a rule by`);
+const { techs } = await fetchRuleset();
+const pages = await fetchAll(SAMPLE);
+const ok = pages.filter((p) => p.ok);
+console.log(`fetched ${ok.length}/${pages.length} of a ${SAMPLE.length}-site sample, ruleset ${techs.length} technologies\n`);
+
+if (ok.length < SAMPLE.length * 0.8)
+  fail(`only ${ok.length}/${SAMPLE.length} sampled sites answered — too few to judge a rule by`);
 
 const hits = new Map<string, string[]>();
 const slugs = new Map<string, string>();

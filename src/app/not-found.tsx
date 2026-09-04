@@ -8,9 +8,9 @@ export default function NotFound() {
         Not in this census.
       </h1>
       <p className="font-body mt-4 max-w-[58ch] text-[16px] leading-relaxed text-muted">
-        Either the technology was not found on any of the fifty-one sites in the latest
-        survey, or the site is not one of the fifty-one. The list is fixed for the run —
-        which is what makes &ldquo;what changed&rdquo; mean anything.
+        Either the technology was not found on any product in the latest survey, or the
+        product is not in the census. The population is fixed between surveys — which is
+        what makes &ldquo;what changed&rdquo; mean anything.
       </p>
       <p className="font-body mt-4 text-[16px] text-muted">
         <Link href="/" className="text-accent underline underline-offset-2">

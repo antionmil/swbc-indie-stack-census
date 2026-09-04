@@ -1,10 +1,10 @@
 import { ImageResponse } from "next/og";
-import { latestRun, tally } from "@/lib/census";
+import { survey } from "@/lib/census";
 import { longDate } from "@/lib/when";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "Indie stack census — what fifty-one indie products actually run on";
+export const alt = "Indie stack census — what a thousand software products actually run on";
 
 /**
  * THE FONT TRAP, already paid for once in the scaffold: ImageResponse cannot
@@ -26,8 +26,9 @@ async function serif(): Promise<ArrayBuffer | null> {
 }
 
 export default async function OG() {
-  const run = await latestRun();
-  const rows = run ? (await tally(run.id)).slice(0, 5) : [];
+  const s = await survey();
+  const run = s?.run ?? null;
+  const rows = s ? s.tally.slice(0, 5) : [];
   const font = await serif();
 
   return new ImageResponse(
@@ -56,14 +57,16 @@ export default async function OG() {
               <span>{r.tech}</span>
               <span style={{ color: "#8a3a1c" }}>
                 {r.n}
-                <span style={{ color: "#6b6152" }}>/{run?.n_fetched ?? 51}</span>
+                <span style={{ color: "#6b6152" }}>/{run?.n_fetched ?? 1224}</span>
               </span>
             </div>
           ))}
         </div>
 
         <div style={{ display: "flex", fontSize: 30, color: "#5c5344" }}>
-          {run ? `${run.n_fetched} indie products, fetched the same morning.` : "Fifty-one indie products, counted."}
+          {run
+            ? `${run.n_fetched.toLocaleString("en-GB")} software products, fetched the same morning.`
+            : "A thousand software products, counted."}
         </div>
       </div>
     ),

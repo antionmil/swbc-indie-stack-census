@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SITES, byDomain } from "@/data/sites";
-import { categoryNames, fetchRows, findingsForSite, latestRun, techSlug } from "@/lib/census";
+import { survey, techSlug } from "@/lib/census";
 import { REST, SECTIONS, sectionFor } from "@/lib/sections";
 import { longDate } from "@/lib/when";
 import { Sheet } from "@/components/Sheet";
@@ -28,15 +28,11 @@ export default async function SitePage({ params }: { params: Promise<{ domain: s
   const site = byDomain.get(domain);
   if (!site) notFound();
 
-  const run = await latestRun();
-  if (!run) notFound();
-
-  const [rows, cats, fetched] = await Promise.all([
-    findingsForSite(run.id, domain),
-    categoryNames(),
-    fetchRows(run.id),
-  ]);
-  const me = fetched.find((f) => f.domain === domain);
+  const s = await survey();
+  if (!s) notFound();
+  const { run, cats } = s;
+  const rows = s.bySite.get(domain) ?? [];
+  const me = s.fetches.get(domain) ?? null;
 
   const grouped = new Map<string, typeof rows>();
   for (const r of rows) {
@@ -48,7 +44,7 @@ export default async function SitePage({ params }: { params: Promise<{ domain: s
   return (
     <Sheet run={run.seq} date={longDate(run.finished_at)}>
       <p className="mt-9 font-mono text-[11px] tracking-[0.16em] text-faint uppercase">
-        {site.group}
+        {site.topic}{site.kind === "oss" ? ` · open source · ${site.src}` : " · indie"}
       </p>
       <h1 className="font-display mt-2 text-[34px] leading-[1.1] sm:text-[42px]">{site.name}</h1>
       <p className="mt-2 font-mono text-[12px] text-faint">

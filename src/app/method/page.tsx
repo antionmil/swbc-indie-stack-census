@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITES } from "@/data/sites";
+import { INDIE } from "@/data/indie";
 import { EXTRA } from "@/lib/extra";
 import { canonical } from "@/lib/extra";
-import { latestRun, tally } from "@/lib/census";
+import { survey } from "@/lib/census";
 import { longDate } from "@/lib/when";
 import { Sheet } from "@/components/Sheet";
 
@@ -32,14 +33,15 @@ function rulesOf(raw: (typeof EXTRA)[string]): string[] {
 }
 
 export default async function Method() {
-  const run = await latestRun();
+  const s = await survey();
+  const run = s?.run ?? null;
   const entries = Object.entries(EXTRA);
 
   /* Which of our own rules found nothing this week. Worth printing: "looked
      for and not found" is a result, and a rule that has quietly stopped
      matching anything looks exactly the same from the outside as a technology
      nobody uses. Naming them puts both in front of the reader. */
-  const seen = new Set(run ? (await tally(run.id)).map((r) => r.tech) : []);
+  const seen = new Set(s ? s.tally.map((r) => r.tech) : []);
   const silent = run ? entries.map(([n]) => n).filter((n) => !seen.has(canonical(n))) : [];
   /* One string, built here rather than assembled out of JSX expressions: a
      `{list}`, `{maybe}`, `.` sequence puts a space in front of the comma and
@@ -48,7 +50,7 @@ export default async function Method() {
     silent.length === 0
       ? ""
       : `${silent.length} of them matched nothing at all in this survey, which is itself a ` +
-        `result: not one of the fifty-one home pages carried a trace of ${silent.slice(0, 3).join(", ")}` +
+        `result: not one home page in the whole census carried a trace of ${silent.slice(0, 3).join(", ")}` +
         (silent.length > 3 ? `, or of ${silent.length - 3} other things looked for` : "") +
         ". They are marked below.";
 
@@ -63,12 +65,57 @@ export default async function Method() {
         it as more than it is.
       </p>
 
+      <Block title="Who is counted">
+        <p>
+          Two populations, counted separately, because they answer differently and an
+          average over both would report neither.
+        </p>
+        <p>
+          <strong className="font-semibold">The indie group is {INDIE.length} commercial
+          products</strong>, picked by hand: Plausible, Linear, Cal.com, Resend and the
+          rest of the tools an indie founder already reads about. It is a small group and
+          it is not a sample of anything. It is a named list, and it is on{" "}
+          <Link href="/sites" className="text-accent underline underline-offset-2">
+            the population page
+          </Link>{" "}
+          in full.
+        </p>
+        <p>
+          <strong className="font-semibold">The open-source group is{" "}
+          {(SITES.length - INDIE.length).toLocaleString("en-GB")} tools</strong> taken from
+          two public lists,{" "}
+          <a className="text-accent underline underline-offset-2" href="https://github.com/awesome-selfhosted/awesome-selfhosted">
+            awesome-selfhosted
+          </a>{" "}
+          and{" "}
+          <a className="text-accent underline underline-offset-2" href="https://github.com/awesome-foss/awesome-sysadmin">
+            awesome-sysadmin
+          </a>
+          . They were chosen because they are curated by other people, they are public,
+          and every row here can be traced back to a line in somebody else&rsquo;s
+          repository. I did not assemble this list, which is the point: a list of a
+          thousand entries that I typed out myself would be unauditable.
+        </p>
+        <p>
+          Entries pointing at GitHub, GitLab, an app store or Read the Docs are dropped
+          before the survey runs — 306 of them. Fingerprinting a code host tells you what
+          the code host runs, and nothing about the product.
+        </p>
+        <p>
+          The population is fixed between surveys. It changes only when the source lists
+          change and the list is rebuilt, and a product that joins is never reported as
+          having adopted anything: the change feed only compares products that answered
+          in both surveys.
+        </p>
+      </Block>
+
       <Block title="What actually happens">
         <p>
-          Every Thursday at 06:00 UTC, each of the {SITES.length} domains gets one HTTPS
-          GET of its home page, with a normal browser user-agent and redirects followed.
+          Every Thursday at 06:00 UTC, each of the {SITES.length.toLocaleString("en-GB")}{" "}
+          domains gets one HTTPS GET of its home page, with a normal browser user-agent
+          and redirects followed.
           From the response we keep the headers, the cookies, the HTML, the script tags,
-          the meta tags and up to three of the stylesheets it links to. We also ask DNS
+          the meta tags and up to two of the stylesheets it links to. We also ask DNS
           for the domain&rsquo;s MX records. That is the whole input: no login, no crawl,
           no second page.
         </p>
@@ -105,8 +152,8 @@ export default async function Method() {
         </p>
         <p>
           <strong className="font-semibold">Anything about the company.</strong> No
-          revenue, no headcount, no funding, no ranking. Fifty-one sites cannot support
-          those claims and this census does not make them.
+          revenue, no headcount, no funding, no ranking. This census counts what a
+          response contained. It does not make claims about the people behind it.
         </p>
       </Block>
 
@@ -146,7 +193,7 @@ export default async function Method() {
 
       <Block title={`The ${entries.length} rules this census adds`}>
         <p>
-          On the public ruleset alone, Next.js was found on 11 of 51 sites while{" "}
+          On the public ruleset alone, Next.js was found on 11 of the first 51 sites while{" "}
           <span className="font-mono text-[13px]">/_next/static/</span> sat in the HTML of
           twice as many — the rest of its rules need a browser. So the census adds rules
           of its own. Every one matches a string that is present in the response, and

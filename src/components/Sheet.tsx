@@ -30,6 +30,7 @@ export function Sheet({
         <div className="flex flex-wrap gap-x-5 gap-y-1">
           <Link href="/" className="hover:text-accent">the census</Link>
           <Link href="/changes" className="hover:text-accent">what changed</Link>
+          <Link href="/sites" className="hover:text-accent">the population</Link>
           <Link href="/method" className="hover:text-accent">method &amp; limits</Link>
           <a href="https://onedaybuilt.com" className="hover:text-accent">one website a day</a>
         </div>

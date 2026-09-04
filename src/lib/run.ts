@@ -1,8 +1,8 @@
 import "server-only";
-import { SITES } from "@/data/sites";
+import { SITES, byDomain } from "@/data/sites";
 import { sql } from "@/lib/db";
 import { canonical } from "@/lib/extra";
-import { fetchAll } from "@/lib/fetchsite";
+import { fetchEach } from "@/lib/fetchsite";
 import { fetchRuleset } from "@/lib/ruleset";
 import { detect } from "@/lib/wappalyzer";
 
@@ -17,6 +17,8 @@ export type RunSummary = {
   failed: string[];
   findings: number;
   changes: { added: number; removed: number };
+  /** Surveys whose raw findings were dropped to keep the database small. */
+  pruned: number;
   ms: number;
 };
 
@@ -33,39 +35,38 @@ export async function runCensus(): Promise<RunSummary> {
     insert into runs (n_sites, ruleset_size) values (${SITES.length}, ${techs.length})
     returning id`) as { id: number }[];
 
-  const pages = await fetchAll(SITES.map((s) => s.domain));
+  /* Fetch, match and DISCARD, one site at a time. The 51-site version held
+     every response in an array and matched them afterwards; at 1,224 sites
+     that is gigabytes of HTML in a function that does not have it. Rows are
+     flushed to Postgres in chunks for the same reason. */
+  type FetchRow = { domain: string; kind: string; ok: number; status: number | null; url: string | null; ms: number; error: string | null };
+  type FindingRow = { domain: string; tech: string; confidence: number; version: string | null; cats: string; evidence: string };
 
-  await db`
-    insert into fetches (run_id, domain, ok, status, final_url, ms, error)
-    select ${runId}, * from unnest(
-      ${pages.map((p) => (p.ok ? p.page.domain : p.domain))}::text[],
-      ${pages.map((p) => (p.ok ? 1 : 0))}::int[],
-      ${pages.map((p) => (p.ok ? p.page.status : null))}::int[],
-      ${pages.map((p) => (p.ok ? p.page.url : null))}::text[],
-      ${pages.map((p) => p.ms)}::int[],
-      ${pages.map((p) => (p.ok ? null : p.error))}::text[])`;
+  const fetchBuf: FetchRow[] = [];
+  const findBuf: FindingRow[] = [];
+  const failed: string[] = [];
+  let ok = 0;
+  let findings = 0;
 
-  const rows: {
-    domain: string; tech: string; confidence: number; version: string | null;
-    cats: string; evidence: string;
-  }[] = [];
-  for (const p of pages) {
-    if (!p.ok) continue;
-    for (const d of detect(p.page, techs, canonical))
-      rows.push({
-        domain: p.page.domain,
-        tech: d.name,
-        confidence: d.confidence,
-        version: d.version ?? null,
-        cats: JSON.stringify(d.cats),
-        evidence: JSON.stringify(d.evidence),
-      });
-  }
+  const flushFetches = async () => {
+    if (!fetchBuf.length) return;
+    const c = fetchBuf.splice(0, fetchBuf.length);
+    await db`
+      insert into fetches (run_id, domain, kind, ok, status, final_url, ms, error)
+      select ${runId}, * from unnest(
+        ${c.map((r) => r.domain)}::text[],
+        ${c.map((r) => r.kind)}::text[],
+        ${c.map((r) => r.ok)}::int[],
+        ${c.map((r) => r.status)}::int[],
+        ${c.map((r) => r.url)}::text[],
+        ${c.map((r) => r.ms)}::int[],
+        ${c.map((r) => r.error)}::text[])
+      on conflict do nothing`;
+  };
 
-  /* Chunked: one statement with 3,000 array elements is fine, one with 30,000
-     is not, and the number of findings grows every time a site is added. */
-  for (let i = 0; i < rows.length; i += 200) {
-    const c = rows.slice(i, i + 200);
+  const flushFindings = async () => {
+    if (!findBuf.length) return;
+    const c = findBuf.splice(0, findBuf.length);
     await db`
       insert into findings (run_id, domain, tech, confidence, version, cats, evidence)
       select ${runId}, * from unnest(
@@ -76,7 +77,38 @@ export async function runCensus(): Promise<RunSummary> {
         ${c.map((r) => r.cats)}::jsonb[],
         ${c.map((r) => r.evidence)}::jsonb[])
       on conflict do nothing`;
-  }
+  };
+
+  await fetchEach(
+    SITES.map((s) => s.domain),
+    async (p) => {
+      if (!p.ok) {
+        failed.push(p.domain);
+        fetchBuf.push({ domain: p.domain, kind: byDomain.get(p.domain)?.kind ?? "oss", ok: 0, status: null, url: null, ms: p.ms, error: p.error.slice(0, 300) });
+      } else {
+        ok++;
+        fetchBuf.push({
+          domain: p.page.domain, kind: byDomain.get(p.page.domain)?.kind ?? "oss",
+          ok: 1, status: p.page.status, url: p.page.url, ms: p.ms, error: null,
+        });
+        for (const d of detect(p.page, techs, canonical)) {
+          findings++;
+          findBuf.push({
+            domain: p.page.domain,
+            tech: d.name,
+            confidence: d.confidence,
+            version: d.version ?? null,
+            cats: JSON.stringify(d.cats),
+            evidence: JSON.stringify(d.evidence),
+          });
+        }
+      }
+      if (fetchBuf.length >= 200) await flushFetches();
+      if (findBuf.length >= 200) await flushFindings();
+    },
+  );
+  await flushFetches();
+  await flushFindings();
 
   const catIds = Object.keys(cats).map(Number);
   await db`
@@ -94,17 +126,41 @@ export async function runCensus(): Promise<RunSummary> {
   const counts = prev.length ? await writeChanges(runId, prev[0].id) : { added: 0, removed: 0 };
   const { added, removed } = counts;
 
-  const ok = pages.filter((p) => p.ok).length;
   await db`update runs set finished_at = now(), n_fetched = ${ok} where id = ${runId}`;
+  const pruned = await prune();
 
   return {
     run: runId,
     fetched: ok,
-    failed: pages.filter((p) => !p.ok).map((p) => ("domain" in p ? p.domain : "?")),
-    findings: rows.length,
+    failed,
+    findings,
     changes: { added, removed },
+    pruned,
     ms: Date.now() - t0,
   };
+}
+
+/**
+ * Keeps the last KEEP surveys' raw findings and drops the rest.
+ *
+ * A survey of 1,224 sites writes about ten thousand findings, each carrying its
+ * evidence strings. Fifty-two of those a year does not fit in a 0.5 GB free
+ * plan, and the site never reads a survey older than the previous one. The
+ * `changes` rows are never pruned: they are the history, they are small, and
+ * they are the only part that cannot be recomputed.
+ */
+const KEEP = 6;
+
+async function prune(): Promise<number> {
+  const db = sql();
+  const old = (await db`
+    select id from runs where finished_at is not null
+    order by id desc offset ${KEEP}`) as { id: number }[];
+  if (!old.length) return 0;
+  const ids = old.map((r) => r.id);
+  await db`delete from findings where run_id = any(${ids}::int[])`;
+  await db`delete from fetches where run_id = any(${ids}::int[])`;
+  return ids.length;
 }
 
 /**

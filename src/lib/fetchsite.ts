@@ -12,7 +12,12 @@ import type { PageInput } from "@/lib/wappalyzer";
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36";
 
-const MAX_HTML = 1_500_000;
+/* Tightened when the census went from 51 sites to 1,224. Every limit here is
+   now multiplied by twelve hundred, and the whole run has to finish inside a
+   300-second function. 800 KB of HTML holds every fingerprint we match on —
+   the rules look at script tags, meta tags and the head, not at the end of a
+   long marketing page. */
+const MAX_HTML = 800_000;
 
 export type Fetched =
   | { ok: true; page: PageInput; ms: number }
@@ -68,12 +73,12 @@ export function styleSheetHrefs(html: string, base: string): string[] {
  * sheet and NOTHING in the HTML, so a census that reads only the document says
  * "no CSS framework" about a page built entirely out of one.
  */
-async function fetchStyles(hrefs: string[], max = 3, cap = 600_000): Promise<string[]> {
+async function fetchStyles(hrefs: string[], max = 2, cap = 400_000): Promise<string[]> {
   const out: string[] = [];
   for (const href of hrefs.slice(0, max)) {
     try {
       const ctl = new AbortController();
-      const timer = setTimeout(() => ctl.abort(), 12_000);
+      const timer = setTimeout(() => ctl.abort(), 6_000);
       const r = await fetch(href, { headers: { "user-agent": UA }, signal: ctl.signal, cache: "no-store" });
       clearTimeout(timer);
       if (r.ok) out.push((await r.text()).slice(0, cap));
@@ -84,7 +89,7 @@ async function fetchStyles(hrefs: string[], max = 3, cap = 600_000): Promise<str
   return out;
 }
 
-export async function fetchSite(domain: string, timeoutMs = 25_000): Promise<Fetched> {
+export async function fetchSite(domain: string, timeoutMs = 12_000): Promise<Fetched> {
   const started = Date.now();
   const ctl = new AbortController();
   const timer = setTimeout(() => ctl.abort(), timeoutMs);
@@ -144,15 +149,38 @@ export async function fetchSite(domain: string, timeoutMs = 25_000): Promise<Fet
   }
 }
 
-/** Bounded concurrency: 51 sites at once is a burst that some hosts answer
- *  with a rate-limit page, and a rate-limit page fingerprints as nothing. */
-export async function fetchAll(domains: string[], width = 8): Promise<Fetched[]> {
-  const out: Fetched[] = [];
+/**
+ * Fetch every domain and hand each result to `onResult` AS IT ARRIVES.
+ *
+ * The callback is the point. Holding 1,224 responses to return them in an
+ * array is up to two gigabytes of HTML and stylesheets in a function with far
+ * less than that; the caller matches each page and throws the bytes away.
+ * This shape was a 51-site array once, and it did not survive the list growing.
+ *
+ * The width is bounded because a thousand simultaneous requests from one
+ * address gets a rate-limit page from the bigger hosts, and a rate-limit page
+ * fingerprints as nothing at all.
+ */
+export async function fetchEach(
+  domains: string[],
+  onResult: (r: Fetched) => void | Promise<void>,
+  width = 40,
+): Promise<void> {
   let i = 0;
   await Promise.all(
     Array.from({ length: Math.min(width, domains.length) }, async () => {
-      while (i < domains.length) out.push(await fetchSite(domains[i++]));
+      while (i < domains.length) {
+        const d = domains[i++];
+        await onResult(await fetchSite(d));
+      }
     }),
   );
+}
+
+/** Collects everything. Only for the gates, which run on a laptop over a
+ *  sample, never on the whole census. */
+export async function fetchAll(domains: string[], width = 8): Promise<Fetched[]> {
+  const out: Fetched[] = [];
+  await fetchEach(domains, (r) => void out.push(r), width);
   return out;
 }

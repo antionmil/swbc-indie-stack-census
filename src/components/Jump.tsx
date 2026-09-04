@@ -23,7 +23,7 @@ export type JumpItem = {
 
 const MAX = 8;
 
-export function Jump({ items }: { items: JumpItem[] }) {
+export function Jump({ items, hint }: { items: JumpItem[]; hint: string }) {
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
   const listRef = useRef<HTMLUListElement>(null);
@@ -104,7 +104,7 @@ export function Jump({ items }: { items: JumpItem[] }) {
           ? hits.length === 0
             ? `Nothing in this survey matches “${q.trim()}”. The list is 51 products, fixed for the run.`
             : `${hits.length} of ${items.length}`
-          : "Any of the 51 products, or anything found on them."}
+          : hint}
       </p>
 
       {showing && hits.length > 0 && (
